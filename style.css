@@ -38,9 +38,10 @@ hr{
   font-size:1.75vw;
 }
 
-.nav-item span{
-  float:right;
-  padding-top:4px;
+.nav-item{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
 }
 
 .nav-item img{
@@ -63,11 +64,11 @@ hr{
 
 .selected-nav:after{
     position:absolute;
-    right:-3px;
+    right:-4px;
     content:'';
-    width:5px;
+    width:4px;
     background:white;
-    height:3.5vw;
+    height:3.3vw;
 }
 
 
