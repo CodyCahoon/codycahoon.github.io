@@ -1,68 +1,109 @@
 <!doctype html>
+
 <html>
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'></head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
-</head>
+    <body>
 
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Brand</a>
-      </div>
+        <div id="left-menu">
+            <nav>
+                <ul id="nav-list">
+                    <li id="logo"><img src="img/templogo.png"></li>
+                    <li id="brand">Cody Cahoon</li>
+                    <li id="location"><span>Raleigh, NC</span></li>
+                    <li><hr/></li>
+                    <li class="nav-item"><img src="img/projects.png"/><span>Projects</span></li>
+                    <li class="nav-item selected-nav"> <img src="img/about.png"/><span>About</span></li>
+                    <li class="nav-item"><img src="img/blog.png"/><span>Blog</span></li>
+                    <li class="nav-item"><img src="img/contact.png"/><span>Contact</span></li>
+                </ul>
+            </nav>
+            <div>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+                <!-- Begin About Me Grid -->
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+                <div class="grid about-grid about-row-1 about-col-1" id="main-pane">
+                    <div>
+                        <img src="img/prof2.png">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu urna lacus. Cras at mattis augue, ac vulputate orci. Quisque sit amet pretium est. Etiam vestibulum imperdiet rutrum. Quisque vulputate vehicula tellus. Sed lacinia finibus rhoncus. Aliquam at consequat leo. Donec at dolor quis urna maximus pretium. Cras quis pulvinar nulla. Donec eu neque eu odio elementum iaculis. Etiam vitae leo auctor, sodales purus ut, commodo massa. Proin pellentesque sagittis commodo. Nunc et accumsan magna, quis vulputate nibh. Vivamus in lacus sit amet tortor lacinia maximus.
 
-</body>
+                            a sem. In interdum dapibus enim non hendrerit. In hendrerit ut nibh id euismod. Quisque blandit rutrum facilisis.
 
-</html>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="grid about-grid about-row-1 about-col-2" id="vt-pane">
+                    <div>
+                        <img src="img/vt.png">
+                        <h1>Virginia Tech</h1>
+                        <h2>B.S. in Computer Science</h2>
+                        <h2>December 2015</h2>
+                    </div>
+                </div>
+
+                <div class="grid about-grid about-row-2 about-col-2" id="skills-pane">
+                    <div>
+                    </div>
+                </div>
+
+
+                <!-- End About Me Grid -->
+
+                <!-- Begin Projects Grid -->
+
+                <div class="hidden-right grid project-grid proj-row-1 proj-col-1">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-2 proj-col-1">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-3 proj-col-1">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-1 proj-col-2">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-2 proj-col-2">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-3 proj-col-2">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-1 proj-col-3">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-2 proj-col-3">
+                    <div>
+                    </div>
+                </div>
+
+                <div class="hidden-right grid project-grid proj-row-3 proj-col-3">
+                    <div>
+                    </div>
+                </div>
+
+                <script src="script.js"></script>
+
+            </body>
+            </html>
