@@ -20,27 +20,43 @@ function toggle(mode)
     switch (mode)
     {
         case 0:
-            $(".about-grid").addClass("hidden-top");
-            $(".project-grid").removeClass("hidden-right");
-            $("#nav-list li:nth-child(5)").addClass("selected-nav");
+        $(".about-grid").removeClass("hidden-top");
+        $(".project-grid").addClass("hidden-right");
+        $(".blog-grid").addClass("hidden-bottom");
+        $(".contact-grid").addClass("hidden-right");
+
+        $("#nav-list li:nth-child(5)").addClass("selected-nav");
         break;
 
         case 1:
-            $(".about-grid").removeClass("hidden-top");
-            $(".project-grid").addClass("hidden-right");
-            $("#nav-list li:nth-child(6)").addClass("selected-nav");
+        lastMovement = "hidden-top";
+
+        $(".about-grid").addClass("hidden-top");
+        $(".project-grid").removeClass("hidden-right");
+        $(".blog-grid").addClass("hidden-bottom");
+        $(".contact-grid").addClass("hidden-right");
+
+        $("#nav-list li:nth-child(6)").addClass("selected-nav");
 
         break;
 
 
         case 2:
-            $("#nav-list li:nth-child(7)").addClass("selected-nav");
+        $(".about-grid").addClass("hidden-top");
+        $(".project-grid").addClass("hidden-right");
+        $(".blog-grid").removeClass("hidden-bottom");
+        $(".contact-grid").addClass("hidden-right");
 
-
+        $("#nav-list li:nth-child(7)").addClass("selected-nav");
         break;
 
         default:
-            $("#nav-list li:nth-child(8)").addClass("selected-nav");
+        $(".about-grid").addClass("hidden-top");
+        $(".project-grid").addClass("hidden-right");
+        $(".blog-grid").addClass("hidden-bottom");
+        $(".contact-grid").removeClass("hidden-right");
+
+        $("#nav-list li:nth-child(8)").addClass("selected-nav");
 
         break;
     }
@@ -51,5 +67,5 @@ $(document).mousemove(function(event) {
 
     currentMousePos.x = event.pageX;
     currentMousePos.y = event.pageY;
-//    console.log(currentMousePos);
+    //    console.log(currentMousePos);
 });
