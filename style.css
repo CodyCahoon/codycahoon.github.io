@@ -23,6 +23,7 @@ hr{
   background-color:#27ae60;
   width:17.5%;
   box-shadow: 0 0 10px #2a2b2d;
+  max-width:190px;
 }
 
 #nav-list{
@@ -98,6 +99,8 @@ hr{
   background: white;
   -webkit-transition:top 0.5s, left 0.5s, right 0.5s ;
   transition: top 0.5s, left 0.5s, right 0.5s;
+  box-shadow: 0 0 10px #2a2b2d;
+
 }
 
 .hidden-top{
@@ -110,7 +113,7 @@ hr{
 
 /* Begin About Me Grid CSS */
 .about-grid{
-  width:calc( (100% - 22.5% - 130px)/2);
+  width:calc( (100% - 17% - 130px)/2);
   height:calc((100% - 75px)/2);
 }
 
@@ -123,12 +126,12 @@ hr{
 }
 
 .about-col-1{
-  left: calc(65px + 22.5%);
+  left: calc(65px + 17.5%);
   height:calc(100% - 60px);
 }
 
 .about-col-2{
-  left:calc(80px + 22.5% + ((100% - 130px - 22.5%)/2));
+  left:calc(80px + 17.5% + ((100% - 130px - 17.5%)/2));
 }
 
 #vt-pane div{
@@ -228,8 +231,12 @@ h3{
 
 /* End Project Grid CSS Section */
 
-@media screen and (max-width: 480px) {
-    body {
-        background-color: lightgreen;
+@media screen and (min-width: 1200px) {
+    body{
+        background:red;
+    }
+
+    #nav-list li{
+      font-size:22px;
     }
 }
