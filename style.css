@@ -59,7 +59,7 @@ hr{
   color: #36383a;
 }
 
-.nav-item:hover img{
+.nav-item:hover img, #logo img{
   -webkit-filter: invert(0.778);
    filter: invert(0.778);
 }
