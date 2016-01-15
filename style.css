@@ -22,8 +22,7 @@ hr{
   left:50px;
   background-color:#27ae60;
   width:17.5%;
-  border-right:4px solid #229955;
-/*  border-top: 6px solid #2ecc71;*/
+box-shadow: 0 0 10px #2a2b2d;
 }
 
 #nav-list{
@@ -220,3 +219,9 @@ h3{
 }
 
 /* End Project Grid CSS Section */
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: lightgreen;
+    }
+}
