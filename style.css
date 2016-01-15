@@ -22,7 +22,7 @@ hr{
   left:50px;
   background-color:#27ae60;
   width:17.5%;
-box-shadow: 0 0 10px #2a2b2d;
+  box-shadow: 0 0 10px #2a2b2d;
 }
 
 #nav-list{
@@ -63,7 +63,7 @@ box-shadow: 0 0 10px #2a2b2d;
 
 .selected-nav:after{
     position:absolute;
-    right:-4px;
+    right:0px;
     content:'';
     width:4px;
     background:white;
@@ -81,6 +81,14 @@ box-shadow: 0 0 10px #2a2b2d;
 
 #location span{
   font-size: 1.5vw;
+}
+
+#location{
+    padding-top:0px !important;
+}
+
+#brand{
+    padding-bottom:0px !important;
 }
 /* End Navigation */
 
