@@ -241,11 +241,6 @@ nav{
   and (max-width: 1024px)
   and (orientation: portrait) {
 
-
-      body{
-          background:red !important;
-      }
-
       .row-1-2.col-1-1{
           width:calc(100% - #{$spacing}) !important;
           height:calc((100% - (2 * #{$spacing}))/2) !important;
@@ -256,11 +251,8 @@ nav{
 /* Portrait */
 @media only screen
   and (min-width: 320px)
-  and (max-width: 480px)
+  and (max-width: 768px)
   and (orientation: portrait) {
-      body{
-          background: red;
-      }
 
      nav{
           width:100vw;
@@ -291,6 +283,8 @@ nav{
               img{
                   width:8vw;
                   height:8vw;
+                  max-width: 36px;
+                  max-height: 36px;
               }
           }
 
@@ -324,9 +318,6 @@ nav{
   and (min-width: 320px)
   and (max-width: 480px)
   and (orientation: landscape) {
-      body{
-          background: purple;
-      }
 
       .row-1-2.col-1-1{
           width:calc(100% - #{$spacing}) !important;

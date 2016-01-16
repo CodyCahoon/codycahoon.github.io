@@ -141,17 +141,11 @@ nav {
 /* Portrait */
 /* Portrait */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-  body {
-    background: red !important; }
-
   .row-1-2.col-1-1 {
     width: calc(100% - 15px) !important;
     height: calc((100% - (2 * 15px))/2) !important; } }
 /* Portrait */
-@media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
-  body {
-    background: red; }
-
+@media only screen and (min-width: 320px) and (max-width: 768px) and (orientation: portrait) {
   nav {
     width: 100vw;
     max-width: none;
@@ -173,7 +167,9 @@ nav {
       border-bottom: 2px solid #2980b9; }
       nav li:nth-child(n+5) img {
         width: 8vw;
-        height: 8vw; }
+        height: 8vw;
+        max-width: 36px;
+        max-height: 36px; }
     nav .selected-nav {
       border-right: 0px solid #2980b9;
       border-bottom: 2px solid white !important; }
@@ -192,9 +188,6 @@ nav {
     height: calc((100% - (3 * 15px))/3) !important; } }
 /* Landscape */
 @media only screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-  body {
-    background: purple; }
-
   .row-1-2.col-1-1 {
     width: calc(100% - 15px) !important;
     height: calc((100% - (2 * 15px))/2) !important; } }
