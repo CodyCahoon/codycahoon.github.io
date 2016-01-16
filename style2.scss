@@ -6,6 +6,8 @@ $marginTop:30px;
 $spacing:15px;
 $mobileSide:10px;
 $mobileTop:10px;
+$spacingMobile:7px;
+
 
 
 html, body, ol, ul, *{
@@ -198,20 +200,20 @@ nav{
 
 
     h1, h2, h3, p{
-      font-family:'Titillium Web';
-      font-weight: normal;
+        font-family:'Titillium Web';
+        font-weight: normal;
     }
 
     h1{
-      font-size:2.0vw;
+        font-size:2.0vw;
     }
 
     h2{
-      font-size:1.5vw;
+        font-size:1.5vw;
     }
 
     h3{
-      font-size:1.0vw;
+        font-size:1.0vw;
     }
 
 }
@@ -237,91 +239,158 @@ nav{
 /* Portrait */
 /* Portrait */
 @media only screen
-  and (min-width: 768px)
-  and (max-width: 1024px)
-  and (orientation: portrait) {
+and (min-width: 768px)
+and (max-width: 1024px)
+and (orientation: portrait) {
 
-      .row-1-2.col-1-1{
-          width:calc(100% - #{$spacing}) !important;
-          height:calc((100% - (2 * #{$spacing}))/2) !important;
-      }
+    .row-1-2.col-1-1{
+        width:calc(100% - #{$spacing}) !important;
+        height:calc((100% - (2 * #{$spacing}))/2) !important;
+    }
 
 }
 
 /* Portrait */
 @media only screen
-  and (min-width: 320px)
-  and (max-width: 768px)
-  and (orientation: portrait) {
+and (min-width: 376px)
+and (max-width: 768px)
+and (orientation: portrait), only screen
+and (min-width: 320px)
+and (max-width: 375px)
+and (orientation: portrait) {
 
-     nav{
-          width:100vw;
-          max-width:none;
-          margin:0px;
 
-          li{
-             float:left;
-             width:calc(25vw);
-          }
 
-          .nav-item {
-              margin:0px ;
-              padding:0px ;
-          }
+    nav{
+        width:100vw;
+        max-width:none;
+        margin:0px;
 
-          li:nth-child(n-4), li span{
-              display:none;
-          }
+        li{
+            float:left;
+            width:calc(25vw);
+        }
 
-          li:nth-child(n+5){
-              display:flex;
-              justify-content:center;
-              align-items:center;
-              padding:5px 0px;
-              border-right:0px solid #{$navBackground};
-              border-bottom:2px solid #{$navBackground};
-              img{
-                  width:8vw;
-                  height:8vw;
-                  max-width: 36px;
-                  max-height: 36px;
-              }
-          }
+        .nav-item {
+            margin:0px ;
+            padding:0px ;
+        }
 
-          .selected-nav{
-              border-right:0px solid #{$navBackground};
-              border-bottom:2px solid white !important;
-          }
-      }
+        li:nth-child(n-4), li span{
+            display:none;
+        }
 
-      #main{
-          width:calc(100vw - #{$spacing});
-          height:calc(100vh - 50px - (1 * #{$spacing}));
-          margin:0px;
-      }
+        li:nth-child(n+5){
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            padding:5px 0px;
+            border-right:0px solid #{$navBackground};
+            border-bottom:2px solid #{$navBackground};
+            img{
+                width:8vw;
+                height:8vw;
+                max-width: 36px;
+                max-height: 36px;
+            }
+        }
 
-      .row-1-2.col-1-1{
-          width:calc(100% - #{$spacing}) !important;
-          height:calc((100% - (2 * #{$spacing}))/2) !important;
-      }
+        .selected-nav{
+            border-right:0px solid #{$navBackground};
+            border-bottom:2px solid white !important;
+        }
+    }
 
-      .row-1-3.col-1-1{
-          width:calc(100% - #{$spacing}) !important;
-          height:calc((100% - (3 * #{$spacing}))/3) !important;
+    #main{
+        width:calc(100vw - #{$spacing});
+        height:calc(100vh - 50px - (1 * #{$spacing}));
+        margin:0px;
+    }
 
-      }
+    .row-1-2.col-1-1{
+        width:calc(100% - #{$spacing}) !important;
+        height:calc((100% - (2 * #{$spacing}))/2) !important;
+    }
+
+    .row-1-3.col-1-1{
+        width:calc(100% - #{$spacing}) !important;
+        height:calc((100% - (3 * #{$spacing}))/3) !important;
+
+    }
 
 }
 
 /* Landscape */
 @media only screen
-  and (min-width: 320px)
-  and (max-width: 480px)
-  and (orientation: landscape) {
+and (min-width: 320px)
+and (max-width: 480px)
+and (orientation: landscape) {
 
-      .row-1-2.col-1-1{
-          width:calc(100% - #{$spacing}) !important;
-          height:calc((100% - (2 * #{$spacing}))/2) !important;
-      }
+    .row-1-2.col-1-1{
+        width:calc(100% - #{$spacing}) !important;
+        height:calc((100% - (2 * #{$spacing}))/2) !important;
+    }
+
+}
+
+
+@media only screen
+and (min-width: 320px)
+and (max-width: 375px)
+and (orientation: portrait) {
+
+    #main{
+        width:calc(100vw - #{$spacingMobile});
+        height:calc(100vh - 50px);
+        margin:0px;
+    }
+
+    .grid{
+        margin-left:#{$spacingMobile} !important;
+        margin-top:#{$spacingMobile} !important;
+    }
+
+    .row-1-1{
+        width:calc(100% - #{$spacingMobile})!important;
+    }
+
+    .col-1-1{
+        height:calc(100% - #{$spacingMobile})!important;
+    }
+
+    .row-1-2{
+        width:calc((100% -  (2 * #{$spacingMobile}))/2)!important;
+    }
+
+    .col-1-2{
+        height:calc((100% - (2 * #{$spacingMobile}))/2) !important;
+    }
+
+    .row-1-3{
+        width:calc((100% -  (3 * #{$spacingMobile}))/3) !important;
+    }
+
+    .row-2-3{
+        width:calc(2*((100% -  (3 * #{$spacingMobile}))/3))!important;
+    }
+
+    .col-1-3{
+        height:calc((100% - (3 * #{$spacingMobile}))/3)!important;
+    }
+
+    .col-2-3{
+        height:calc(2*((100% -  (3 * #{$spacingMobile}))/3))!important;
+    }
+
+    .row-1-2.col-1-1{
+        width:calc(100% - #{$spacingMobile}) !important;
+        height:calc((100% - (2 * #{$spacingMobile}))/2) !important;
+    }
+
+    .row-1-3.col-1-1{
+        width:calc(100% - #{$spacingMobile}) !important;
+        height:calc((100% - (3 * #{$spacingMobile}))/3) !important;
+
+    }
 
 }
