@@ -14,8 +14,6 @@ $("#nav-list li:nth-child(8)").click(function(){
     toggle(3);
 });
 
-$(window).resize(resize);
-
 function toggle(mode)
 {
     $(".nav-item").removeClass("selected-nav");
@@ -72,11 +70,3 @@ $(document).mousemove(function(event) {
     currentMousePos.y = event.pageY;
     //    console.log(currentMousePos);
 });
-
-function resize(){
-    var size = $(window).width();
-    size -= $("nav").width();
-    size -= 100;
-    //$("#main").width(size);
-
-}
