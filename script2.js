@@ -70,5 +70,3 @@ $(document).mousemove(function(event) {
     currentMousePos.y = event.pageY;
     //    console.log(currentMousePos);
 });
-
-alert('1');

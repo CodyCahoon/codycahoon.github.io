@@ -285,6 +285,7 @@ and (orientation: portrait) {
             padding:5px 0px;
             border-right:0px solid #{$navBackground};
             border-bottom:2px solid #{$navBackground};
+            border-top:1px solid purple;
             img{
                 width:10vh;
                 height:10vh;

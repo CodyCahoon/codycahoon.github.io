@@ -163,7 +163,8 @@ nav {
       align-items: center;
       padding: 5px 0px;
       border-right: 0px solid #2980b9;
-      border-bottom: 2px solid #2980b9; }
+      border-bottom: 2px solid #2980b9;
+      border-top: 1px solid purple; }
       nav li:nth-child(n+5) img {
         width: 10vh;
         height: 10vh;
