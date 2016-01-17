@@ -284,8 +284,8 @@ and (orientation: portrait) {
             align-items:center;
             padding:5px 0px;
             border-right:0px solid #{$navBackground};
-            border-bottom:2px solid #{$navBackground};
-            border-top:1px solid purple;
+            border-bottom:4px solid #{$navBackground};
+            border-top:2px solid white;
             img{
                 width:10vh;
                 height:10vh;
@@ -296,7 +296,7 @@ and (orientation: portrait) {
 
         .selected-nav{
             border-right:0px solid #{$navBackground};
-            border-bottom:2px solid white !important;
+            border-bottom:4px solid white !important;
         }
     }
 
