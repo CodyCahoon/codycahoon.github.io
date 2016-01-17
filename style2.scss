@@ -121,7 +121,6 @@ nav{
     width:calc(100vw - #{$navWidth} - (2 * #{$marginSide}));
     height:calc(100vh - (2 * #{$marginTop}) + #{$spacing});
     margin:calc(#{$marginTop} - #{$spacing}) 0px #{$marginTop} 0px;
-    font-family:'Open Sans';
 
     .page{
         left:0px;
@@ -136,9 +135,23 @@ nav{
     #about-page{
         top:0px;
 
-        #prof-img{
-            width:15vw;
-            height:15vw;
+        .grid div:first-child{
+            text-align: center;
+            height:30%;
+            width:100%;
+        }
+
+        .grid div:nth-child(2){
+            height:60%;
+            width:100%;
+
+            p{
+                padding:5px;
+            }
+        }
+
+        .grid:first-child{
+            justify-content: space-around;
         }
 
         #vt-img{
@@ -171,19 +184,7 @@ nav{
         flex-flow: column wrap;
         justify-content:center;
         align-items:center;
-
-
-        div{
-            max-height:50vh;
-            overflow:scroll;
-        }
-        p{
-            margin:0px;
-            padding:10px;
-            font-size:2.7vh;
-        }
-
-
+        align-content: center;
     }
 
     .row-1-1{
