@@ -13,6 +13,7 @@ $spacingMobile:7px;
 html, body, ol, ul, *{
     margin:0;
     padding:0;
+    font-family:"Titillium Web";
 }
 
 body{
@@ -101,9 +102,9 @@ nav{
 
         img{
 
-                -webkit-filter: invert(0.0);
-                -moz-filter: invert(0.0);
-                filter: invert(0.0);
+            -webkit-filter: invert(0.0);
+            -moz-filter: invert(0.0);
+            filter: invert(0.0);
         }
     }
 
@@ -135,28 +136,36 @@ nav{
     #about-page{
         top:0px;
 
-        .grid div:first-child{
-            text-align: center;
-            height:30%;
-            width:100%;
-        }
-
-        .grid div:nth-child(2){
-            height:60%;
-            width:100%;
-
-            p{
-                padding:5px;
+        .grid:first-child{
+            div:first-child{
+                text-align:center;
+                height:30%;
+            }
+            div:nth-child(2){
+                text-align:left;
+                height:60%;
             }
         }
 
-        .grid:first-child{
-            justify-content: space-around;
+        .grid:nth-child(2){
+            div:first-child{
+                text-align:center;
+                height:50%;
+            }
+            div:nth-child(2){
+                height:40%;
+                text-align:center;
+            }
         }
 
-        #vt-img{
-            width:20vw;
+        .grid div{
+            width:100%;
         }
+
+        p{
+            padding:5px;
+        }
+
     }
 
     #project-page{
@@ -172,8 +181,6 @@ nav{
     }
 
     .grid{
-        width:100%;
-        height:100%;
         float:left;
         background:white;
         box-shadow: 0px 3px 4px #2a2b2d;
@@ -182,10 +189,10 @@ nav{
         margin-top:#{$spacing};
         display:flex;
         flex-flow: column wrap;
-        justify-content:center;
+        justify-content:space-around;
         align-items:center;
-        align-content: center;
     }
+
 
     .row-1-1{
         width:calc(100% - #{$spacing});
@@ -220,8 +227,7 @@ nav{
     }
 
 
-    h1, h2, h3, p{
-        font-family:'Titillium Web';
+    h1, h2, h3, p, pre{
         font-weight: normal;
     }
 

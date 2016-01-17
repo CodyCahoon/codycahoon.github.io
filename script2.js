@@ -14,9 +14,8 @@ $("#nav-list li:nth-child(8)").click(function(){
     toggle(3);
 });
 
-$(window).resize(textFit);
-
-$(document).ready(textFit);
+$(window).resize(resize);
+$(document).ready(resize);
 
 function toggle(mode)
 {
@@ -64,18 +63,35 @@ function textFit()
 {
     // Makes the text fit correctly in its grid
     //Max of 22.5px when full screen, move down from that value
-    $('.grid div p').css('font-size', '22.5px');
-    while( $('.grid div p').height() > $('.grid div:nth-child(2)').height() ) {
-        $('.grid div p').css('font-size', (parseInt($('.grid div p').css('font-size')) - 0.5) + "px" );
+    $(this).find("p").css('font-size', '24px');
+    while( $(this).find("p").height() > $(this).height() ) {
+        $(this).find("p").css('font-size', (parseInt($(this).find("p").css('font-size')) - 1) + "px" );
     }
 
-    //Resizes the profile image
-    var width = $("#about-page .grid div:first-child").width();
-    var height = $("#about-page .grid div:first-child").height();
+
+
+}
+
+function imgFit()
+{
+    var width = $(this).width();
+    var height = $(this).height();
     var min = Math.min(width, height);
-    $("#prof-img").height(min);
-    $("#prof-img").width(min);
 
+    var imgWidth = $(this).find("img").width();
+    var imgHeight = $(this).find("img").height();
 
+    if (imgWidth >= imgHeight)
+    {
+        $(this).find("img").height(min);
+    }
+    if (imgHeight >= imgWidth){
+        $(this).find("img").width(min);
+    }
+}
 
+function resize()
+{
+    $("#about-page .grid div:first-child").each(imgFit);
+    $("#about-page .grid div:last-child").each(textFit);
 }
