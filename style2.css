@@ -163,8 +163,7 @@ nav {
       align-items: center;
       padding: 5px 0px;
       border-right: 0px solid #2980b9;
-      border-bottom: 4px solid #2980b9;
-      border-top: 2px solid white; }
+      border-bottom: 20px solid #2980b9; }
       nav li:nth-child(n+5) img {
         width: 10vh;
         height: 10vh;
@@ -172,7 +171,7 @@ nav {
         max-height: 75px; }
     nav .selected-nav {
       border-right: 0px solid #2980b9;
-      border-bottom: 4px solid white !important; }
+      border-bottom: 20px solid white !important; }
 
   #main {
     width: calc(100vw - 15px);
