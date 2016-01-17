@@ -165,10 +165,10 @@ nav {
       border-right: 0px solid #2980b9;
       border-bottom: 2px solid #2980b9; }
       nav li:nth-child(n+5) img {
-        width: 8vw;
-        height: 8vw;
-        max-width: 36px;
-        max-height: 36px; }
+        width: 10vh;
+        height: 10vh;
+        max-width: 75px;
+        max-height: 75px; }
     nav .selected-nav {
       border-right: 0px solid #2980b9;
       border-bottom: 2px solid white !important; }
