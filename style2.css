@@ -16,24 +16,29 @@ nav {
     height: 40%;
     padding: 5px 0px; }
   nav li:nth-child(3) span {
-    font-size: small; }
+    font-size: small;
+    color: white; }
   nav ul {
     list-style: none;
     text-align: center; }
   nav span {
     font-family: 'Actor';
-    color: white;
+    color: #36383a;
     font-size: medium; }
   nav .nav-item {
     margin-top: 5px; }
-  nav .nav-item:hover {
-    cursor: pointer; }
-    nav .nav-item:hover span {
-      color: #36383a; }
-    nav .nav-item:hover img {
+    nav .nav-item img {
       -webkit-filter: invert(0.778);
       -moz-filter: invert(0.778);
       filter: invert(0.778); }
+  nav .nav-item:hover {
+    cursor: pointer; }
+    nav .nav-item:hover span {
+      color: white; }
+    nav .nav-item:hover img {
+      -webkit-filter: invert(0);
+      -moz-filter: invert(0);
+      filter: invert(0); }
   nav li:nth-child(n+4) {
     display: flex;
     align-items: center;
@@ -47,8 +52,15 @@ nav {
     width: 100%; }
   nav .selected-nav {
     border-color: white !important; }
+    nav .selected-nav span {
+      color: white; }
+    nav .selected-nav img {
+      -webkit-filter: invert(0);
+      -moz-filter: invert(0);
+      filter: invert(0); }
   nav #brand span {
-    font-size: x-large; }
+    font-size: x-large;
+    color: white; }
 
 #main {
   display: block;

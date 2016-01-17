@@ -35,6 +35,7 @@ nav{
 
     li:nth-child(3) span{
         font-size:small;
+        color:white;
     }
 
     ul{
@@ -44,24 +45,33 @@ nav{
 
     span{
         font-family:'Actor';
-        color:white;
+        color: #{$bodyBackground};
         font-size:medium;
     }
 
+
     .nav-item{
         margin-top:5px;
-    }
 
-    .nav-item:hover{
-        cursor:pointer;
-        span{
-            color:#{$bodyBackground};
-        }
+
 
         img{
             -webkit-filter: invert(0.778);
             -moz-filter: invert(0.778);
             filter: invert(0.778);
+        }
+    }
+
+    .nav-item:hover{
+        cursor:pointer;
+        span{
+            color:white;
+        }
+
+        img{
+            -webkit-filter: invert(0.0);
+            -moz-filter: invert(0.0);
+            filter: invert(0.0);
         }
     }
 
@@ -84,10 +94,22 @@ nav{
 
     .selected-nav{
         border-color:white !important;
+
+        span{
+            color: white;
+        }
+
+        img{
+
+                -webkit-filter: invert(0.0);
+                -moz-filter: invert(0.0);
+                filter: invert(0.0);
+        }
     }
 
     #brand span{
         font-size:x-large;
+        color:white;
     }
 }
 
