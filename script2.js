@@ -81,12 +81,16 @@ function imgFit()
     var imgWidth = $(this).find("img").width();
     var imgHeight = $(this).find("img").height();
 
-    if (imgWidth >= imgHeight)
+    if (imgWidth > imgHeight)
     {
         $(this).find("img").height(min);
     }
-    if (imgHeight >= imgWidth){
+    else if (imgHeight > imgWidth){
         $(this).find("img").width(min);
+    }
+    else {
+        $(this).find("img").width(min);
+        $(this).find("img").height(min);
     }
 }
 
