@@ -42,8 +42,47 @@ nav {
 .hidden {
   display: none; }
 
+.full-width, #main-content, #main-content .grid, #main-content .row-1-1 {
+  width: 100%; }
+
+.full-height, #main-content .col-1-1 {
+  height: 100%; }
+
+.full-width-height, #main-content .page {
+  width: 100%;
+  height: 100%; }
+
+p {
+  padding: 0px 10px; }
+
 #main-content {
-  background: white;
-  width: 100vw;
-  height: calc(100vh - 10vh - 15px);
-  margin-top: 15px; }
+  /* -5px due to border of selected */
+  height: calc(100vh - 10vh - 5px);
+  margin-top: 5px;
+  overflow: hidden; }
+  #main-content .page {
+    position: relative;
+    left: 0px; }
+  #main-content .hide-about {
+    top: -100%; }
+  #main-content .hide-blog {
+    display: none; }
+  #main-content .hide-contact {
+    display: none; }
+  #main-content .hide-project {
+    display: none; }
+  #main-content .grid {
+    display: flex;
+    float: left;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    align-items: center;
+    background: white;
+    color: #36383a;
+    font-family: 'Titillium Web';
+    margin-right: 5px;
+    margin-bottom: 5px; }
+  #main-content #about-page .grid:first-child div:first-child {
+    height: 30%; }
+  #main-content #about-page .grid:first-child div:last-child {
+    height: 50%; }

@@ -71,11 +71,91 @@ nav{
     display:none;
 }
 
+.full-width{
+    width:100%;
+}
+
+.full-height{
+    height:100%;
+}
+
+.full-width-height{
+    width:100%;
+    height:100%;
+}
+
+p{
+    padding:0px 10px;
+}
 
 
 #main-content{
-    background:white;
-    width:100vw;
-    height: calc(100vh - #{$navH} - #{$mobileOffset});
-    margin-top:#{$mobileOffset};
+    @extend .full-width;
+
+    /* -5px due to border of selected */
+    height: calc(100vh - #{$navH} - 5px);
+    margin-top:5px;
+    overflow:hidden;
+
+    .page{
+        position:relative;
+        left:0px;
+        @extend .full-width-height;
+    }
+
+    .hide-about{
+        top:-100%;
+    }
+
+    .hide-blog{
+        display:none;
+    }
+
+    .hide-contact{
+        display:none;
+    }
+
+    .hide-project{
+        display:none;
+    }
+
+    .grid{
+        display:flex;
+        @extend .full-width;
+        float:left;
+        justify-content:space-around;
+        flex-flow:column nowrap;
+        align-items:center;
+        background:white;
+        color:#{$bodyBackground};
+        font-family: 'Titillium Web';
+        margin-right:5px;
+        margin-bottom:5px;
+    }
+
+    .row-1-1{
+        @extend .full-width;
+    }
+
+    .col-1-1{
+        @extend .full-height;
+    }
+
+    .row-1-2{
+
+    }
+
+    #about-page{
+
+        .grid:first-child{
+            div:first-child{
+                height:30%;
+            }
+
+            div:last-child{
+                height:50%;
+            }
+        }
+    }
+
 }
