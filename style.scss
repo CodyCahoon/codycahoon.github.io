@@ -36,7 +36,6 @@ nav{
             color:#{$bodyBackground};
             width:calc(100% / 5);
             height:100%;
-            border-bottom: 5px solid #{$navBackground};
 
             img{
                 -webkit-filter:invert(0.778);
@@ -46,7 +45,7 @@ nav{
 
         }
 
-        .nav-hover{
+        .selected{
             color:white;
             img{
                 -webkit-filter:invert(0);
@@ -57,12 +56,7 @@ nav{
 
         li:hover{
             cursor:pointer;
-            @extend .nav-hover;
-        }
-
-        .selected{
-            border-bottom: 5px solid white;
-            @extend .nav-hover;
+            @extend .selected;
         }
     }
 }

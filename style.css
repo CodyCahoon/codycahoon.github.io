@@ -22,22 +22,19 @@ nav {
       font-family: 'Actor';
       color: #36383a;
       width: calc(100% / 5);
-      height: 100%;
-      border-bottom: 5px solid #2980b9; }
+      height: 100%; }
       nav ul li img {
         -webkit-filter: invert(0.778);
         -moz-filter: invert(0.778);
         filter: invert(0.778); }
-    nav ul .nav-hover, nav ul li:hover, nav ul .selected {
+    nav ul .selected, nav ul li:hover {
       color: white; }
-      nav ul .nav-hover img, nav ul li:hover img, nav ul .selected img {
+      nav ul .selected img, nav ul li:hover img {
         -webkit-filter: invert(0);
         -moz-filter: invert(0);
         filter: invert(0); }
     nav ul li:hover {
       cursor: pointer; }
-    nav ul .selected {
-      border-bottom: 5px solid white; }
 
 .hidden {
   display: none; }
