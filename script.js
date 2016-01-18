@@ -1,7 +1,12 @@
-$(document).ready(resize);
-$(window).resize(resize);
+$(document).ready(function(){
+    resize(true);
+});
+$(window).resize(function(){
+    resize(false);
+});
 
-function resize()
+
+function resize(firstRun)
 {
     $("nav li").each(function(){
         imgFit($(this), 0.75, true);
@@ -13,7 +18,11 @@ function resize()
     });
 
     //Fit paragraph-only divs
-    $(".grid div").each(textFit);
+
+    $(".grid div").each(function(){
+        paragraphsFit($(this), firstRun);
+    });
+
 }
 
 $("nav li").click(function(){
@@ -30,17 +39,47 @@ function toggle(index){
 }
 
 /**
- * Altered from StackOverflow
- * http://stackoverflow.com/questions/6112660/how-to-automatically-change-the-text-size-inside-a-div
- *
- */
+* Altered from StackOverflow
+* http://stackoverflow.com/questions/6112660/how-to-automatically-change-the-text-size-inside-a-div
+*
+*/
 function textFit()
 {
     // Makes the text fit correctly in its grid
     //Max of 22.5px when full screen, move down from that value
-    $(this).find("p").css('font-size', '24px');
-    while( $(this).find("p").height() > $(this).height() ) {
-        $(this).find("p").css('font-size', (parseInt($(this).find("p").css('font-size')) - 1) + "px" );
+    parent.find("p").css('font-size', '24px');
+    while( parent.find("p").height() > parent.height() ) {
+        parent.find("p").css('font-size', (parseInt(parent.find("p").css('font-size')) - 1) + "px" );
+    }
+}
+
+function paragraphsFit(parent, firstRun)
+{
+    var numParagraphs = parent.find("p").length;
+    // Makes the text fit correctly in its grid
+    //Max of 22.5px when full screen, move down from that value
+    if (numParagraphs < 2)
+    {
+        parent.find("p").css('font-size', '24px');
+        while( parent.find("p").height() > parent.height() ) {
+            parent.find("p").css('font-size', (parseInt(parent.find("p").css('font-size')) - 1) + "px" );
+        }
+    }
+
+    else{
+        window.total = 0;
+        parent.find("p").css('font-size', '24px');
+        parent.find("p").each(getHeight);
+            while( window.total > parent.height() ) {
+                parent.find("p").css('font-size', (parseInt(parent.find("p").css('font-size')) - 1) + "px" );
+                window.total = 0;
+                parent.find("p").each(getHeight);
+            }
+        if(firstRun)
+        {
+            parent.find("p").css('font-size', (parseInt(parent.find("p").css('font-size')) - 1) + "px" );
+
+        }
     }
 }
 
@@ -58,16 +97,20 @@ function imgFit(parent, scale, isNav)
         parent.find("img").height(min);
     }
     else {
-        if (imgWidth > imgHeight){
+        if (imgWidth >= imgHeight){
             parent.find("img").height(min);
         }
-        else if (imgHeight > imgWidth){
+        if (imgHeight >= imgWidth){
             parent.find("img").width(min);
-        }
-        else {
-            parent.find("img").width(min);
-            parent.find("img").height(min);
         }
     }
 
+}
+
+function getHeight()
+{
+    if (typeof $(this).height() === "number" )
+    {
+        window.total +=  Number($(this).height());
+    }
 }

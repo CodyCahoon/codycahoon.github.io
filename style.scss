@@ -1,6 +1,6 @@
 $navBackground:#2980b9;
 $bodyBackground:#36383a;
-$mobileOffset:15px;
+$mobileOffset:5px;
 $navH:10vh;
 
 html, body, ul, ol, *{
@@ -80,15 +80,17 @@ nav{
 
 p{
     padding:0px 10px;
+    box-sizing: content-box;
 }
+
 
 
 #main-content{
     @extend .full-width;
-
+    background:#{$bodyBackground};
     /* -5px due to border of selected */
-    height: calc(100vh - #{$navH} - 5px);
-    margin-top:5px;
+    height: calc(100vh - #{$navH} - #{$mobileOffset});
+    margin-top:#{$mobileOffset};
     overflow:hidden;
 
     .page{
@@ -120,28 +122,69 @@ p{
         justify-content:space-around;
         flex-flow:column nowrap;
         align-items:center;
+        align-content:center;
         background:white;
         color:#{$bodyBackground};
         font-family: 'Titillium Web';
-        margin-right:5px;
-        margin-bottom:5px;
+        margin-bottom: #{$mobileOffset};
+        margin-right: #{$mobileOffset};
+
+        div{
+            width:100%;
+        }
+
     }
 
     .row-1-1{
-        @extend .full-width;
-    }
-
-    .col-1-1{
         @extend .full-height;
     }
 
-    .row-1-2{
-
+    .col-1-1{
+        @extend .full-width;
     }
+
+    .row-1-2{
+        height:calc((100% - #{$mobileOffset})/ 2);
+    }
+
+    .col-1-2{
+        width:calc((100% - #{$mobileOffset})/ 2);
+    }
+
+    .row-1-3{
+        height:calc((100% - #{$mobileOffset})/ 3);
+    }
+
+    .row-2-3{
+        height:calc((100% - #{$mobileOffset})/ 3);
+    }
+
+    .col-1-3{
+        width:calc((100% - #{$mobileOffset})/ 3);
+    }
+
+    .col-2-3{
+        width:calc((100% - #{$mobileOffset})/ 3);
+    }
+
+
 
     #about-page{
 
         .grid:first-child{
+
+            div:first-child{
+                text-align: center;
+                height:30%;
+            }
+
+            div:last-child{
+                height:50%;
+            }
+        }
+
+        .grid:nth-child(2){
+            text-align: center;
             div:first-child{
                 height:30%;
             }
@@ -150,6 +193,11 @@ p{
                 height:50%;
             }
         }
+
+        .grid:nth-child(3){
+            margin-right:0px;
+        }
     }
+
 
 }
