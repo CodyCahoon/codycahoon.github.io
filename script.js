@@ -36,6 +36,14 @@ function toggle(index){
         index = 3;
     }
     $("nav li:nth-child(" + index + ")").addClass("selected");
+
+    index -= 2;
+    $(".page").each(function(){
+        $(this).addClass("hide-" + ($(this).index() + 1));
+    });
+
+    $(".page:nth-child(" + index + ")").removeClass("hide-" + index);
+
 }
 
 /**
