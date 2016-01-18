@@ -60,10 +60,10 @@ p {
   left: 100% !important; }
 
 .hide-3 {
-  display: none; }
+  top: 200% !important; }
 
 .hide-4 {
-  display: none; }
+  left: -100% !important; }
 
 #main-content {
   background: #36383a;
@@ -73,7 +73,11 @@ p {
   #main-content .page {
     position: relative;
     left: 0px;
-    overflow: hidden; }
+    overflow: hidden;
+    background: #36383a;
+    -webkit-transition: left 0.4s, top 0.4s;
+    -moz-transition: left 0.4s, top 0.4s;
+    transition: left 0.4s, top 0.4s; }
   #main-content .grid {
     display: flex;
     float: left;
@@ -120,3 +124,9 @@ p {
     text-align: center; }
     #main-content #page-2 .grid:nth-child(3n) {
       margin-right: 0px; }
+  #main-content #page-3 {
+    top: -200%;
+    text-align: center; }
+  #main-content #page-4 {
+    top: -300%;
+    text-align: center; }

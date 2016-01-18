@@ -2,6 +2,7 @@ $navBackground:#2980b9;
 $bodyBackground:#36383a;
 $mobileOffset:5px;
 $navH:10vh;
+$timer:0.4s;
 
 html, body, ul, ol, *{
     margin:0px;
@@ -92,11 +93,11 @@ p{
 }
 
 .hide-3{
-    display:none;
+    top:200% !important;
 }
 
 .hide-4{
-    display:none;
+    left: -100% !important;
 }
 
 
@@ -113,6 +114,12 @@ p{
         left:0px;
         @extend .full-width-height;
         overflow:hidden;
+        background:#{$bodyBackground};
+
+        -webkit-transition:left #{$timer}, top #{$timer};
+        -moz-transition:left #{$timer}, top #{$timer};
+
+        transition:left #{$timer}, top #{$timer};
     }
 
 
@@ -203,12 +210,26 @@ p{
 
     #page-2{
         top:-100%;
+        text-align:center;
 
         .grid:nth-child(3n){
             margin-right:0px;
         }
 
+    }
+
+    #page-3{
+        top:-200%;
         text-align:center;
+
+
+    }
+
+    #page-4{
+        top:-300%;
+        text-align:center;
+
+
     }
 
 

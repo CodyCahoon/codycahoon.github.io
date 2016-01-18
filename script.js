@@ -105,12 +105,7 @@ function imgFit(parent, scale, isNav)
         parent.find("img").height(min);
     }
     else {
-        if (imgWidth === imgHeight){
-            parent.find("img").width(min);
-
-            parent.find("img").height(min);
-        }
-        else if (imgHeight > imgWidth){
+        if (imgHeight > imgWidth){
             parent.find("img").width(min);
         }
         else{
