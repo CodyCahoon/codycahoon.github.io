@@ -1,0 +1,49 @@
+html, body, ul, ol, * {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background: #36383a; }
+
+nav {
+  width: 100vw;
+  height: 10vh;
+  background: #2980b9; }
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 10vh; }
+    nav ul li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Actor';
+      color: #36383a;
+      width: calc(100% / 5);
+      height: 100%;
+      border-bottom: 5px solid #2980b9; }
+      nav ul li img {
+        -webkit-filter: invert(0.778);
+        -moz-filter: invert(0.778);
+        filter: invert(0.778); }
+    nav ul .nav-hover, nav ul li:hover, nav ul .selected {
+      color: white; }
+      nav ul .nav-hover img, nav ul li:hover img, nav ul .selected img {
+        -webkit-filter: invert(0);
+        -moz-filter: invert(0);
+        filter: invert(0); }
+    nav ul li:hover {
+      cursor: pointer; }
+    nav ul .selected {
+      border-bottom: 5px solid white; }
+
+.hidden {
+  display: none; }
+
+#main-content {
+  background: white;
+  width: 100vw;
+  height: calc(100vh - 10vh - 15px);
+  margin-top: 15px; }

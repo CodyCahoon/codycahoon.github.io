@@ -1,0 +1,81 @@
+$navBackground:#2980b9;
+$bodyBackground:#36383a;
+$mobileOffset:15px;
+$navH:10vh;
+
+html, body, ul, ol, *{
+    margin:0px;
+    padding:0px;
+}
+
+body{
+    background: #{$bodyBackground};
+}
+
+
+nav{
+    width:100vw;
+    height:10vh;
+    background:#{$navBackground};
+
+    ul{
+        list-style:none;
+        display:flex;
+        flex-wrap: nowrap;
+
+        width:100%;
+        height:#{$navH};
+
+
+        li{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+
+            font-family: 'Actor';
+            color:#{$bodyBackground};
+            width:calc(100% / 5);
+            height:100%;
+            border-bottom: 5px solid #{$navBackground};
+
+            img{
+                -webkit-filter:invert(0.778);
+                -moz-filter:invert(0.778);
+                filter:invert(0.778);
+            }
+
+        }
+
+        .nav-hover{
+            color:white;
+            img{
+                -webkit-filter:invert(0);
+                -moz-filter:invert(0);
+                filter:invert(0);
+            }
+        }
+
+        li:hover{
+            cursor:pointer;
+            @extend .nav-hover;
+        }
+
+        .selected{
+            border-bottom: 5px solid white;
+            @extend .nav-hover;
+        }
+    }
+}
+
+.hidden{
+    display:none;
+}
+
+
+
+#main-content{
+    background:white;
+    width:100vw;
+    height: calc(100vh - #{$navH} - #{$mobileOffset});
+    margin-top:#{$mobileOffset};
+}
