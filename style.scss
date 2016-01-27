@@ -13,7 +13,6 @@ body{
     background: #{$bodyBackground};
 }
 
-
 nav{
     width:100vw;
     height:10vh;
@@ -23,16 +22,13 @@ nav{
         list-style:none;
         display:flex;
         flex-wrap: nowrap;
-
         width:100%;
         height:#{$navH};
-
 
         li{
             display:flex;
             align-items:center;
-            justify-content: center;
-
+            justify-content:space-around;
             font-family: 'Actor';
             color:#{$bodyBackground};
             width:calc(100% / 5);
@@ -64,6 +60,10 @@ nav{
 
 .hidden{
     display:none;
+}
+
+.show{
+    display:block;
 }
 
 .full-width{
@@ -100,12 +100,9 @@ p{
     left: -100% !important;
 }
 
-
-
 #main-content{
     @extend .full-width;
     background:#{$bodyBackground};
-    /* -5px due to border of selected */
     height: calc(100vh - #{$navH} );
     overflow:hidden;
 
@@ -121,8 +118,6 @@ p{
 
         transition:left #{$timer}, top #{$timer};
     }
-
-
 
     .grid{
         display:flex;
@@ -141,7 +136,6 @@ p{
         div{
             width:100%;
         }
-
     }
 
     .row-1-1{
@@ -176,12 +170,9 @@ p{
         width:calc((100% - (2 * #{$mobileOffset})) * (2/3));
     }
 
-
-
     #page-1{
         top:0px;
         .grid:first-child{
-
             div:first-child{
                 text-align: center;
                 height:30%;
@@ -215,22 +206,64 @@ p{
         .grid:nth-child(3n){
             margin-right:0px;
         }
-
     }
 
     #page-3{
         top:-200%;
         text-align:center;
-
-
     }
 
     #page-4{
         top:-300%;
         text-align:center;
+    }
+}
 
+/* Portrait */
+@media only screen
+and (min-width: 768px){
+
+
+    nav{
+        float:left;
+        width:15vw;
+        margin:5vh 0vw 5vh 5vw;
+        height:90vh;
+
+        ul{
+            height:100%;
+            width:100%;
+            flex-flow:column wrap;
+
+
+            li{
+                height:calc(100% / 6);
+                width:100%;
+
+                span{
+                    font-size: 1.5vw;
+                }
+            }
+        }
 
     }
+
+
+    #main-content{
+        float:left;
+        background:#{$bodyBackground};
+        width:calc(75vw - #{$mobileOffset});
+        margin:calc(5vh - #{$mobileOffset}) 0vw 0vh #{$mobileOffset};
+        height:calc(90vh + #{$mobileOffset});
+
+    }
+}
+
+/* Landscape */
+@media only screen
+and (min-width: 768px)
+and (max-width: 1024px)
+and (orientation: landscape) {
 
 
 }

@@ -18,7 +18,7 @@ nav {
     nav ul li {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       font-family: 'Actor';
       color: #36383a;
       width: calc(100% / 5);
@@ -38,6 +38,9 @@ nav {
 
 .hidden {
   display: none; }
+
+.show {
+  display: block; }
 
 .full-width, #main-content, #main-content .grid, #main-content .col-1-1 {
   width: 100%; }
@@ -67,7 +70,6 @@ p {
 
 #main-content {
   background: #36383a;
-  /* -5px due to border of selected */
   height: calc(100vh - 10vh );
   overflow: hidden; }
   #main-content .page {
@@ -130,3 +132,28 @@ p {
   #main-content #page-4 {
     top: -300%;
     text-align: center; }
+
+/* Portrait */
+@media only screen and (min-width: 768px) {
+  nav {
+    float: left;
+    width: 15vw;
+    margin: 5vh 0vw 5vh 5vw;
+    height: 90vh; }
+    nav ul {
+      height: 100%;
+      width: 100%;
+      flex-flow: column wrap; }
+      nav ul li {
+        height: calc(100% / 6);
+        width: 100%; }
+        nav ul li span {
+          font-size: 1.5vw; }
+
+  #main-content {
+    float: left;
+    background: #36383a;
+    width: calc(75vw - 5px);
+    margin: calc(5vh - 5px) 0vw 0vh 5px;
+    height: calc(90vh + 5px); } }
+/* Landscape */
