@@ -1,5 +1,10 @@
 $(document).ready(function(){
     resize(true);
+
+        setTimeout(function(){
+            resize(false);
+        }, 40);
+
 });
 $(window).resize(function(){
     resize(false);
@@ -143,7 +148,7 @@ function checkSize(){
             imgFit($(this), 0.3, true);
         });
         $("nav li:nth-child(1)").each(function(){
-            imgFit($(this), 0.8, true);
+            imgFit($(this), 1, true);
         });
     }
 }

@@ -143,9 +143,10 @@ p {
     nav ul {
       height: 100%;
       width: 100%;
-      flex-flow: column wrap; }
+      flex-flow: column wrap;
+      justify-content: center; }
       nav ul li {
-        height: calc(100% / 6);
+        height: calc(100% / 7);
         width: 100%; }
         nav ul li span {
           font-size: 1.5vw; }
@@ -153,7 +154,7 @@ p {
   #main-content {
     float: left;
     background: #36383a;
-    width: calc(75vw - 5px);
-    margin: calc(5vh - 5px) 0vw 0vh 5px;
+    width: calc(75vw - 5px - 5vw);
+    margin: calc(5vh - 5px) 0vw 0vh 5vw;
     height: calc(90vh + 5px); } }
 /* Landscape */
