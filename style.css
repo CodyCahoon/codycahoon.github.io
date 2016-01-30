@@ -14,13 +14,10 @@ nav {
   justify-content: space-between;
   align-items: center;
   color: #36383a; }
-  nav img:first-child {
-    padding-left: 2%;
-    width: 15%; }
   nav img {
     /*-webkit-transition : -webkit-filter 250ms;*/ }
   nav ul {
-    width: 87.5%;
+    width: 100%;
     display: flex;
     justify-content: space-around; }
     nav ul li {
@@ -136,7 +133,7 @@ p {
     text-align: center; }
 
 /* Portrait */
-@media only screen and (min-width: 768px) {
+@media (min-width: 768px), only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   nav {
     float: left;
     width: 15vw;

@@ -23,18 +23,13 @@ nav{
     align-items: center;
     color:#{$bodyBackground};
 
-    img:first-child{
-        padding-left:2%;
-        width:15%;
-    }
-
     img{
         @extend .invert-img;
         /*-webkit-transition : -webkit-filter 250ms;*/
     }
 
     ul{
-        width:87.5%;
+        width:100%;
         display:flex;
         justify-content: space-around;
 
@@ -229,10 +224,11 @@ p{
 }
 
 /* Portrait */
-@media only screen
-and (min-width: 768px),
-only screen
-and (min-device-width: 768px){
+@media  (min-width: 768px), only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
 
 
     nav{

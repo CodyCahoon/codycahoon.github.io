@@ -108,11 +108,13 @@ function getHeight()
 }
 
 function checkSize(){
-    $("nav span").removeClass("hidden");
+
 
     if ($(window).width() < 768)
     {
         $("nav span").addClass("hidden");
+        $("nav > img").addClass("hidden");
+
         $("nav").each(function(){
             imgFit($(this), 0.7, true);
         });
@@ -123,6 +125,10 @@ function checkSize(){
         $("nav li").each(function(){
             imgFit($(this), 0.40, true);
         });
+
+        $("nav img").removeClass("hidden");
+        $("nav span").removeClass("hidden");
+
 
         var w = $("nav").width() * 0.8;
         w = Math.min(125, w);
