@@ -12,13 +12,11 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Actor';
+  font-family: 'Oxygen', sans-serif;
   color: #36383a; }
   nav img:first-child {
     padding-left: 2%;
     width: 15%; }
-  nav img {
-    max-width: 200px; }
   nav ul {
     width: 87.5%;
     display: flex;
