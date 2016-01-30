@@ -1,48 +1,42 @@
 $(document).ready(function(){
-    resize(true);
 
         setTimeout(function(){
-            resize(false);
+            resize();
         }, 40);
 
 });
 $(window).resize(function(){
-    resize(false);
+    resize();
 });
 
 
-function resize(firstRun)
+function resize()
 {
-
-
     //Fit image-only divs
     $(".grid div").each(function(){
-        imgFit($(this), 1, false);
+        imgFit($(this), 1);
     });
 
     //Fit paragraph-only divs
-
     $(".grid div").each(function(){
-        paragraphsFit($(this), firstRun);
+        paragraphsFit($(this));
     });
 
     checkSize();
-
 }
 
 $("nav li").click(function(){
     toggle($(this).index() + 1);
 });
 
+$("nav > img").click(function(){
+    toggle(1);
+});
+
 function toggle(index){
     $("nav li").removeClass("selected");
-    if (index < 3)
-    {
-        index = 3;
-    }
     $("nav li:nth-child(" + index + ")").addClass("selected");
 
-    index -= 2;
     $(".page").each(function(){
         $(this).addClass("hide-" + ($(this).index() + 1));
     });
@@ -56,17 +50,7 @@ function toggle(index){
 * http://stackoverflow.com/questions/6112660/how-to-automatically-change-the-text-size-inside-a-div
 *
 */
-function textFit()
-{
-    // Makes the text fit correctly in its grid
-    //Max of 22.5px when full screen, move down from that value
-    parent.find("p").css('font-size', '24px');
-    while( parent.find("p").height() > parent.height() ) {
-        parent.find("p").css('font-size', (parseInt(parent.find("p").css('font-size')) - 1) + "px" );
-    }
-}
-
-function paragraphsFit(parent, firstRun)
+function paragraphsFit(parent)
 {
     var numParagraphs = parent.find("p").length;
     // Makes the text fit correctly in its grid
@@ -88,11 +72,6 @@ function paragraphsFit(parent, firstRun)
                 window.total = 0;
                 parent.find("p").each(getHeight);
             }
-        if(firstRun)
-        {
-            parent.find("p").css('font-size', (parseInt(parent.find("p").css('font-size')) - 1) + "px" );
-
-        }
     }
 }
 
@@ -115,7 +94,6 @@ function imgFit(parent, scale, isNav)
         }
         else{
             parent.find("img").height(min);
-
         }
     }
 
@@ -130,25 +108,25 @@ function getHeight()
 }
 
 function checkSize(){
-    $("nav li:nth-child(2)").removeClass("hidden");
-    $("nav li span").removeClass("hidden");
+    $("nav span").removeClass("hidden");
 
     if ($(window).width() < 768)
     {
-        $("nav li:nth-child(2)").addClass("hidden");
-        $("nav li span").addClass("hidden");
-        $("nav li").each(function(){
+        $("nav span").addClass("hidden");
+        $("nav").each(function(){
             imgFit($(this), 0.7, true);
         });
 
     }
 
     else {
-        $("nav li:nth-child(n + 2)").each(function(){
-            imgFit($(this), 0.3, true);
+        $("nav li").each(function(){
+            imgFit($(this), 0.40, true);
         });
-        $("nav li:nth-child(1)").each(function(){
-            imgFit($(this), 1, true);
-        });
+
+        var w = $("nav").width() * 0.8;
+        w = Math.min(125, w);
+        $("nav > img:first-child").width(w);
+        $("nav > img:first-child").height(w);
     }
 }
