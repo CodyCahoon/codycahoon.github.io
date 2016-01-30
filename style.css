@@ -86,7 +86,6 @@ p {
     justify-content: space-around;
     flex-flow: column nowrap;
     align-items: center;
-    align-content: center;
     background: white;
     color: #36383a;
     margin-top: 5px;
@@ -107,19 +106,21 @@ p {
     width: calc((100% - (2 * 5px)) * (2/3)); }
   #main-content #page-1 {
     top: 0px; }
-    #main-content #page-1 .grid:first-child div:first-child {
-      text-align: center;
-      height: 30%; }
-    #main-content #page-1 .grid:first-child div:last-child {
-      height: 50%; }
-    #main-content #page-1 .grid:nth-child(2) {
+    #main-content #page-1 .grid div {
       text-align: center; }
-      #main-content #page-1 .grid:nth-child(2) div:first-child {
-        height: 30%; }
-      #main-content #page-1 .grid:nth-child(2) div:last-child {
-        height: 50%; }
+    #main-content #page-1 .grid div:first-child {
+      height: 30%; }
+    #main-content #page-1 .grid div:last-child {
+      height: 50%; }
+    #main-content #page-1 .grid:first-child div:last-child {
+      width: 80%; }
     #main-content #page-1 .grid:nth-child(3) {
       margin-right: 0px; }
+      #main-content #page-1 .grid:nth-child(3) p:first-child, #main-content #page-1 .grid:nth-child(3) p:nth-child(4) {
+        font-weight: bold;
+        text-decoration: underline; }
+      #main-content #page-1 .grid:nth-child(3) div {
+        height: 70%; }
   #main-content #page-2 {
     top: -100%;
     text-align: center; }
