@@ -11,6 +11,7 @@ html, body, ul, ol, *{
 
 body{
     background: #{$bodyBackground};
+    font-family: 'Oxygen', sans-serif;
 }
 
 nav{
@@ -20,7 +21,6 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items: center;
-    font-family: 'Oxygen', sans-serif;
     color:#{$bodyBackground};
 
     img:first-child{
@@ -30,6 +30,7 @@ nav{
 
     img{
         @extend .invert-img;
+        /*-webkit-transition : -webkit-filter 250ms;*/
     }
 
     ul{
@@ -137,7 +138,6 @@ p{
         align-content:center;
         background:white;
         color:#{$bodyBackground};
-        font-family: 'Titillium Web';
         margin-top: #{$mobileOffset};
         margin-right: #{$mobileOffset};
 
@@ -224,6 +224,7 @@ p{
     #page-4{
         top:-300%;
         text-align:center;
+
     }
 }
 
@@ -277,7 +278,6 @@ and (min-width: 768px){
         }
     }
 
-
     #main-content{
         float:left;
         background:#{$bodyBackground};
@@ -286,13 +286,4 @@ and (min-width: 768px){
         height:calc(90vh + #{$mobileOffset});
 
     }
-}
-
-/* Landscape */
-@media only screen
-and (min-width: 768px)
-and (max-width: 1024px)
-and (orientation: landscape) {
-
-
 }
