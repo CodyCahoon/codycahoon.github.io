@@ -1,5 +1,7 @@
-$navBackground:#2980b9;
-$bodyBackground:#36383a;
+$navBackground:#36383a;
+$bodyBackground:#36383A;
+$orange:#FDA94D;
+$white:#FFFDFB;
 $mobileOffset:5px;
 $navH:10vh;
 $timer:0.4s;
@@ -21,10 +23,9 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items: center;
-    color:#{$bodyBackground};
+    color:#FDA94D;
 
-    img{
-        @extend .invert-img;
+    li img{
         /*-webkit-transition : -webkit-filter 250ms;*/
     }
 
@@ -41,8 +42,11 @@ nav{
     }
 
     img:hover{
-        @extend .hover-img;
         cursor:pointer;
+    }
+
+    li img:hover{
+        @extend .hover-img;
     }
 
     li:hover, .selected{
@@ -52,6 +56,9 @@ nav{
             @extend .hover-img;
         }
     }
+
+    
+
 
 }
 
@@ -73,15 +80,16 @@ nav{
 }
 
 .invert-img{
-    -webkit-filter:invert(0.778);
-    -moz-filter:invert(0.778);
-    filter:invert(0.778);
+    -webkit-filter:grayscale(100%) brightness(100);
+    -moz-filter:grayscale(100%) brightness(100);
+    filter:grayscale(100%) brightness(100);
 }
 
 .hover-img{
-    -webkit-filter:invert(0);
-    -moz-filter:invert(0);
-    filter:invert(0);
+    /**/
+    -webkit-filter:grayscale(100%) brightness(100);
+    -moz-filter:grayscale(100%) brightness(100);
+    filter:grayscale(100%) brightness(100);
 }
 
 p{
@@ -131,7 +139,7 @@ p{
         flex-flow:column nowrap;
         align-items:center;
         background:white;
-        color:#{$bodyBackground};
+        color:#{$navBackground};
         margin-top: #{$mobileOffset};
         margin-right: #{$mobileOffset};
 
@@ -245,10 +253,7 @@ p{
         flex-flow:column;
         align-items:center;;
         justify-content: space-around;
-
-        img:first-child{
-            padding:0px;
-        }
+        border-right:1px solid white;
 
         ul{
             width:100%;

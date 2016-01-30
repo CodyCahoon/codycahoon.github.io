@@ -3,18 +3,18 @@ html, body, ul, ol, * {
   padding: 0px; }
 
 body {
-  background: #36383a;
+  background: #36383A;
   font-family: 'Oxygen', sans-serif; }
 
 nav {
   width: 100vw;
   height: 10vh;
-  background: #2980b9;
+  background: #36383a;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #36383a; }
-  nav img {
+  color: #FDA94D; }
+  nav li img {
     /*-webkit-transition : -webkit-filter 250ms;*/ }
   nav ul {
     width: 100%;
@@ -43,15 +43,16 @@ nav {
   width: 100%;
   height: 100%; }
 
-.invert-img, nav img {
-  -webkit-filter: invert(0.778);
-  -moz-filter: invert(0.778);
-  filter: invert(0.778); }
+.invert-img {
+  -webkit-filter: grayscale(100%) brightness(100);
+  -moz-filter: grayscale(100%) brightness(100);
+  filter: grayscale(100%) brightness(100); }
 
-.hover-img, nav img:hover, nav li:hover img, nav .selected img {
-  -webkit-filter: invert(0);
-  -moz-filter: invert(0);
-  filter: invert(0); }
+.hover-img, nav li img:hover, nav li:hover img, nav .selected img {
+  /**/
+  -webkit-filter: grayscale(100%) brightness(100);
+  -moz-filter: grayscale(100%) brightness(100);
+  filter: grayscale(100%) brightness(100); }
 
 p {
   padding: 0px 10px; }
@@ -69,14 +70,14 @@ p {
   left: -100% !important; }
 
 #main-content {
-  background: #36383a;
+  background: #36383A;
   height: calc(100vh - 10vh );
   overflow: hidden; }
   #main-content .page {
     position: relative;
     left: 0px;
     overflow: hidden;
-    background: #36383a;
+    background: #36383A;
     -webkit-transition: left 0.4s, top 0.4s;
     -moz-transition: left 0.4s, top 0.4s;
     transition: left 0.4s, top 0.4s; }
@@ -142,9 +143,8 @@ p {
     height: 90vh;
     flex-flow: column;
     align-items: center;
-    justify-content: space-around; }
-    nav img:first-child {
-      padding: 0px; }
+    justify-content: space-around;
+    border-right: 1px solid white; }
     nav ul {
       width: 100%;
       height: 50%;
@@ -168,7 +168,7 @@ p {
 
   #main-content {
     float: left;
-    background: #36383a;
+    background: #36383A;
     width: calc(75vw - 5px - 5vw);
     margin: calc(5vh - 5px) 0vw 0vh 5vw;
     height: calc(90vh + 5px); } }
