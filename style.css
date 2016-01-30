@@ -151,6 +151,8 @@ p {
       flex-flow: column nowrap;
       justify-content: center; }
       nav ul li {
+        justify-content: space-between;
+        padding: 0px 15px;
         height: 24%; }
         nav ul li span {
           font-size: 1.5vw; }
