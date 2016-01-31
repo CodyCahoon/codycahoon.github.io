@@ -89,7 +89,8 @@ p {
     background: white;
     color: #36383a;
     margin-top: 5px;
-    margin-right: 5px; }
+    margin-right: 5px;
+    box-sizing: border-box; }
     #main-content .grid div {
       width: 100%; }
   #main-content .row-1-2 {
@@ -103,7 +104,7 @@ p {
   #main-content .col-1-3 {
     width: calc((100% - (2 * 5px))/ 3); }
   #main-content .col-2-3 {
-    width: calc((100% - (2 * 5px)) * (2/3)); }
+    width: calc((100% - (2 * 5px)) * (2/3) + 5px); }
   #main-content #page-1 {
     top: 0px; }
     #main-content #page-1 .grid div {
@@ -126,14 +127,40 @@ p {
   #main-content #page-2 {
     top: -100%;
     text-align: center; }
-    #main-content #page-2 .grid:nth-child(3n) {
+    #main-content #page-2 .grid:nth-child(3), #main-content #page-2 .grid:nth-child(5) {
       margin-right: 0px; }
+    #main-content #page-2 .grid div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column nowrap;
+      width: 100%;
+      height: 100%;
+      background: white; }
+    #main-content #page-2 .grid:hover {
+      cursor: pointer; }
+      #main-content #page-2 .grid:hover div {
+        background: rgba(252, 149, 44, 0.8); }
+    #main-content #page-2 .grid:nth-child(1) {
+      background: url("img/shapes.jpg"); }
+    #main-content #page-2 .grid:nth-child(2) {
+      background: url("img/orb.jpg"); }
+    #main-content #page-2 .grid:nth-child(3) {
+      background: url("img/operacraft.jpg"); }
   #main-content #page-3 {
     top: -200%;
     text-align: center; }
   #main-content #page-4 {
-    top: -300%;
-    text-align: center; }
+    top: -300%; }
+    #main-content #page-4 .grid div:first-child {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      align-items: center; }
+
+.cover-bg, #main-content #page-2 .grid:nth-child(1), #main-content #page-2 .grid:nth-child(2), #main-content #page-2 .grid:nth-child(3) {
+  background-size: cover;
+  background-position: center; }
 
 /* Portrait */
 @media (min-width: 768px), only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {

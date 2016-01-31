@@ -129,9 +129,8 @@ function checkSize(){
         $("nav img").removeClass("hidden");
         $("nav span").removeClass("hidden");
 
-
-        var w = $("nav").width() * 0.8;
-        w = Math.min(125, w);
+        var w = $("nav").width() * 0.75;
+        w = Math.min(130, w);
         $("nav > img:first-child").width(w);
         $("nav > img:first-child").height(w);
     }
