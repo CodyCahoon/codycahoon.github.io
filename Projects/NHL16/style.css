@@ -1,0 +1,124 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+body{
+	background-color:black;
+	font-family:'Roboto';
+	color:white;
+}
+
+.box, #unselected-box{
+	background-color:rgb(42, 43, 49);
+}
+
+h1{
+	font-size:36px;
+}
+p{
+	font-size:20px;
+}
+
+.box h1{
+	position:relative;
+	top:45%;
+	padding-right:12px;
+	text-align:right;
+	vertical-align:bottom;
+}
+
+.play.row-3.box-1 h1, .row-3.box-4 h1{
+	top:19%;
+}
+
+.home.row-1.box-1 h1, .row-1.box-3 h1, .custom.row-1.box-1 h1{
+	top:73%;
+}
+
+.row-1{
+	top:17%;
+	position:fixed;
+}
+
+.row-2{
+	top:43%;
+	position:fixed;
+}
+
+.row-3{
+	top:69%;
+	position:fixed;
+}
+
+.box-hf{
+	width:47%;
+}
+
+.box-qtr{
+	width:23.25%;
+}
+
+.box-sm{
+	height:25%;
+}
+
+.box-md{
+	height:51%;
+}
+
+.box-1{
+	left:2.5%;
+}
+
+.box-2{
+	left:26.25%;
+}
+
+.box-3{
+	left:50%;
+}
+
+.box-4{
+	left:73.75%;
+}
+
+.header{
+	position:fixed;
+	top:7.5%;
+	left:2.5%;
+	width:95%;
+}
+
+.header h1{
+	display:inline;
+	margin-right:2%;
+	color:gray;
+}
+
+.selected{
+	color:white !important;
+}
+
+#selected-box{
+    background: -webkit-linear-gradient(rgb(60, 76, 163), rgb(33, 24, 94)) !important; /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgb(60, 76, 163), rgb(33, 24, 94)) !important; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgb(60, 76, 163), rgb(33, 24, 94)) !important; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgb(60, 76, 163), rgb(33, 24, 94)) !important; /* Standard syntax */
+}
+
+#selected-header{
+	color:white;
+}
+
+#unselected-header{
+	color:gray;
+}
+
+#selected-h{
+	color:white;
+    border-bottom:2px solid white;
+}
+.play, .custom{
+	display:none;
+}
