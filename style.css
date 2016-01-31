@@ -49,7 +49,6 @@ nav {
   filter: grayscale(100%) brightness(100); }
 
 .hover-img, nav li img:hover, nav li:hover img, nav .selected img {
-  /**/
   -webkit-filter: invert(0);
   -moz-filter: invert(0);
   filter: invert(0); }
@@ -110,9 +109,11 @@ p {
     #main-content #page-1 .grid div {
       text-align: center; }
     #main-content #page-1 .grid div:first-child {
-      height: 30%; }
+      height: 35%; }
     #main-content #page-1 .grid div:last-child {
       height: 50%; }
+    #main-content #page-1 .grid:first-child img {
+      border-radius: 200px; }
     #main-content #page-1 .grid:first-child div:last-child {
       width: 80%; }
     #main-content #page-1 .grid:nth-child(3) {
