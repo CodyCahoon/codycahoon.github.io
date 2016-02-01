@@ -34,7 +34,7 @@ $("#page-2 .grid").click(function(){
 function resize()
 {
     //Fit image-only divs
-    $(".grid div").each(function(){
+    $("#page-1 .grid div").each(function(){
         imgFit($(this), 1);
     });
 
@@ -151,7 +151,6 @@ function checkSize(){
         $("nav span").removeClass("hidden");
 
         var w = $("nav").width() * 0.75;
-        w = Math.min(130, w);
         $("nav > img:first-child").width(w);
         $("nav > img:first-child").height(w);
     }

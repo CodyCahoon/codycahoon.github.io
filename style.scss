@@ -1,5 +1,5 @@
-$navBackground:#36383a;
-$bodyBackground:#36383A;
+$navBackground:#272829;
+$bodyBackground:#272829;
 $orange:#FDA94D;
 $white:#FFFDFB;
 $mobileOffset:5px;
@@ -189,7 +189,7 @@ p{
         }
 
         .grid div:last-child{
-            height:50%;
+            height:45%;
         }
 
         .grid:first-child{
@@ -199,6 +199,10 @@ p{
             div:last-child{
                 width:80%;
             }
+        }
+
+        .grid:nth-child(2){
+            justify-content: center;
         }
 
 
@@ -240,7 +244,7 @@ p{
             }
         }
 
-        .grid:nth-child(1){
+    /*    .grid:nth-child(1){
             background:url("img/shapes.jpg");
             @extend .cover-bg;
         }
@@ -253,7 +257,7 @@ p{
         .grid:nth-child(3){
             background:url("img/operacraft.jpg");
             @extend .cover-bg;
-        }
+        }*/
 
 
     }

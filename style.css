@@ -3,13 +3,13 @@ html, body, ul, ol, * {
   padding: 0px; }
 
 body {
-  background: #36383A;
+  background: #272829;
   font-family: 'Oxygen', sans-serif; }
 
 nav {
   width: 100vw;
   height: 10vh;
-  background: #36383a;
+  background: #272829;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,14 +69,14 @@ p {
   left: -100% !important; }
 
 #main-content {
-  background: #36383A;
+  background: #272829;
   height: calc(100vh - 10vh );
   overflow: hidden; }
   #main-content .page {
     position: relative;
     left: 0px;
     overflow: hidden;
-    background: #36383A;
+    background: #272829;
     -webkit-transition: left 0.4s, top 0.4s;
     -moz-transition: left 0.4s, top 0.4s;
     transition: left 0.4s, top 0.4s; }
@@ -87,7 +87,7 @@ p {
     flex-flow: column nowrap;
     align-items: center;
     background: white;
-    color: #36383a;
+    color: #272829;
     margin-top: 5px;
     margin-right: 5px;
     box-sizing: border-box; }
@@ -112,11 +112,13 @@ p {
     #main-content #page-1 .grid div:first-child {
       height: 35%; }
     #main-content #page-1 .grid div:last-child {
-      height: 50%; }
+      height: 45%; }
     #main-content #page-1 .grid:first-child img {
       border-radius: 200px; }
     #main-content #page-1 .grid:first-child div:last-child {
       width: 80%; }
+    #main-content #page-1 .grid:nth-child(2) {
+      justify-content: center; }
     #main-content #page-1 .grid:nth-child(3) {
       margin-right: 0px; }
       #main-content #page-1 .grid:nth-child(3) p:first-child, #main-content #page-1 .grid:nth-child(3) p:nth-child(4) {
@@ -126,7 +128,21 @@ p {
         height: 70%; }
   #main-content #page-2 {
     top: -100%;
-    text-align: center; }
+    text-align: center;
+    /*    .grid:nth-child(1){
+            background:url("img/shapes.jpg");
+            @extend .cover-bg;
+        }
+
+        .grid:nth-child(2){
+            background:url("img/orb.jpg");
+            @extend .cover-bg;
+        }
+
+        .grid:nth-child(3){
+            background:url("img/operacraft.jpg");
+            @extend .cover-bg;
+        }*/ }
     #main-content #page-2 .grid:nth-child(3), #main-content #page-2 .grid:nth-child(5) {
       margin-right: 0px; }
     #main-content #page-2 .grid div {
@@ -141,12 +157,6 @@ p {
       cursor: pointer; }
       #main-content #page-2 .grid:hover div {
         background: rgba(252, 149, 44, 0.8); }
-    #main-content #page-2 .grid:nth-child(1) {
-      background: url("img/shapes.jpg"); }
-    #main-content #page-2 .grid:nth-child(2) {
-      background: url("img/orb.jpg"); }
-    #main-content #page-2 .grid:nth-child(3) {
-      background: url("img/operacraft.jpg"); }
   #main-content #page-3 {
     top: -200%;
     text-align: center; }
@@ -158,7 +168,7 @@ p {
       justify-content: space-between;
       align-items: center; }
 
-.cover-bg, #main-content #page-2 .grid:nth-child(1), #main-content #page-2 .grid:nth-child(2), #main-content #page-2 .grid:nth-child(3) {
+.cover-bg {
   background-size: cover;
   background-position: center; }
 
