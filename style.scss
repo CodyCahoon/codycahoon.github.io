@@ -60,7 +60,7 @@ nav{
 }
 
 .hidden{
-    display:none;
+    display:none !important;
 }
 
 .full-width{
@@ -72,8 +72,8 @@ nav{
 }
 
 .full-width-height{
-    width:100%;
-    height:100%;
+    width:100% !important;
+    height:100% !important;
 }
 
 .invert-img{
@@ -281,6 +281,7 @@ p{
     background-size: cover;
     background-position: center;
 }
+
 
 /* Portrait */
 @media  (min-width: 768px), only screen

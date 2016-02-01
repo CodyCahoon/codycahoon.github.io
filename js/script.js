@@ -10,6 +10,27 @@ $(window).resize(function(){
 });
 
 
+var toggleProject = [false, false, false, false, false];
+$("#page-2 .grid").click(function(){
+
+
+    toggleProject[$(this).index()] = !toggleProject[$(this).index()];
+    if (toggleProject[$(this).index()])
+    {
+        $("#page-2 .grid").addClass("hidden");
+        $(this).removeClass("hidden");
+        $(this).addClass("full-width-height");
+        $("#page-2 .grid:nth-child(" + ($(this).index() + 1) + ") p:nth-child(n + 3)").removeClass("hidden");
+    }
+    else {
+        $("#page-2 .grid").removeClass("hidden");
+        $(this).removeClass("full-width-height");
+        $("#page-2 .grid:nth-child(" + ($(this).index() + 1) + ") p:nth-child(n + 3)").addClass("hidden");
+
+
+    }
+});
+
 function resize()
 {
     //Fit image-only divs
