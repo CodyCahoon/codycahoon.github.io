@@ -6,16 +6,15 @@
 
         $scope.loaded = false;
         $scope.players = [];
-        urls = ["game1", "game2"];
+        $scope.urls = ["game1", "game2"];
 
-        for (var i = 0; i < urls.length; i++){
-            var url = "https://raw.githubusercontent.com/CodyCahoon/codycahoon.github.io/master/stats/" + urls[i] + ".json";
+        for (var i = 0; i < $scope.urls.length; i++){
+            var url = "https://raw.githubusercontent.com/CodyCahoon/codycahoon.github.io/master/stats/" + $scope.urls[i] + ".json";
             $http.get(url).then(function(response){
                 if ($scope.players){
-                    $scope.player.concat(response.data);
+                    $scope.players = $scope.players.concat(response.data);
                 }else {
                     $scope.players = response.data;
-                    $scope.loaded = true;
                 }
             }, function(error){
                 console.log(error);
@@ -23,7 +22,11 @@
         }
 
         $scope.$watch('players', function(){
-            console.log($scope.players);
+            if ($scope.players.length != $scope.urls.length * 6){
+                return;
+            }
+            $scope.loaded = true;
+
             for (var i = 0; i < $scope.players.length; i++){
                 player = $scope.players[i];
                 half = player["half"]["first"];
@@ -60,6 +63,12 @@
 
             }
 
+            $scope.players.sort(function(a, b){
+                var compare =  a.name.localeCompare(b.name);
+                if (compare == 0){
+                    return a.game - b.game;
+                }
+            })
             console.log($scope.players);
         })
     }

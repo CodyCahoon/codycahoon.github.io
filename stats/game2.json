@@ -1,6 +1,7 @@
 [
     {
         "name":"Brian McCloud",
+        "game":2,
         "half":{
             "first":{
                 "oreb":1,
@@ -32,6 +33,7 @@
     },
     {
         "name":"Cody Cahoon",
+        "game":2,
         "half":{
             "first":{
                 "oreb":3,
@@ -63,6 +65,7 @@
     },
     {
         "name":"Hunter Garlock",
+        "game":2,
         "half":{
             "first":{
                 "oreb":0,
@@ -94,6 +97,7 @@
     },
     {
         "name":"Jonell Taylor",
+        "game":2,
         "half":{
             "first":{
                 "oreb":2,
@@ -125,6 +129,7 @@
     },
     {
         "name":"Ty Vanderley",
+        "game":2,
         "half":{
             "first":{
                 "oreb":3,
@@ -156,6 +161,7 @@
     },
     {
         "name":"Jackie Orr",
+        "game":2,
         "half":{
             "first":{
                 "oreb":0,
