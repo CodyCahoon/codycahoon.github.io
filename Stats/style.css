@@ -1,0 +1,33 @@
+body{
+    font-family:'Open Sans';
+}
+
+table{
+    width:90%;
+    margin:20px auto;
+    height:15%;
+    border-collapse: collapse;
+}
+
+table{
+    border:1px solid black;
+    text-align: center;
+    vertical-align: center;
+}
+
+th{
+    width:7%;
+}
+
+th:first-child{
+    width:11%;
+}
+
+thead tr{
+    border-bottom: 1px solid black;
+
+}
+
+td:nth-child(odd){
+    background:rgb(213, 213, 213);
+}

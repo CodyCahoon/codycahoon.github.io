@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>MetStats</title>
+    <link href='style.css' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body ng-show="loaded" ng-controller="MainCtrl">
+
+    <table ng-repeat="player in players">
+        <thead>
+            <tr>
+                <th>{{player.name}}</th>
+                <th>OREB</th>
+                <th>DREB</th>
+                <th>REB</th>
+                <th>FGM</th>
+                <th>FGA</th>
+                <th>FG%</th>
+                <th>3PTM</th>
+                <th>3PTA</th>
+                <th>3PT%</th>
+                <th>BLK</th>
+                <th>STL</th>
+                <th>TO</th>
+                <th>PTS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="half in player.half">
+                <td>{{half.name}}</td>
+                <td>{{half.oreb}}</td>
+                <td>{{half.dreb}}</td>
+                <td>{{half.reb}}</td>
+                <td>{{half.fgm}}</td>
+                <td>{{half.fga}}</td>
+                <td>{{half.fgp | number:2}}</td>
+                <td>{{half.threeptm}}</td>
+                <td>{{half.threepta}}</td>
+                <td>{{half.threeptp | number:2}}</td>
+                <td>{{half.blk}}</td>
+                <td>{{half.stl}}</td>
+                <td>{{half.to}}</td>
+                <td>{{half.pts}}</td>
+            </tr>
+            <tr>
+                <td>{{player.total.name}}</td>
+                <td>{{player.total.oreb}}</td>
+                <td>{{player.total.dreb}}</td>
+                <td>{{player.total.reb}}</td>
+                <td>{{player.total.fgm}}</td>
+                <td>{{player.total.fga}}</td>
+                <td>{{player.total.fgp | number:2}}</td>
+                <td>{{player.total.threeptm}}</td>
+                <td>{{player.total.threepta}}</td>
+                <td>{{player.total.threeptp | number:2}}</td>
+                <td>{{player.total.blk}}</td>
+                <td>{{player.total.stl}}</td>
+                <td>{{player.total.to}}</td>
+                <td>{{player.total.pts}}</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
