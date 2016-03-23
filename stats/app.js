@@ -9,7 +9,7 @@
         urls = ["game1", "game2"];
 
         for (var i = 0; i < urls.length; i++){
-            var url = "https://raw.githubusercontent.com/CodyCahoon/codycahoon.github.io/master/stats/" + url[i] + ".json";
+            var url = "https://raw.githubusercontent.com/CodyCahoon/codycahoon.github.io/master/stats/" + urls[i] + ".json";
             $http.get(url).then(function(response){
                 if ($scope.players){
                     $scope.player.concat(response.data);
