@@ -65,8 +65,10 @@
 
             $scope.players.sort(function(a, b){
                 var compare =  a.name.localeCompare(b.name);
-                if (compare == 0){
+                if (compare === 0){
                     return a.game - b.game;
+                }else{
+                    return compare;
                 }
             })
             console.log($scope.players);

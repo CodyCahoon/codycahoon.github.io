@@ -65,6 +65,7 @@
     },
     {
         "name":"Hunter Garlock",
+        "game":1,        
         "half":{
             "first":{
                 "oreb":2,
