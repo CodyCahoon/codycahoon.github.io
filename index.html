@@ -1,245 +1,185 @@
 <!doctype html>
-<html ng-app="app">
+<html>
 <head>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="balloon.css"/>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100,300' rel='stylesheet' type='text/css'>
+
+
+    <title>Cody Cahoon</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery CDN -->
+    <script src="js/jquery-1.12.0.min.js"></script>
 </head>
-<body ng-controller="MainCtrl">
+<body>
     <nav>
+        <img class="hidden" alt="Personal Logo" src="img/logo.png">
+        <div>
+            <span id="name" class="hidden">Cody Cahoon</span>
+            <span id="loc" class="hidden">Raleigh, NC</span>
+        </div>
         <ul>
-            <li class="selected">
-                Home
-            </li>
-            <li>
-                BaaS
-            </li>
-            <li>
-                Bricklayers
-            </li>
-            <li>
-                Crabtree Lakers
-            </li>
-            <li>
-                The Deregulators
-            </li>
-            <li >
-                DynaMet
-            </li>
-            <li>
-                EI & Trey
-            </li>
-            <li>
-                MetLife Ballers
-            </li>
-            <li>
-                Peanuts Gang
-            </li>
-            <li>
-                Red Baron
-            </li>
+            <li class="selected"><img alt="About icon" src="img/about.png"><span class="hidden">About</span></li>
+            <li><img alt="Code icon" src="img/project.png"><span class="hidden">Projects</span></li>
+            <li><img alt="Blog icon" src="img/blog.png"><span class="hidden">Blog</span></li>
+            <li><img alt="Email icon" src="img/contact.png"><span class="hidden">Contact</span></li>
         </ul>
+
     </nav>
 
-    <section id="standings" ng-if="!hasCurrentTeam">
-        Standings
-        <table >
-            <thead>
-                <tr>
-                    <th data-balloon="Rank" data-balloon-pos="up">
-                        Rank
-                    </th>
-                    <th data-balloon="Team Name" data-balloon-pos="up">
-                        Team
-                    </th>
-                    <th data-balloon="Wins" data-balloon-pos="up">
-                        W
-                    </th>
-                    <th data-balloon="Losses" data-balloon-pos="up">
-                        L
-                    </th>
-                    <th data-balloon="Winning Percentage" data-balloon-pos="up">
-                        PCT
-                    </th>
-                    <th data-balloon="Points per game" data-balloon-pos="up">
-                        PPG
-                    </th>
-                    <th data-balloon="Opponents Points per game" data-balloon-pos="up">
-                        Opp PPG
-                    </th>
-                    <th data-balloon="Point Differential" data-balloon-pos="up">
-                        DIFF
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="team in standings | orderBy:['-wins', '-wpct', '-pf', '+pa']">
-                    <td>
+    <section id="main-content">
 
-                    </td>
-                    <td>
-                        {{team.name}}
-                    </td>
-                    <td>
-                        {{team.wins}}
-                    </td>
-                    <td>
-                        {{team.losses}}
-                    </td>
-                    <td>
-                        {{team.wpct | number:3}}
-                    </td>
-                    <td>
-                        {{team.pf / team.gp | number:1}}
-                    </td>
-                    <td>
-                        {{team.pa / team.gp | number:1}}
-                    </td>
-                    <td>
-                        <span class="win" ng-if="team.pd > 0">+{{team.pd / team.gp | number:1}}</span>
-                        <span class="loss" ng-if="team.pd < 0">{{team.pd /team.gp | number:1}}</span>
-                        <span ng-if="team.pd === 0">{{team.pd / team.gp | number:1}}</span>
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+
+        <div id="page-1" class="page">
+
+            <div class="grid row-2-3 col-1-1">
+                <div>
+                    <img src="img/prof.jpg" alt="Profile picture">
+                </div>
+                <div>
+                    <p>Hi, I'm Cody Cahoon. <br><br>I recently graduated from Virginia Tech and currently work at MetLife as a Software Developer, working with AngularJS. I'm sarcastic the majority of the time and enjoy coding in any language from C to HTML. In my free time I like to play music (piano + uke) and attempt to pull off aerials in Rocket League. If you woud like to get in contact with me, visit the contact page.</p>
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-2">
+                <div>
+                    <img src="img/vt.png" alt="Virginia Tech Logo">
+                </div>
+                <div>
+                    <p>Virginia Tech</p>
+                    <p>B.S. in Computer Science</p>
+                    <p>December 2015</p>
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-2" >
+                <div>
+                    <p>Web Skills</p>
+                    <p>HTML5, CSS3, JS, jQuery, AngularJS</p>
+                    <p>&nbsp;</p>
+                    <p>Dev Skills</p>
+                    <p>Java, C, Processing, Leap Motion</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div id="page-2" class="page hide-2">
+
+
+            <div class="grid row-1-3 col-1-3">
+                <div>
+                    <h2>Shapes and Colors</h2>
+                    <p>Javascript matching game</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden">A simple Javascript game where the player can match items by color or shape or both!</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden"><a href="./shapes/index.html"><img src="img/link.png"></a></p>
+
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-3">
+                <div>
+                    <h2>The Orb</h2>
+                    <p>3D project visualization</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden">A Virginia Tech research project which displays Virginia Tech projects on a 3D orb, which are accesible through both hand gestures or mouse.</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden"><a href="https://www.icat.vt.edu/image/project/orb"><img src="img/link.png"></a></p>
+
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-3">
+                <div>
+                    <h2>Operacraft</h2>
+                    <p>Minecraft + Opera</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden">A Virginia Tech research project, bringing the theater form of Opera to the game Minecraft.</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden"><a href="https://www.icat.vt.edu/funding/operacraft"><img src="img/link.png"></a></p>
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-1">
+                <div>
+                    <h2>ASLi</h2>
+                    <p>Leap Motion ASL interpreter</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden">Built in Processing using the Leap Motion to recognize gestures, ASLi plans to interpret the ASL alphabet and gestures.</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden"><a href="https://github.com/CodyCahoon/ASLi"><img src="img/link.png"></a></p>
+
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-1">
+                <div>
+                    <h2>NHL 15 UI</h2>
+                    <p>Interface modeled in HTML5</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden">Recreation of the NHL 15 interface, using HTML5, CSS3, and Javascript. Using the arrow keys, you can navigate the interface just as you would in game.</p>
+                    <p class="hidden">&nbsp;</p>
+                    <p class="hidden"><a href="./nhl15/index.html"><img src="img/link.png"></a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="page-3" class="page hide-3">
+
+            <div class="grid row-1-3 col-1-1">
+                <div>
+                    <h2>WIP</h2>
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-1">
+                <div>
+                    <h2>WIP</h2>
+                </div>
+            </div>
+
+            <div class="grid row-1-3 col-1-1">
+                <div>
+                    <h2>WIP</h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="page-4" class="page hide-4">
+
+            <div class="grid row-1-3 col-1-1">
+                <div>
+                    <h1>Cody Cahoon</h1>
+                    <h1>codyjcahoon@gmail.com</h1>
+                </div>
+            </div>
+
+            <div class="grid row-2-3 col-1-1">
+                <div>
+                    <h2><a href="https://www.linkedin.com/in/cody-cahoon-102a958a">Linkedin</a></h2>
+                    <h2><a href="https://github.com/CodyCahoon/">Github</a></h2>
+                    <h2><a href="https://soundcloud.com/cody-cahoon">Soundcloud</a></h2>
+                </div>
+            </div>
+
+        </div>
+
+
     </section>
 
-    <section id="results" ng-if="!hasCurrentTeam">
-        Results
-        <table  ng-repeat="game in games">
-            <tbody>
-                <tr>
-                    <td>
-                        <span class="win" ng-if="game.win1">{{game.team1}}</span>
-                        <span ng-if="game.win2">{{game.team1}}</span>
-                    </td>
-                    <td>
-                        <span class="win" ng-if="game.win1">{{game.score1}}</span>
-                        <span ng-if="game.win2">{{game.score1}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span class="win" ng-if="game.win2">{{game.team2}}</span>
-                        <span ng-if="game.win1">{{game.team2}}</span>
-                    </td>
-                    <td>
-                        <span class="win" ng-if="game.win2">{{game.score2}}</span>
-                        <span  ng-if="game.win1">{{game.score2}}</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-
-
-    <h1 ng-if="hasCurrentTeam && !currentTeam.startsWith('EI')">{{currentTeam}}</h1>
-    <h1 ng-if="hasCurrentTeam && currentTeam.startsWith('EI')">EI & Trey</h1>
-
-    <section ng-if="hasCurrentTeam">
-        Scores
-        <table >
-            <tbody>
-                <tr ng-repeat="game in games">
-                    <td>
-                        vs.
-                    </td>
-                    <td ng-if="currentTeam.localeCompare(game.team1) === 0">
-                        <span>{{game.team2}}</span>
-                    </td>
-                    <td ng-if="currentTeam.localeCompare(game.team2) === 0">
-                        <span>{{game.team1}}</span>
-                    </td>
-                    <td ng-if="currentTeam.localeCompare(game.team1) === 0">
-                        <span class="win" ng-if="game.win1">W</span>
-                        <span class="loss" ng-if="game.win2">L</span>
-                    </td>
-                    <td ng-if="currentTeam.localeCompare(game.team2) === 0">
-                        <span class="win" ng-if="game.win2">W</span>
-                        <span class="loss" ng-if="game.win1">L</span>
-                    </td>
-                    <td>
-                        <span ng-if="game.win1">{{game.score1}} - {{game.score2}}</span>
-                        <span ng-if="game.win2">{{game.score2}} - {{game.score1}}</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <section ng-if="hasCurrentTeam">
-        Statistics
-        <table>
-            <thead>
-                <tr>
-                    <th data-balloon="Team's Record" data-balloon-pos="up">
-                        Record
-                    </th>
-                    <th data-balloon="Winning Percentage" data-balloon-pos="up">
-                        PCT
-                    </th>
-                    <th  data-balloon="Points per game" data-balloon-pos="up">
-                        PPG
-                    </th>
-                    <th  data-balloon="Opponent Points per game" data-balloon-pos="up">
-                        Opp PPG
-                    </th>
-                    <th  data-balloon="Point Differential per game" data-balloon-pos="up">
-                        DIFF
-                    </th>
-                    <th  data-balloon="Points for" data-balloon-pos="up">
-                        PF
-                    </th>
-                    <th  data-balloon="Points Allowed" data-balloon-pos="up">
-                        PA
-                    </th>
-                    <th  data-balloon="Point Differential" data-balloon-pos="up">
-                        DIFF
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        {{currentTeamObj.wins}} - {{currentTeamObj.losses}}
-                    </td>
-                    <td>
-                        {{currentTeamObj.wpct | number:3}}
-                    </td>
-                    <td>
-                        {{currentTeamObj.pf / currentTeamObj.gp | number:1}}
-                    </td>
-                    <td>
-                        {{currentTeamObj.pa / currentTeamObj.gp | number:1}}
-                    </td>
-                    <td>
-                        <span class="win" ng-if="currentTeamObj.pd > 0">+{{currentTeamObj.pd / currentTeamObj.gp | number:1}}</span>
-                        <span class="loss" ng-if="currentTeamObj.pd < 0">{{currentTeamObj.pd /currentTeamObj.gp | number:1}}</span>
-                        <span ng-if="currentTeamObj.pd === 0">{{currentTeamObj.pd / currentTeamObj.gp | number:1}}</span>
-                    </td>
-                    <td>
-                        {{currentTeamObj.pf}}
-                    </td>
-                    <td>
-                        {{currentTeamObj.pa}}
-                    </td>
-                    <td>
-                        <span class="win" ng-if="currentTeamObj.pd > 0">+{{currentTeamObj.pd | number:1}}</span>
-                        <span class="loss" ng-if="currentTeamObj.pd < 0">{{currentTeamObj.pd| number:1}}</span>
-                        <span ng-if="currentTeamObj.pd === 0">{{currentTeamObj.pd| number:1}}</span>
-
-                    </td>
-
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
