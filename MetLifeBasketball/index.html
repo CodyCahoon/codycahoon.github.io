@@ -1,0 +1,245 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="balloon.css"/>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,100,300' rel='stylesheet' type='text/css'>
+</head>
+<body ng-controller="MainCtrl">
+    <nav>
+        <ul>
+            <li class="selected">
+                Home
+            </li>
+            <li>
+                BaaS
+            </li>
+            <li>
+                Bricklayers
+            </li>
+            <li>
+                Crabtree Lakers
+            </li>
+            <li>
+                The Deregulators
+            </li>
+            <li >
+                DynaMet
+            </li>
+            <li>
+                EI & Trey
+            </li>
+            <li>
+                MetLife Ballers
+            </li>
+            <li>
+                Peanuts Gang
+            </li>
+            <li>
+                Red Baron
+            </li>
+        </ul>
+    </nav>
+
+    <section id="standings" ng-if="!hasCurrentTeam">
+        Standings
+        <table >
+            <thead>
+                <tr>
+                    <th data-balloon="Rank" data-balloon-pos="up">
+                        Rank
+                    </th>
+                    <th data-balloon="Team Name" data-balloon-pos="up">
+                        Team
+                    </th>
+                    <th data-balloon="Wins" data-balloon-pos="up">
+                        W
+                    </th>
+                    <th data-balloon="Losses" data-balloon-pos="up">
+                        L
+                    </th>
+                    <th data-balloon="Winning Percentage" data-balloon-pos="up">
+                        PCT
+                    </th>
+                    <th data-balloon="Points per game" data-balloon-pos="up">
+                        PPG
+                    </th>
+                    <th data-balloon="Opponents Points per game" data-balloon-pos="up">
+                        Opp PPG
+                    </th>
+                    <th data-balloon="Point Differential" data-balloon-pos="up">
+                        DIFF
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="team in standings | orderBy:['-wins', '-wpct', '-pf', '+pa']">
+                    <td>
+
+                    </td>
+                    <td>
+                        {{team.name}}
+                    </td>
+                    <td>
+                        {{team.wins}}
+                    </td>
+                    <td>
+                        {{team.losses}}
+                    </td>
+                    <td>
+                        {{team.wpct | number:3}}
+                    </td>
+                    <td>
+                        {{team.pf / team.gp | number:1}}
+                    </td>
+                    <td>
+                        {{team.pa / team.gp | number:1}}
+                    </td>
+                    <td>
+                        <span class="win" ng-if="team.pd > 0">+{{team.pd / team.gp | number:1}}</span>
+                        <span class="loss" ng-if="team.pd < 0">{{team.pd /team.gp | number:1}}</span>
+                        <span ng-if="team.pd === 0">{{team.pd / team.gp | number:1}}</span>
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="results" ng-if="!hasCurrentTeam">
+        Results
+        <table  ng-repeat="game in games">
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="win" ng-if="game.win1">{{game.team1}}</span>
+                        <span ng-if="game.win2">{{game.team1}}</span>
+                    </td>
+                    <td>
+                        <span class="win" ng-if="game.win1">{{game.score1}}</span>
+                        <span ng-if="game.win2">{{game.score1}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="win" ng-if="game.win2">{{game.team2}}</span>
+                        <span ng-if="game.win1">{{game.team2}}</span>
+                    </td>
+                    <td>
+                        <span class="win" ng-if="game.win2">{{game.score2}}</span>
+                        <span  ng-if="game.win1">{{game.score2}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+
+
+    <h1 ng-if="hasCurrentTeam && !currentTeam.startsWith('EI')">{{currentTeam}}</h1>
+    <h1 ng-if="hasCurrentTeam && currentTeam.startsWith('EI')">EI & Trey</h1>
+
+    <section ng-if="hasCurrentTeam">
+        Scores
+        <table >
+            <tbody>
+                <tr ng-repeat="game in games">
+                    <td>
+                        vs.
+                    </td>
+                    <td ng-if="currentTeam.localeCompare(game.team1) === 0">
+                        <span>{{game.team2}}</span>
+                    </td>
+                    <td ng-if="currentTeam.localeCompare(game.team2) === 0">
+                        <span>{{game.team1}}</span>
+                    </td>
+                    <td ng-if="currentTeam.localeCompare(game.team1) === 0">
+                        <span class="win" ng-if="game.win1">W</span>
+                        <span class="loss" ng-if="game.win2">L</span>
+                    </td>
+                    <td ng-if="currentTeam.localeCompare(game.team2) === 0">
+                        <span class="win" ng-if="game.win2">W</span>
+                        <span class="loss" ng-if="game.win1">L</span>
+                    </td>
+                    <td>
+                        <span ng-if="game.win1">{{game.score1}} - {{game.score2}}</span>
+                        <span ng-if="game.win2">{{game.score2}} - {{game.score1}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section ng-if="hasCurrentTeam">
+        Statistics
+        <table>
+            <thead>
+                <tr>
+                    <th data-balloon="Team's Record" data-balloon-pos="up">
+                        Record
+                    </th>
+                    <th data-balloon="Winning Percentage" data-balloon-pos="up">
+                        PCT
+                    </th>
+                    <th  data-balloon="Points per game" data-balloon-pos="up">
+                        PPG
+                    </th>
+                    <th  data-balloon="Opponent Points per game" data-balloon-pos="up">
+                        Opp PPG
+                    </th>
+                    <th  data-balloon="Point Differential per game" data-balloon-pos="up">
+                        DIFF
+                    </th>
+                    <th  data-balloon="Points for" data-balloon-pos="up">
+                        PF
+                    </th>
+                    <th  data-balloon="Points Allowed" data-balloon-pos="up">
+                        PA
+                    </th>
+                    <th  data-balloon="Point Differential" data-balloon-pos="up">
+                        DIFF
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{currentTeamObj.wins}} - {{currentTeamObj.losses}}
+                    </td>
+                    <td>
+                        {{currentTeamObj.wpct | number:3}}
+                    </td>
+                    <td>
+                        {{currentTeamObj.pf / currentTeamObj.gp | number:1}}
+                    </td>
+                    <td>
+                        {{currentTeamObj.pa / currentTeamObj.gp | number:1}}
+                    </td>
+                    <td>
+                        <span class="win" ng-if="currentTeamObj.pd > 0">+{{currentTeamObj.pd / currentTeamObj.gp | number:1}}</span>
+                        <span class="loss" ng-if="currentTeamObj.pd < 0">{{currentTeamObj.pd /currentTeamObj.gp | number:1}}</span>
+                        <span ng-if="currentTeamObj.pd === 0">{{currentTeamObj.pd / currentTeamObj.gp | number:1}}</span>
+                    </td>
+                    <td>
+                        {{currentTeamObj.pf}}
+                    </td>
+                    <td>
+                        {{currentTeamObj.pa}}
+                    </td>
+                    <td>
+                        <span class="win" ng-if="currentTeamObj.pd > 0">+{{currentTeamObj.pd | number:1}}</span>
+                        <span class="loss" ng-if="currentTeamObj.pd < 0">{{currentTeamObj.pd| number:1}}</span>
+                        <span ng-if="currentTeamObj.pd === 0">{{currentTeamObj.pd| number:1}}</span>
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
