@@ -1,17 +1,28 @@
 (function(){
 
+    'use strict';
+
     var app = angular.module("app", []);
 
     var MainCtrl = function($scope){
-
         $scope.currentTeam = null;
+
         $scope.currentGames = [];
+
         $scope.hasCurrentTeam = false;
+
         $scope.games = [];
+
         $scope.origGames = [];
+
         $scope.standings = [];
+
         $scope.currentTeamObj = null;
+
         $scope.currentWeek = 0;
+        $scope.currentWeekGames = [];
+        $scope.maxWeek = 0;
+
         $scope.dates = [
             "3/22",
             "3/23",
@@ -34,8 +45,8 @@
             "5/24",
             "5/25"
         ];
-        $scope.gameNumbers = [];
         var teams = [];
+
 
         var addGame = function(team1, score1, team2, score2, gameNumber){
             var newGame = {
@@ -55,6 +66,8 @@
             }
 
             newGame["date"] = $scope.dates[gameNumber - 1];
+
+            //Game has been played
             if (score1 + score2 !== 0) {
                 $scope.currentWeek = gameNumber;
                 newGame["hasPlayed"] = true;
@@ -63,37 +76,34 @@
             $scope.games.push(newGame);
             $scope.origGames.push(newGame);
             $scope.maxWeek = gameNumber;
-
             $scope.$apply();
         }
 
         $(document).ready(function(){
             loadGames();
+            filterByWeek();
 
             $("body").on('click', '#prevWeek', function(){
-                if ($scope.currentWeek === 1){
-                    $scope.currentWeek = $scope.maxWeek;
-                } else {
-                    $scope.currentWeek--;
-                }
-                $scope.$apply();
-
-                resetGames();
-                filterByWeek();
+                changeWeek(-1);
             });
 
             $("body").on('click', '#nextWeek', function(){
-                if ($scope.currentWeek === $scope.maxWeek){
-                    $scope.currentWeek = 1
-                } else {
-                    $scope.currentWeek++;
-                }
-                $scope.$apply();
-
-                resetGames();
-                filterByWeek();
+                changeWeek(1);
             });
         });
+
+        var changeWeek = function(direction){
+            var newWeek = $scope.currentWeek + direction;
+            if (newWeek < 1) {
+                $scope.currentWeek = $scope.maxWeek;
+            } else if (newWeek > $scope.maxWeek) {
+                $scope.currentWeek = 1;
+            } else {
+                $scope.currentWeek = newWeek;
+            }
+            $scope.$apply();
+            filterByWeek();
+        }
 
         var loadGames = function(){
             var pg = "Peanuts Gang";
@@ -175,26 +185,28 @@
             addGame(bl, 34, dm, 29, 12);
             addGame(ei, 66, bs, 57, 12);
             addGame(dr, 2, tn, 0, 12);
+            addGame(bl, 2, tn, 0, 12);
 
 
-
-            getStandings();
+            buildStandings();
         }
 
-        var getStandings = function(){
+        var buildStandings = function(){
             var teams = {};
             for (var i = 0; i < $scope.origGames.length; i++){
                 var currentGame = $scope.origGames[i];
-                teams[currentGame.team1] = teams[currentGame.team1] || {wins:0, losses:0, name:currentGame.team1, pf:0, pa:0, wpct:0};
-                teams[currentGame.team2] = teams[currentGame.team2] || {wins:0, losses:0, name:currentGame.team2, pf:0, pa:0, wpct:0};
 
-                var hasNotPlayed = currentGame.score1 + currentGame.score2 === 0;
+                var hasNotPlayed = (currentGame.score1 + currentGame.score2) === 0;
                 if (hasNotPlayed){
                     continue;
                 }
-                var isForfeit = currentGame.score1 + currentGame.score2 === 2;
 
 
+
+                teams[currentGame.team1] = teams[currentGame.team1] || {wins:0, losses:0, gp:0, name:currentGame.team1, pf:0, pa:0, wpct:0, streak:0, games:[], last5:'-', forfeits:0};
+                teams[currentGame.team2] = teams[currentGame.team2] || {wins:0, losses:0, gp:0, name:currentGame.team2, pf:0, pa:0, wpct:0, streak:0, games:[], last5:'-', forfeits:0};
+
+                var isForfeit = (currentGame.score1 + currentGame.score2) === 2;
                 if (!isForfeit)
                 {
                     teams[currentGame.team1]["pf"] += currentGame.score1;
@@ -203,107 +215,144 @@
                     teams[currentGame.team2]["pa"] += currentGame.score1;
                     teams[currentGame.team1]["pd"] = teams[currentGame.team1]["pf"] - teams[currentGame.team1]["pa"];
                     teams[currentGame.team2]["pd"] = teams[currentGame.team2]["pf"] - teams[currentGame.team2]["pa"];
+                } else {
+                    teams[currentGame.team1]["forfeits"]++;
+                    teams[currentGame.team2]["forfeits"]++;
                 }
 
                 if (currentGame.win1){
-                    teams[currentGame.team1]["wins"] = teams[currentGame.team1]["wins"] + 1;
-                    teams[currentGame.team2]["losses"] = teams[currentGame.team2]["losses"] + 1;
-                }else{
-                    teams[currentGame.team2]["wins"] = teams[currentGame.team2]["wins"] +1;
-                    teams[currentGame.team1]["losses"] = teams[currentGame.team1]["losses"] + 1;
+                    teams[currentGame.team1]["wins"]++;
+                    teams[currentGame.team2]["losses"]++;
+
+                    teams[currentGame.team1]["games"].push("w");
+                    teams[currentGame.team2]["games"].push("l");
+
+                    if (teams[currentGame.team1]["streak"] >= 0) {
+                        teams[currentGame.team1]["streak"]++;
+                    } else {
+                        teams[currentGame.team1]["streak"] = 1;
+                    }
+
+                    if (teams[currentGame.team2]["streak"] <= 0) {
+                        teams[currentGame.team2]["streak"]--;
+                    } else {
+                        teams[currentGame.team2]["streak"] = -1;
+                    }
+                } else {
+                    teams[currentGame.team2]["wins"]++;
+                    teams[currentGame.team1]["losses"]++;
+
+                    teams[currentGame.team1]["games"].push("l");
+                    teams[currentGame.team2]["games"].push("w");
+
+                    if (teams[currentGame.team2]["streak"] >= 0) {
+                        teams[currentGame.team2]["streak"]++;
+                    } else {
+                        teams[currentGame.team2]["streak"] = 1;
+                    }
+
+                    if (teams[currentGame.team1]["streak"] <= 0) {
+                        teams[currentGame.team1]["streak"]--;
+                    } else {
+                        teams[currentGame.team1]["streak"] = -1;
+                    }
                 }
                 teams[currentGame.team1]["wpct"] = teams[currentGame.team1]["wins"] / (teams[currentGame.team1]["wins"] + teams[currentGame.team1]["losses"]);
                 teams[currentGame.team2]["wpct"] = teams[currentGame.team2]["wins"] / (teams[currentGame.team2]["wins"] + teams[currentGame.team2]["losses"]);
                 teams[currentGame.team1]["gp"] = teams[currentGame.team1]["wins"] + teams[currentGame.team1]["losses"];
                 teams[currentGame.team2]["gp"] = teams[currentGame.team2]["wins"] + teams[currentGame.team2]["losses"];
 
-                if (!isForfeit){
-                    teams[currentGame.team1]["gp"]--;
-                    teams[currentGame.team2]["gp"]--;
-                }
+                teams[currentGame.team1]["ppg"] = teams[currentGame.team1]["pf"] / (teams[currentGame.team1]["gp"] - teams[currentGame.team1]["forfeits"]);
+                teams[currentGame.team2]["ppg"] = teams[currentGame.team2]["pf"] / (teams[currentGame.team2]["gp"] - teams[currentGame.team2]["forfeits"]);
 
-                teams[currentGame.team1]["ppg"] = teams[currentGame.team1]["pf"] / teams[currentGame.team1]["gp"];
-                teams[currentGame.team2]["ppg"] = teams[currentGame.team2]["pf"] / teams[currentGame.team2]["gp"];
-
-                teams[currentGame.team1]["oppg"] = teams[currentGame.team1]["pa"] / teams[currentGame.team1]["gp"];
-                teams[currentGame.team2]["oppg"] = teams[currentGame.team2]["pa"] / teams[currentGame.team2]["gp"];
+                teams[currentGame.team1]["oppg"] = teams[currentGame.team1]["pa"] / (teams[currentGame.team1]["gp"] - teams[currentGame.team1]["forfeits"]);
+                teams[currentGame.team2]["oppg"] = teams[currentGame.team2]["pa"] / (teams[currentGame.team2]["gp"] - teams[currentGame.team2]["forfeits"]);
 
                 teams[currentGame.team1]["ppgd"] = teams[currentGame.team1]["ppg"] - teams[currentGame.team1]["oppg"];
                 teams[currentGame.team2]["ppgd"] = teams[currentGame.team2]["ppg"] - teams[currentGame.team2]["oppg"];
 
             }
-            for (team in teams){
+            for (var team in teams){
+                var currentTeam = teams[team];
+                var winCount = 0;
+                var lossCount = 0;
+                var length = currentTeam.games.length - 1;
+                var count = 0;
+                while (length >= 0 && count != 5){
+                    if (currentTeam.games[length] === 'w'){
+                        winCount++;
+                    } else {
+                        lossCount++;
+                    }
+                    length--;
+                    count++;
+                }
+
+                currentTeam['last5'] = winCount + ' - ' + lossCount;
+
                 if (!(team === 'The Nerds' || team === 'Peanuts Gang'))
-                $scope.standings.push(teams[team]);
+                    $scope.standings.push(teams[team]);
             }
-
-            filterByWeek();
-
-
             $scope.$apply();
         }
 
         $("nav li").click(function(){
             var team =  $(this).html().trim().replace("&amp;", "&");
             $scope.currentTeam = team;
+
             var array = $scope.standings.filter(function(value){
                 return value.name.localeCompare(team) === 0;
             });
             $scope.currentTeamObj = array[0];
-            if ($scope.currentTeam.localeCompare("Home") !== 0){
-                $scope.hasCurrentTeam = true;
-            }else{
-                $("nav li").removeClass("grey");
-                $scope.hasCurrentTeam = false;
-            }
+            $scope.hasCurrentTeam = true;
+
             $("nav li").removeClass("selected");
             $(this).addClass("selected");
             $scope.$apply();
         });
 
-        $("nav li:nth-child(n+2)").mouseover(function(){
-            $("nav li:nth-child(n+2)").addClass("grey");
-            $(this).removeClass("grey");
-        });
-
-        $("nav li:nth-child(n+2)").mouseleave(function(){
-            if (!$scope.hasCurrentTeam)
-                $("nav li:nth-child(n+2)").removeClass("grey");
-            else {
-                $("nav li:nth-child(n+2)").addClass("grey");
-                $(".selected").removeClass("grey");
-
+        $("nav li").mouseleave(function(){
+            var $selected = $(".selected");
+            if ($selected.length === 0){
+                $("nav li").css("color", "#F1F2F3");
+            } else {
+                $("nav li").css("color", "rgb(93, 93, 93)");
+                $selected.css("color", "F1F2F3");
             }
         });
 
+        $("nav li").mouseenter(function(){
+            $("nav li").css("color", "rgb(93, 93, 93)");
+            $(this).css("color", "#F1F2F3");
+            $(".selected").css("color", "F1F2F3");
+        });
+
+        $("#home").click(clearFilters);
+
+        function clearFilters(){
+            $("nav li").removeClass("selected");
+            $("nav li").css("color", "#F1F2F3");
+            $scope.currentTeam = null;
+            $scope.hasCurrentTeam = false;
+            $scope.$apply();
+        }
 
         $scope.$watch("currentTeam", function(newVal, oldVal){
             if (newVal){
                 $scope.games = $scope.origGames;
                 $scope.games = $scope.games.filter(function(value){
                     return value.team1.localeCompare($scope.currentTeam) === 0 ||
-                    value.team2.localeCompare($scope.currentTeam) === 0 ||
-                    $scope.currentTeam.localeCompare("Home") === 0;
+                    value.team2.localeCompare($scope.currentTeam) === 0 ;
                 });
-                if ($scope.currentTeam.localeCompare("Home") === 0){
-                    filterByWeek();
-                }
             }
         });
 
-        function resetGames(){
-            $scope.games = $scope.origGames;
-        }
-
         function filterByWeek(){
-            $scope.games = $scope.games.filter(function(value){
+            $scope.currentWeekGames = $scope.origGames.filter(function(value){
                 return value.game === $scope.currentWeek;
             });
             $scope.$apply();
         }
-
-
-
     }
 
     app.controller("MainCtrl", MainCtrl);
