@@ -1,23 +1,15 @@
 (function(){
-
     'use strict';
 
     var app = angular.module("app", []);
 
     var MainCtrl = function($scope){
         $scope.currentTeam = null;
-
-        $scope.currentGames = [];
-
         $scope.hasCurrentTeam = false;
 
         $scope.games = [];
-
         $scope.origGames = [];
-
         $scope.standings = [];
-
-        $scope.currentTeamObj = null;
 
         $scope.currentWeek = 0;
         $scope.currentWeekGames = [];
@@ -55,8 +47,23 @@
                 team2:team2,
                 score2:score2,
                 game:gameNumber,
-                hasPlayed:false
+                hasPlayed:true,
+                isForfeit:false
             }
+
+            var totalScore = score1 + score2;
+
+            if (totalScore === 0) {
+                newGame["hasPlayed"] = false;
+            } else if (totalScore === 2) {
+                newGame["isForfeit"] = true;
+            }
+
+            //Game has been played
+            if (totalScore !== 0) {
+                $scope.currentWeek = gameNumber;
+            }
+
             if (score1 > score2){
                 newGame["win1"] = true;
                 newGame["win2"] = false;
@@ -67,13 +74,6 @@
 
             newGame["date"] = $scope.dates[gameNumber - 1];
 
-            //Game has been played
-            if (score1 + score2 !== 0) {
-                $scope.currentWeek = gameNumber;
-                newGame["hasPlayed"] = true;
-            }
-
-            $scope.games.push(newGame);
             $scope.origGames.push(newGame);
             $scope.maxWeek = gameNumber;
             $scope.$apply();
@@ -196,18 +196,14 @@
             for (var i = 0; i < $scope.origGames.length; i++){
                 var currentGame = $scope.origGames[i];
 
-                var hasNotPlayed = (currentGame.score1 + currentGame.score2) === 0;
-                if (hasNotPlayed){
+                if (!currentGame.hasPlayed){
                     continue;
                 }
 
+                teams[currentGame.team1] = teams[currentGame.team1] || generateNewTeam(currentGame.team1);
+                teams[currentGame.team2] = teams[currentGame.team2] || generateNewTeam(currentGame.team2);
 
-
-                teams[currentGame.team1] = teams[currentGame.team1] || {wins:0, losses:0, gp:0, name:currentGame.team1, pf:0, pa:0, wpct:0, streak:0, games:[], last5:'-', forfeits:0};
-                teams[currentGame.team2] = teams[currentGame.team2] || {wins:0, losses:0, gp:0, name:currentGame.team2, pf:0, pa:0, wpct:0, streak:0, games:[], last5:'-', forfeits:0};
-
-                var isForfeit = (currentGame.score1 + currentGame.score2) === 2;
-                if (!isForfeit)
+                if (!currentGame.isForfeit)
                 {
                     teams[currentGame.team1]["pf"] += currentGame.score1;
                     teams[currentGame.team1]["pa"] += currentGame.score2;
@@ -272,38 +268,69 @@
                 teams[currentGame.team2]["ppgd"] = teams[currentGame.team2]["ppg"] - teams[currentGame.team2]["oppg"];
 
             }
-            for (var team in teams){
-                var currentTeam = teams[team];
-                var winCount = 0;
-                var lossCount = 0;
-                var length = currentTeam.games.length - 1;
-                var count = 0;
-                while (length >= 0 && count != 5){
-                    if (currentTeam.games[length] === 'w'){
-                        winCount++;
-                    } else {
-                        lossCount++;
-                    }
-                    length--;
-                    count++;
-                }
 
-                currentTeam['last5'] = winCount + ' - ' + lossCount;
-
-                if (!(team === 'The Nerds' || team === 'Peanuts Gang'))
-                    $scope.standings.push(teams[team]);
-            }
+            //Add teams to standings
+            addTeamsToStandings(teams);
             $scope.$apply();
         }
 
+        function addTeamsToStandings(teams){
+            for (var team in teams){
+                var currentTeam = teams[team];
+                generateLast5Record(currentTeam);
+                if (!(team === 'The Nerds' || team === 'Peanuts Gang')) {
+                    $scope.standings.push(teams[team]);
+                }
+            }
+        }
+
+        function generateLast5Record(currentTeam){
+            var winCount = 0;
+            var lossCount = 0;
+            var length = currentTeam.games.length - 1;
+            var count = 0;
+            while (length >= 0 && count != 5){
+                if (currentTeam.games[length] === 'w'){
+                    winCount++;
+                } else {
+                    lossCount++;
+                }
+                length--;
+                count++;
+            }
+
+            currentTeam['last5'] = winCount + ' - ' + lossCount;
+        }
+
+        function generateNewTeam(team){
+            return {
+                wins:0,
+                losses:0,
+                gp:0,
+                name:team,
+                pf:0,
+                pa:0,
+                wpct:0,
+                streak:0,
+                games:[],
+                last5:'-',
+                forfeits:0
+            };
+        }
+
+        function generateStats(team, game){
+
+
+        }
+
+        //Handle clicking new team
         $("nav li").click(function(){
             var team =  $(this).html().trim().replace("&amp;", "&");
-            $scope.currentTeam = team;
 
             var array = $scope.standings.filter(function(value){
                 return value.name.localeCompare(team) === 0;
             });
-            $scope.currentTeamObj = array[0];
+            $scope.currentTeam = array[0];
             $scope.hasCurrentTeam = true;
 
             $("nav li").removeClass("selected");
@@ -311,6 +338,7 @@
             $scope.$apply();
         });
 
+        //Event Handlers for hover effect
         $("nav li").mouseleave(function(){
             var $selected = $(".selected");
             if ($selected.length === 0){
@@ -339,10 +367,9 @@
 
         $scope.$watch("currentTeam", function(newVal, oldVal){
             if (newVal){
-                $scope.games = $scope.origGames;
-                $scope.games = $scope.games.filter(function(value){
-                    return value.team1.localeCompare($scope.currentTeam) === 0 ||
-                    value.team2.localeCompare($scope.currentTeam) === 0 ;
+                $scope.games = $scope.origGames.filter(function(value){
+                    return value.team1.localeCompare($scope.currentTeam.name) === 0 ||
+                    value.team2.localeCompare($scope.currentTeam.name) === 0 ;
                 });
             }
         });
