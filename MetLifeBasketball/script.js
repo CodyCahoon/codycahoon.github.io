@@ -220,6 +220,7 @@
         function addTeamsToStandings(teams){
             for (var team in teams){
                 var currentTeam = teams[team];
+                setLogo(currentTeam);
                 if (!(team === 'The Nerds' || team === 'Peanuts Gang')) {
                     $scope.standings.push(teams[team]);
                 }
@@ -231,6 +232,7 @@
 
             for (var i = 0; i < $scope.standings.length; i++){
                 $scope.standings[i]["rank"] = i + 1;
+
             }
         }
 
@@ -342,6 +344,12 @@
             };
         }
 
+        var setLogo = function(team) {
+            var imgAddress = team.name.replace('&','').replace(' ', '').toLowerCase();
+            imgAddress = imgAddress.replace(' ', '');
+            team["logo"] = 'img/' + imgAddress + '.png';
+        }
+
         //Handle clicking new team
         $("nav li").click(function(){
             var team =  $(this).html().trim().replace("&amp;", "&");
@@ -350,7 +358,9 @@
                 return value.name.localeCompare(team) === 0;
             });
             $scope.currentTeam = array[0];
-            $scope.currentTeam.logo = "img/blank.png";
+            var imgAddress = team.replace('&','').replace(' ', '').toLowerCase();
+            imgAddress = imgAddress.replace(' ', '');
+            $scope.currentTeam.logo = 'img/' + imgAddress + '.png';
             $scope.hasCurrentTeam = true;
 
             $("nav li").removeClass("selected");

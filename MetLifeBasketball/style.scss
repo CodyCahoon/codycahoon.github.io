@@ -144,6 +144,16 @@ thead{
             width:20%;
         }
     }
+
+    .img-container{
+        width:50px;
+        text-align: center;
+        float:left;
+    }
+
+    img {
+        height:25px;
+    }
 }
 
 .team-stats th:hover, #standings th:nth-child(n + 3):hover, button:hover{
@@ -264,12 +274,17 @@ thead{
     width:100%;
     height:90px;
     background:white;
-    padding:0px 30px;
+
+    .img-container{
+        width:175px;
+        text-align:center;
+        float:left;
+        height:90px;
+    }
 
     img {
         margin:10px;
         height:70px;
-        float:left;
     }
 
     .vertical-line{
@@ -291,5 +306,22 @@ thead{
         margin:36px 15px;
         float:left;
         color:#666;
+    }
+}
+
+.team-bg{
+    width:100%;
+    height:100%;
+    text-align:center;
+    background:none;
+
+    tr {
+        background:none;
+        border:none;
+    }
+
+    img {
+        height:50vh;
+        opacity:0.65;
     }
 }
