@@ -3,17 +3,21 @@
 
     var app = angular.module("app", []);
 
-    var MainCtrl = function($scope){
+    var MainCtrl = function($scope, $filter){
         $scope.currentTeam = null;
         $scope.hasCurrentTeam = false;
 
         $scope.games = [];
         $scope.origGames = [];
         $scope.standings = [];
+        $scope.orderOn = null;
+        $scope.reverse = false;
 
         $scope.currentWeek = 0;
         $scope.currentWeekGames = [];
         $scope.maxWeek = 0;
+
+        var orderBy = $filter('orderBy');
 
         $scope.dates = [
             "3/22",
@@ -82,6 +86,7 @@
         $(document).ready(function(){
             loadGames();
             filterByWeek();
+            $scope.order('wpct');
 
             $("body").on('click', '#prevWeek', function(){
                 changeWeek(-1);
@@ -368,6 +373,8 @@
             $("nav li").css("color", "#F1F2F3");
             $scope.currentTeam = null;
             $scope.hasCurrentTeam = false;
+            $scope.orderOn = null;
+            $scope.order('wpct');
             $scope.$apply();
         }
 
@@ -385,6 +392,12 @@
                 return value.game === $scope.currentWeek;
             });
             $scope.$apply();
+        }
+
+        $scope.order = function(type) {
+            $scope.reverse = ($scope.orderOn === type) ? !$scope.reverse : true;
+            $scope.orderOn = type;
+            $scope.standings = orderBy($scope.standings, type, $scope.reverse);
         }
     }
 

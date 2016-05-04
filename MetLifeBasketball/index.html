@@ -130,34 +130,34 @@
                     <th>
 
                     </th>
-                    <th data-balloon="Wins" data-balloon-pos="up">
+                    <th data-balloon="Wins" data-balloon-pos="up" ng-click="order('wins')">
                         W
                     </th>
-                    <th data-balloon="Losses" data-balloon-pos="up">
+                    <th data-balloon="Losses" data-balloon-pos="up" ng-click="order('losses')">
                         L
                     </th>
-                    <th data-balloon="Winning Percentage" data-balloon-pos="up">
+                    <th data-balloon="Winning Percentage" data-balloon-pos="up" ng-click="order('wpct')">
                         PCT
                     </th>
-                    <th data-balloon="Points per game" data-balloon-pos="up">
+                    <th data-balloon="Points per game" data-balloon-pos="up" ng-click="order('ppg')">
                         PPG
                     </th>
-                    <th data-balloon="Opponents Points per game" data-balloon-pos="up">
+                    <th data-balloon="Opponents Points per game" data-balloon-pos="up" ng-click="order('oppg')">
                         Opp PPG
                     </th>
-                    <th data-balloon="Point Differential" data-balloon-pos="up">
+                    <th data-balloon="Point Differential" data-balloon-pos="up" ng-click="order('ppgd')">
                         DIFF
                     </th>
-                    <th data-balloon="Current Streak" data-balloon-pos="up">
+                    <th data-balloon="Current Streak" data-balloon-pos="up" ng-click="order('streak')">
                         STRK
                     </th>
-                    <th data-balloon="Record last 5 games" data-balloon-pos="up">
+                    <th data-balloon="Record last 5 games" data-balloon-pos="up" ng-click="order('last5')">
                         L5
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="team in standings | orderBy:['-wpct', 'losses', '-pf', '+pa']">
+                <tr ng-repeat="team in standings">
                     <td>
 
                     </td>
