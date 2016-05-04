@@ -187,7 +187,6 @@
             addGame(dr, 2, tn, 0, 12);
             addGame(bl, 2, tn, 0, 12);
 
-
             buildStandings();
         }
 
@@ -200,73 +199,12 @@
                     continue;
                 }
 
-                teams[currentGame.team1] = teams[currentGame.team1] || generateNewTeam(currentGame.team1);
-                teams[currentGame.team2] = teams[currentGame.team2] || generateNewTeam(currentGame.team2);
+                var team1 = teams[currentGame.team1] || generateNewTeam(currentGame.team1);
+                var team2 = teams[currentGame.team2] || generateNewTeam(currentGame.team2);
 
-                if (!currentGame.isForfeit)
-                {
-                    teams[currentGame.team1]["pf"] += currentGame.score1;
-                    teams[currentGame.team1]["pa"] += currentGame.score2;
-                    teams[currentGame.team2]["pf"] += currentGame.score2;
-                    teams[currentGame.team2]["pa"] += currentGame.score1;
-                    teams[currentGame.team1]["pd"] = teams[currentGame.team1]["pf"] - teams[currentGame.team1]["pa"];
-                    teams[currentGame.team2]["pd"] = teams[currentGame.team2]["pf"] - teams[currentGame.team2]["pa"];
-                } else {
-                    teams[currentGame.team1]["forfeits"]++;
-                    teams[currentGame.team2]["forfeits"]++;
-                }
-
-                if (currentGame.win1){
-                    teams[currentGame.team1]["wins"]++;
-                    teams[currentGame.team2]["losses"]++;
-
-                    teams[currentGame.team1]["games"].push("w");
-                    teams[currentGame.team2]["games"].push("l");
-
-                    if (teams[currentGame.team1]["streak"] >= 0) {
-                        teams[currentGame.team1]["streak"]++;
-                    } else {
-                        teams[currentGame.team1]["streak"] = 1;
-                    }
-
-                    if (teams[currentGame.team2]["streak"] <= 0) {
-                        teams[currentGame.team2]["streak"]--;
-                    } else {
-                        teams[currentGame.team2]["streak"] = -1;
-                    }
-                } else {
-                    teams[currentGame.team2]["wins"]++;
-                    teams[currentGame.team1]["losses"]++;
-
-                    teams[currentGame.team1]["games"].push("l");
-                    teams[currentGame.team2]["games"].push("w");
-
-                    if (teams[currentGame.team2]["streak"] >= 0) {
-                        teams[currentGame.team2]["streak"]++;
-                    } else {
-                        teams[currentGame.team2]["streak"] = 1;
-                    }
-
-                    if (teams[currentGame.team1]["streak"] <= 0) {
-                        teams[currentGame.team1]["streak"]--;
-                    } else {
-                        teams[currentGame.team1]["streak"] = -1;
-                    }
-                }
-                teams[currentGame.team1]["wpct"] = teams[currentGame.team1]["wins"] / (teams[currentGame.team1]["wins"] + teams[currentGame.team1]["losses"]);
-                teams[currentGame.team2]["wpct"] = teams[currentGame.team2]["wins"] / (teams[currentGame.team2]["wins"] + teams[currentGame.team2]["losses"]);
-                teams[currentGame.team1]["gp"] = teams[currentGame.team1]["wins"] + teams[currentGame.team1]["losses"];
-                teams[currentGame.team2]["gp"] = teams[currentGame.team2]["wins"] + teams[currentGame.team2]["losses"];
-
-                teams[currentGame.team1]["ppg"] = teams[currentGame.team1]["pf"] / (teams[currentGame.team1]["gp"] - teams[currentGame.team1]["forfeits"]);
-                teams[currentGame.team2]["ppg"] = teams[currentGame.team2]["pf"] / (teams[currentGame.team2]["gp"] - teams[currentGame.team2]["forfeits"]);
-
-                teams[currentGame.team1]["oppg"] = teams[currentGame.team1]["pa"] / (teams[currentGame.team1]["gp"] - teams[currentGame.team1]["forfeits"]);
-                teams[currentGame.team2]["oppg"] = teams[currentGame.team2]["pa"] / (teams[currentGame.team2]["gp"] - teams[currentGame.team2]["forfeits"]);
-
-                teams[currentGame.team1]["ppgd"] = teams[currentGame.team1]["ppg"] - teams[currentGame.team1]["oppg"];
-                teams[currentGame.team2]["ppgd"] = teams[currentGame.team2]["ppg"] - teams[currentGame.team2]["oppg"];
-
+                var stats = generateStats(team1, team2, currentGame);
+                teams[currentGame.team1] = stats.team1;
+                teams[currentGame.team2] = stats.team2;
             }
 
             //Add teams to standings
@@ -277,29 +215,102 @@
         function addTeamsToStandings(teams){
             for (var team in teams){
                 var currentTeam = teams[team];
-                generateLast5Record(currentTeam);
                 if (!(team === 'The Nerds' || team === 'Peanuts Gang')) {
                     $scope.standings.push(teams[team]);
                 }
             }
         }
 
-        function generateLast5Record(currentTeam){
+        function generateStats(team1, team2, game) {
+            if (!game.isForfeit)
+            {
+                team1["pf"] += game.score1;
+                team1["pa"] += game.score2;
+                team2["pf"] += game.score2;
+                team2["pa"] += game.score1;
+                team1["pd"] = team1["pf"] - team1["pa"];
+                team2["pd"] = team2["pf"] - team2["pa"];
+            } else {
+                team1["forfeits"]++;
+                team2["forfeits"]++;
+            }
+
+            if (game.win1){
+                team1["wins"]++;
+                team2["losses"]++;
+
+                team1["games"].push("w");
+                team2["games"].push("l");
+
+                if (team1["streak"] >= 0) {
+                    team1["streak"]++;
+                } else {
+                    team1["streak"] = 1;
+                }
+
+                if (team2["streak"] <= 0) {
+                    team2["streak"]--;
+                } else {
+                    team2["streak"] = -1;
+                }
+            } else {
+                team2["wins"]++;
+                team1["losses"]++;
+
+                team1["games"].push("l");
+                team2["games"].push("w");
+
+                if (team2["streak"] >= 0) {
+                    team2["streak"]++;
+                } else {
+                    team2["streak"] = 1;
+                }
+
+                if (team1["streak"] <= 0) {
+                    team1["streak"]--;
+                } else {
+                    team1["streak"] = -1;
+                }
+            }
+
+            team1["last5"] = generateLast5(team1);
+            team2["last5"] = generateLast5(team2);
+
+            team1["wpct"] = team1["wins"] / (team1["wins"] + team1["losses"]);
+            team2["wpct"] = team2["wins"] / (team2["wins"] + team2["losses"]);
+            team1["gp"] = team1["wins"] + team1["losses"];
+            team2["gp"] = team2["wins"] + team2["losses"];
+
+            team1["ppg"] = team1["pf"] / (team1["gp"] - team1["forfeits"]);
+            team2["ppg"] = team2["pf"] / (team2["gp"] - team2["forfeits"]);
+
+            team1["oppg"] = team1["pa"] / (team1["gp"] - team1["forfeits"]);
+            team2["oppg"] = team2["pa"] / (team2["gp"] - team2["forfeits"]);
+
+            team1["ppgd"] = team1["ppg"] - team1["oppg"];
+            team2["ppgd"] = team2["ppg"] - team2["oppg"];
+
+            return {
+                team1,
+                team2
+            };
+        }
+
+        function generateLast5(team){
             var winCount = 0;
             var lossCount = 0;
-            var length = currentTeam.games.length - 1;
+            var index = team.games.length - 1;
             var count = 0;
-            while (length >= 0 && count != 5){
-                if (currentTeam.games[length] === 'w'){
+            while (index >= 0 && count != 5){
+                if (team.games[index] === 'w'){
                     winCount++;
                 } else {
                     lossCount++;
                 }
-                length--;
+                index--;
                 count++;
             }
-
-            currentTeam['last5'] = winCount + ' - ' + lossCount;
+            return winCount + ' - ' + lossCount;
         }
 
         function generateNewTeam(team){
@@ -316,11 +327,6 @@
                 last5:'-',
                 forfeits:0
             };
-        }
-
-        function generateStats(team, game){
-
-
         }
 
         //Handle clicking new team
