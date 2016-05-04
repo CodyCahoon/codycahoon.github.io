@@ -224,6 +224,14 @@
                     $scope.standings.push(teams[team]);
                 }
             }
+
+            $scope.standings.sort(function(team1, team2){
+                return team1.wpct < team2.wpct;
+            })
+
+            for (var i = 0; i < $scope.standings.length; i++){
+                $scope.standings[i]["rank"] = i + 1;
+            }
         }
 
         function generateStats(team1, team2, game) {
@@ -342,6 +350,7 @@
                 return value.name.localeCompare(team) === 0;
             });
             $scope.currentTeam = array[0];
+            $scope.currentTeam.logo = "img/blank.png";
             $scope.hasCurrentTeam = true;
 
             $("nav li").removeClass("selected");

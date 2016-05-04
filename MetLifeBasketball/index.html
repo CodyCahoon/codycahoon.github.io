@@ -159,7 +159,7 @@
             <tbody>
                 <tr ng-repeat="team in standings">
                     <td>
-
+                        {{team.rank}}
                     </td>
                     <td>
                         {{team.name}}
@@ -197,8 +197,18 @@
     </section>
 
     <!-- Current team page -->
-    <h1 ng-if="hasCurrentTeam && !currentTeam.name.startsWith('EI')">{{currentTeam.name}}</h1>
-    <h1 ng-if="hasCurrentTeam && currentTeam.name.startsWith('EI')">EI & Trey</h1>
+    <div ng-if="hasCurrentTeam" class="team-subheader">
+        <img ng-src="{{currentTeam.logo}}" alt="{{currentTeam.name}} Logo" />
+        <div class="vertical-line"></div>
+        <h1 ng-if="!currentTeam.name.startsWith('EI')">{{currentTeam.name}}</h1>
+        <h1 ng-if="currentTeam.name.startsWith('EI')">EI & Trey</h1>
+        <span class="detailed-info" ng-if="currentTeam.rank === 1">{{currentTeam.rank}}st Overall</span>
+        <span class="detailed-info" ng-if="currentTeam.rank === 2">{{currentTeam.rank}}nd Overall</span>
+        <span class="detailed-info" ng-if="currentTeam.rank === 3">{{currentTeam.rank}}rd Overall</span>
+        <span class="detailed-info" ng-if="currentTeam.rank > 3">{{currentTeam.rank}}th Overall</span>
+
+    </div>
+
 
     <!-- Individual Team Scores -->
     <section class="team-stats team-schedule" ng-if="hasCurrentTeam">

@@ -2,7 +2,6 @@ html, body{
     height:100%;
     font-family: 'Roboto';
     font-weight:300;
-    counter-reset: tr;
 }
 
 body{
@@ -100,6 +99,7 @@ nav{
 
 section{
     float:left;
+    clear:left;
     width:48%;
     margin:25px 1%;
 }
@@ -126,13 +126,6 @@ th{
 
 thead{
     border:1px solid #ddd;
-}
-
-h1{
-    font-weight:400;
-    font-size:40px;
-    text-align:center;
-    margin:20px;
 }
 
 #standings{
@@ -165,11 +158,6 @@ h1{
 .loss{
     color:#E04444;
     font-weight:400;
-}
-
-#standings tr td:first-child::before{
-    counter-increment: tr;
-    content:counter(tr);
 }
 
 .team-stats{
@@ -266,7 +254,42 @@ h1{
     }
 }
 
-
 .team-detailed-stats{
     width:65%;
+    clear:none;
+}
+
+.team-subheader{
+
+    width:100%;
+    height:90px;
+    background:white;
+    padding:0px 30px;
+
+    img {
+        margin:10px;
+        height:70px;
+        float:left;
+    }
+
+    .vertical-line{
+        width:1px;
+        background:rgb(93, 93, 93);
+        height:70px;
+        margin:10px;
+        float:left;
+    }
+
+    h1 {
+        font-size:40px;
+        margin:20px;
+        float:left;
+        font-weight:400;
+    }
+
+    .detailed-info{
+        margin:36px 15px;
+        float:left;
+        color:#666;
+    }
 }
