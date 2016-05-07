@@ -207,6 +207,8 @@
         <div class="vertical-line"></div>
         <h1 ng-if="!currentTeam.name.startsWith('EI')">{{currentTeam.name}}</h1>
         <h1 ng-if="currentTeam.name.startsWith('EI')">EI & Trey</h1>
+        <span class="detailed-info">{{currentTeam.wins}} - {{currentTeam.losses}}</span>
+        <div class="vertical-line small"></div>
         <span class="detailed-info" ng-if="currentTeam.rank === 1">{{currentTeam.rank}}st Overall</span>
         <span class="detailed-info" ng-if="currentTeam.rank === 2">{{currentTeam.rank}}nd Overall</span>
         <span class="detailed-info" ng-if="currentTeam.rank === 3">{{currentTeam.rank}}rd Overall</span>
