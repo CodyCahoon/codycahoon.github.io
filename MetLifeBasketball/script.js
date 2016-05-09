@@ -390,7 +390,7 @@
             $(".selected").css("color", "F1F2F3");
         });
 
-        $("#home").click(clearFilters);
+        $("body").on("click", ".home", clearFilters);
 
         function clearFilters(){
             $("nav li").removeClass("selected");

@@ -88,8 +88,8 @@
 
     <!-- Navigation for teams -->
     <nav>
-        <div id="home">
-            Home
+        <div class="home">
+            <img src="img/metlife.png" alt="MetLife Logo" />
         </div>
         <ul>
             <li>
@@ -118,6 +118,14 @@
             </li>
         </ul>
     </nav>
+
+    <div ng-if="!hasCurrentTeam" class="main-subheader">
+        <img src="img/snoopy.png" alt="Snoopy image" />
+        <h1 class="league">MetLife Basketball</h1>
+        <div class="vertical-line"></div>
+        <a class="home">Home</a>
+        <a>Playoffs (coming soon)</a>
+    </div>
 
     <!-- Standings of league, home page -->
     <section id="standings" ng-if="!hasCurrentTeam">
