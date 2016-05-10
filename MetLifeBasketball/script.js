@@ -10,12 +10,15 @@
         $scope.games = [];
         $scope.origGames = [];
         $scope.standings = [];
+        $scope.leagueStandings = [];
         $scope.orderOn = null;
         $scope.reverse = false;
 
         $scope.currentWeek = 0;
         $scope.currentWeekGames = [];
         $scope.maxWeek = 0;
+
+        $scope.viewPlayoffs = false;
 
         var orderBy = $filter('orderBy');
 
@@ -228,6 +231,7 @@
                 setLogo(currentTeam);
                 if (!(team === 'The Nerds' || team === 'Peanuts Gang')) {
                     $scope.standings.push(teams[team]);
+
                 }
             }
 
@@ -237,8 +241,9 @@
 
             for (var i = 0; i < $scope.standings.length; i++){
                 $scope.standings[i]["rank"] = i + 1;
-
             }
+
+            angular.copy($scope.standings, $scope.leagueStandings);
         }
 
         function generateStats(team1, team2, game) {
@@ -392,6 +397,8 @@
 
         $("body").on("click", ".home", clearFilters);
 
+        $("body").on("click", ".playoffs", showPlayoffs);
+
         function clearFilters(){
             $("nav li").removeClass("selected");
             $("nav li").css("color", "#F1F2F3");
@@ -399,6 +406,12 @@
             $scope.hasCurrentTeam = false;
             $scope.orderOn = null;
             $scope.order('wpct');
+            $scope.viewPlayoffs = false;
+            $scope.$apply();
+        }
+
+        function showPlayoffs() {
+            $scope.viewPlayoffs = true;
             $scope.$apply();
         }
 

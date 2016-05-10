@@ -123,12 +123,12 @@
         <img src="img/snoopy.png" alt="Snoopy image" />
         <h1 class="league">MetLife Basketball</h1>
         <div class="vertical-line"></div>
-        <a class="home">Home</a>
-        <a>Playoffs (coming soon)</a>
+        <a class="home">Standings</a>
+        <a class="playoffs">Playoffs</a>
     </div>
 
     <!-- Standings of league, home page -->
-    <section id="standings" ng-if="!hasCurrentTeam">
+    <section id="standings" ng-if="!hasCurrentTeam && !viewPlayoffs">
         <table>
             <thead>
                 <tr>
@@ -344,6 +344,91 @@
             <tr>
                 <td>
                     <img ng-src="{{currentTeam.logo}}" alt="{{currentTeam.name}} Logo" />
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section ng-if="viewPlayoffs" class="playoff-tree">
+        <table>
+            <tr>
+                <td class="content">
+                    <span class="rank left">{{leagueStandings[0].rank}}</span>
+                    <span>{{leagueStandings[0].name}}</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="content">
+                    <span class="rank right">{{leagueStandings[2].rank}}</span>
+                    <span>{{leagueStandings[2].name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <span class="rank left">{{leagueStandings[7].rank}}</span>
+                    <span>{{leagueStandings[7].name}}</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="content">
+                    <span class="rank right">{{leagueStandings[5].rank}}</span>
+                    <span>{{leagueStandings[5].name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <span class="rank left">{{leagueStandings[4].rank}}</span>
+                    <span>{{leagueStandings[4].name}}</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="content">
+                    <span class="rank right">{{leagueStandings[6].rank}}</span>
+                    <span>{{leagueStandings[6].name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="content">
+                    <span class="rank left">{{leagueStandings[3].rank}}</span>
+                    <span>{{leagueStandings[3].name}}</span>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="content">
+                    <span class="rank right">{{leagueStandings[1].rank}}</span>
+                    <span>{{leagueStandings[1].name}}</span>
                 </td>
             </tr>
         </table>

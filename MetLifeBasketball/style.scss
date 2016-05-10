@@ -59,7 +59,7 @@ nav{
             -webkit-filter:grayscale(100%) brightness(100);
             -moz-filter:grayscale(100%) brightness(100);
             -o-filter:grayscale(100%) brightness(100);
-
+            padding-bottom:5px;
         }
 
         font-size:20px;
@@ -370,7 +370,7 @@ thead{
         font-size:18px;
         margin:0;
         margin:0 5px;
-        padding:10px 5px 11px;
+        padding:10px 5px;
         font-weight:300;
         text-decoration: none;
         border-bottom: 4px solid white;
@@ -385,7 +385,7 @@ thead{
 
 
     .league {
-        font-weight:100;
+        font-weight:300;
     }
 
     .vertical-line{
@@ -394,5 +394,47 @@ thead{
         height:30px;
         margin:10px;
         float:left;
+    }
+}
+
+.playoff-tree{
+    width:98%;
+
+    table {
+        background:none;
+        border:none;
+    }
+
+    td {
+        width:10%;
+        height:45px;
+        padding:10px;
+
+        &.content {
+            background:white;
+        }
+    }
+
+    .rank {
+
+        padding:0px 7px;
+
+        &.right {
+            float: right;
+
+            + span {
+                float:left;
+                padding: 0px 7px;
+            }
+        }
+
+        &.left {
+            float: left;
+
+            + span {
+                float:left;
+                padding: 0px 7px;
+            }
+        }
     }
 }
