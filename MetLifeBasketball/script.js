@@ -200,7 +200,7 @@
             addGame(bl, 2, pg, 0, 13);
             
             addGame(dr, 48, mb, 52, 14);
-            addGame(rb, 2, th, 0, 14); //forfeit
+            addGame(rb, 2, tn, 0, 14); //forfeit
             addGame(ei, 56, cl, 37, 14);
             addGame(bs, 36, dm, 74, 14);
             
