@@ -35,7 +35,6 @@
             "4/20",
             "4/26",
             "4/27",
-            "5/4",
             "5/5",
             "5/10",
             "5/11",
@@ -199,6 +198,13 @@
             addGame(rb, 59, dm, 33, 13);
             addGame(mb, 2, tn, 0, 13); //forfeit
             addGame(bl, 2, pg, 0, 13);
+            
+            addGame(dr, 48, mb, 52, 14);
+            addGame(rb, 2, th, 0, 14); //forfeit
+            addGame(ei, 56, cl, 37, 14);
+            addGame(bs, 36, dm, 74, 14);
+            
+            addGame(cl, 2, pg, 0, 15); //forfeit
 
             buildStandings();
         }
