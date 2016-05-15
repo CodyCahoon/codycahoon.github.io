@@ -205,6 +205,9 @@
             addGame(bs, 36, dm, 74, 14);
             
             addGame(cl, 2, pg, 0, 15); //forfeit
+            addGame(mb, 64, bl, 57, 15);
+            addGame(ei, 83, dm, 69, 15);
+            addGame(dr, 53, rb, 59, 15);
 
             buildStandings();
         }
