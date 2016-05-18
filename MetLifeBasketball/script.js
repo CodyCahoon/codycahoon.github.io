@@ -88,7 +88,7 @@
         $(document).ready(function(){
             loadGames();
             filterByWeek();
-            $scope.order('rank');
+            $scope.order('-rank');
 
             $("body").on('click', '#prevWeek', function(){
                 changeWeek(-1);
@@ -414,7 +414,7 @@
             $scope.currentTeam = null;
             $scope.hasCurrentTeam = false;
             $scope.orderOn = null;
-            $scope.order('rank');
+            $scope.order('-rank');
             $scope.viewPlayoffs = false;
             $scope.$apply();
         }
