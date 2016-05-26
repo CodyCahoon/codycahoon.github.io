@@ -217,6 +217,11 @@
             addGame(rb, 2, pg, 0, 17);
             addGame(bs, 46, bl, 60, 17);
             addGame(ei, 2, dr, 0, 17);
+            
+            addGame(dr, 46, cl, 49, 18);
+            addGame(bs, 47, mb, 62, 18);
+            addGame(ei, 80, bl, 63, 18);
+            addGame(dm, 2, tn, 0, 18);
 
             buildStandings();
         }
