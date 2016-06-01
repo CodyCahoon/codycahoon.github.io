@@ -40,7 +40,9 @@
             "5/11",
             "5/18",
             "5/24",
-            "5/25"
+            "5/25",
+            "5/31",
+            "6/1"
         ];
         var teams = [];
 
@@ -222,6 +224,10 @@
             addGame(bs, 47, mb, 62, 18);
             addGame(ei, 80, bl, 63, 18);
             addGame(dm, 2, tn, 0, 18);
+            
+            addGame(dr, 63, bl, 36, 19);
+            addGame(rb, 64, cl, 49, 19);
+            addGame(ei, 2, tn, 0, 19);
 
             buildStandings();
         }
