@@ -35,14 +35,14 @@
             "4/20",
             "4/26",
             "4/27",
-            "5/4",
             "5/5",
             "5/10",
             "5/11",
-            "5/17",
             "5/18",
             "5/24",
-            "5/25"
+            "5/25",
+            "5/31",
+            "6/1"
         ];
         var teams = [];
 
@@ -89,7 +89,7 @@
         $(document).ready(function(){
             loadGames();
             filterByWeek();
-            $scope.order('wpct');
+            $scope.order('-rank');
 
             $("body").on('click', '#prevWeek', function(){
                 changeWeek(-1);
@@ -199,6 +199,35 @@
             addGame(rb, 59, dm, 33, 13);
             addGame(mb, 2, tn, 0, 13); //forfeit
             addGame(bl, 2, pg, 0, 13);
+            
+            addGame(dr, 48, mb, 52, 14);
+            addGame(rb, 2, tn, 0, 14); //forfeit
+            addGame(ei, 56, cl, 37, 14);
+            addGame(bs, 36, dm, 74, 14);
+            
+            addGame(cl, 2, pg, 0, 15); //forfeit
+            addGame(mb, 64, bl, 57, 15);
+            addGame(ei, 83, dm, 69, 15);
+            addGame(dr, 53, rb, 59, 15);
+            
+            addGame(cl, 45, dm, 43, 16);
+            addGame(mb, 2, rb, 0, 16);
+            addGame(bl, 2, rb, 0, 16);
+            
+            addGame(cl, 2, tn, 0, 17);
+            addGame(mb, 62, rb, 57, 17);
+            addGame(rb, 2, pg, 0, 17);
+            addGame(bs, 46, bl, 60, 17);
+            addGame(ei, 2, dr, 0, 17);
+            
+            addGame(dr, 46, cl, 49, 18);
+            addGame(bs, 47, mb, 62, 18);
+            addGame(ei, 80, bl, 63, 18);
+            addGame(dm, 2, tn, 0, 18);
+            
+            addGame(dr, 63, bl, 36, 19);
+            addGame(rb, 64, cl, 49, 19);
+            addGame(ei, 2, tn, 0, 19);
 
             buildStandings();
         }
@@ -405,7 +434,7 @@
             $scope.currentTeam = null;
             $scope.hasCurrentTeam = false;
             $scope.orderOn = null;
-            $scope.order('wpct');
+            $scope.order('-rank');
             $scope.viewPlayoffs = false;
             $scope.$apply();
         }
