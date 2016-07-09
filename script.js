@@ -31,7 +31,6 @@
     });
 
     function newCommand(){
-        prevCommandIndex ++;
         commands.push(currentCommand);
         currentCommand = "";
         currentCommandLength = 0;
@@ -61,7 +60,7 @@
                 removeLetter();
             }
         }
-        
+
     });
 
 
