@@ -9,7 +9,7 @@ html, body {
 
 .main {
     width: 100%;
-    height: 100vh;
+    height: 140%;
     background: #464646;
     margin: 0;
 }
@@ -50,11 +50,11 @@ html, body {
 
 @keyframes move-before {
     0% {
-        transform: translate3d(-20px, 0px, 0);
+        transform: translate3d(-10px, 0px, 0);
         z-index: 1;
     }
     25% {
-        transform: translate3d(-10px, -10px, 0);
+        transform: translate3d(-5px, -5px, 0);
         z-index: 0;
     }
     50% {
@@ -62,21 +62,21 @@ html, body {
         z-index: 1;
     }
     75% {
-        transform: translate3d(-10px, 10px, 0);
+        transform: translate3d(-5px, 5px, 0);
         z-index: 0;
     }
     100% {
-        transform: translate3d(-20px, 0px, 0);
+        transform: translate3d(-10px, 0px, 0);
         z-index: 1;
     }
 }
 @keyframes move-after {
     0% {
-        transform: translate3d(-20px, 0px, 0);
+        transform: translate3d(-10px, 0px, 0);
         z-index: 1;
     }
     25% {
-        transform: translate3d(-10px, -10px, 0);
+        transform: translate3d(-5px, -5px, 0);
         z-index: 0;
     }
     50% {
@@ -84,18 +84,18 @@ html, body {
         z-index: 1;
     }
     75% {
-        transform: translate3d(-10px, 10px, 0);
+        transform: translate3d(-5px, 5px, 0);
         z-index: 0;
     }
     100% {
-        transform: translate3d(-20px, 0px, 0);
+        transform: translate3d(-10px, 0px, 0);
         z-index: 1;
     }
 }
 .character-card {
     font-family: 'Quicksand', sans-serif;
     color: #129AED;
-    margin: 40px 40px 0 20px;
+    margin: 50px 40px 0 20px;
     padding: 16px 0 8px;
     position: relative;
     text-transform: uppercase;
@@ -105,8 +105,6 @@ html, body {
     min-width: 50%;
     flex-grow: 1;
     display: flex;
-    flex-flow: column;
-
 }
 .character-card:after {
     position: absolute;
@@ -118,8 +116,7 @@ html, body {
     border: 6px solid #129AED;
     /*animation-name: move-after;
     animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-delay: attr(data-delay);*/
+    animation-iteration-count: infinite;*/
 }
 .character-card:before {
     position: absolute;
@@ -129,14 +126,14 @@ html, body {
     height: 100%;
     content: '';
     border: 6px solid #73D8EF;
-   /* animation-name: move-before;
+    /*animation-name: move-before;
     animation-duration: 5s;
-    animation-iteration-count: infinite;
-        animation-delay: attr(data-delay);*/
+    animation-iteration-count: infinite;*/
 
 }
-.character-card:hover:after {
-    transform: translate3d(4px, 0, 0);
+
+.character-card .character-info {
+    width: 100%;
 }
 .character-card .character-label {
     display: block;
