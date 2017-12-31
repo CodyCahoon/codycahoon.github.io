@@ -7,7 +7,6 @@ html, body {
 
 .main {
     width: 100vw;
-    height: 140%;
     background: #414249;
     margin: 0;
     padding: 0;
@@ -123,8 +122,8 @@ html, body {
     height: 100%;
     color: #129AED;
     text-align: left;
-
 }
+
 .character-card .character-name {
     display: block;
     margin: -4px 0 0;

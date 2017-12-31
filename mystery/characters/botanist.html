@@ -1,38 +1,106 @@
 <!doctype html>
 <html>
-    <title>Botanist</title>
-    <link rel="stylesheet" type="text/css" href="./css/characters.css" />
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="./css/botanist.css" />
-</html>
-
-<div class="character">
-
-    <div class="cards">
-        <a href="../index.html" class="character-card botanist">
-            <div class="character-icon">
-                <img src="../images/botanist-icon.png"/>
+    <head>
+        <title>Botanist</title>
+        <link rel="stylesheet" type="text/css" href="./css/characters.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/open-clue.css"/>
+        <link rel="stylesheet" type="text/css" href="./css/botanist.css"/>
+    </head>
+    <body>
+        <div class="character">
+            <!-- Heading -->
+            <div class="cards">
+                <a href="../index.html" class="character-card botanist">
+                    <div class="character-icon">
+                        <img src="../images/botanist-icon.png"/>
+                    </div>
+                    <div class="character-info">
+                        <label class="character-label">The</label>
+                        <h1 class="character-name" data-name="Botanist">Botanist</h1>
+                    </div>
+                    <div class="character-icon">
+                        <img src="../images/botanist-icon.png"/>
+                    </div>
+                </a>
             </div>
-            <div class="character-info">
-              <label class="character-label">The</label>
-              <h1 class="character-name" data-name="Botanist">Botanist</h1>
+            <!-- Clue tiles -->
+            <div class="clues">
+                <div class="clue" onclick="toggleClue(1)">
+                    <span class="clue-number" data-clue="1">1</span>
+                </div>
+                <div class="clue locked" onclick="toggleClue(2)">
+                    <span class="clue-number" data-clue="2">2</span>
+                </div>
+                <div class="clue locked" onclick="toggleClue(3)">
+                    <span class="clue-number" data-clue="3">3</span>
+                </div>
             </div>
-            <div class="character-icon">
-                <img src="../images/botanist-icon.png"/>
+            <!-- Actual Clues -->
+            <div id="clue-1" class="open-clue hidden">
+                <div class="cards">
+                    <a href="" class="character-card clue">
+                        <div class="character-icon">
+                            <img src="../images/clue-icon.png"/>
+                        </div>
+                        <div class="character-info">
+                            <h1 class="character-name" data-name="Clue #1">Clue #1</h1>
+                        </div>
+                        <div class="character-icon">
+                            <img src="../images/clue-icon.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="clue-text">
+                    <p>You are found in the bathroom on the 2nd night. You decide to break into the test clues!</p>
+                    <a href="./botanist.html" class="back-button">
+                        <span class="back-button-txt" data-text="Back to Botanist">Back to Botanist</span>
+                    </a>
+                </div>
             </div>
-        </a>
-    </div>
-
-    <div class="clues">
-        <div class="clue">
-            <span class="clue-number" data-clue="1">1</span>
-         </div>
-        <div class="clue locked">
-            <span class="clue-number" data-clue="2">2</span>
-         </div>  
-         <div class="clue locked">
-            <span class="clue-number" data-clue="3">3</span>
-         </div>   
-         
-    </div>
-</div>
+            <div id="clue-2" class="open-clue hidden">
+                <div class="cards">
+                    <a href="" class="character-card clue">
+                        <div class="character-icon">
+                            <img src="../images/clue-icon.png"/>
+                        </div>
+                        <div class="character-info">
+                            <h1 class="character-name" data-name="Clue #2">Clue #2</h1>
+                        </div>
+                        <div class="character-icon">
+                            <img src="../images/clue-icon.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="clue-text">
+                    <p>You are found in the bathroom on the 2nd night. You decide to break into the test clues!</p>
+                    <a href="./botanist.html" class="back-button">
+                        <span class="back-button-txt" data-text="Back to Botanist">Back to Botanist</span>
+                    </a>
+                </div>
+            </div>
+            <div id="clue-3" class="open-clue hidden">
+                <div class="cards">
+                    <a href="" class="character-card clue">
+                        <div class="character-icon">
+                            <img src="../images/clue-icon.png"/>
+                        </div>
+                        <div class="character-info">
+                            <h1 class="character-name" data-name="Clue #3">Clue #3</h1>
+                        </div>
+                        <div class="character-icon">
+                            <img src="../images/clue-icon.png"/>
+                        </div>
+                    </a>
+                </div>
+                <div class="clue-text">
+                    <p>You are found in the bathroom on the 2nd night. You decide to break into the test clues!</p>
+                    <a href="./botanist.html" class="back-button">
+                        <span class="back-button-txt" data-text="Back to Botanist">Back to Botanist</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script src="../scripts/mystery.js"></script>
+    </body>
+    </html

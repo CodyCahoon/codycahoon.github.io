@@ -76,8 +76,6 @@
     z-index: 1;
 }
 
-
-
 .character .clues .clue .clue-number:after {
     position: absolute;
     z-index: -1;

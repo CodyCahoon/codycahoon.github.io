@@ -14,3 +14,19 @@
 .character .clues .clue:before {
     border-color: #3CA559;
 }
+
+.open-clue .back-button:before {
+    border: 6px solid #3CA559;
+}
+
+.open-clue .back-button:after {
+    border: 6px solid #75D791;
+}
+
+.open-clue .back-button {
+    color: #75D791;
+}
+
+.open-clue .back-button-txt:after {
+    color: #3CA559;
+}
