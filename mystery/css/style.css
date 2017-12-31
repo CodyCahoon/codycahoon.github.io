@@ -8,10 +8,11 @@ html, body {
 }
 
 .main {
-    width: 100%;
+    width: 100vw;
     height: 140%;
     background: #414249;
     margin: 0;
+    padding: 0;
 }
 
 .cards {
@@ -20,6 +21,8 @@ html, body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100vw;
+    padding: 0;
+    margin: 0;
 }
 
 .mystery-title {
@@ -47,6 +50,7 @@ html, body {
     color: #EDAF12;
     text-align: center;
 }
+
 .character-card {
     font-family: 'Quicksand', sans-serif;
     color: #129AED;
@@ -60,7 +64,9 @@ html, body {
     flex-grow: 1;
     display: flex;
     justify-content: flex-start;
+    text-decoration: none;
 }
+
 .character-card:after {
     position: absolute;
     top: 0;

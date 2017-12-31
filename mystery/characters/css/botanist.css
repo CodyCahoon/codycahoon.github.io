@@ -1,0 +1,16 @@
+.character .clues .clue {
+    border-color: #75D791;
+    color: #75D791;
+}
+
+.character .clues .clue .clue-number:after {
+    color: #3CA559;
+}
+
+.character .clues .clue:after {
+    border-color: #3CA559;
+}
+
+.character .clues .clue:before {
+    border-color: #75D791;
+}
