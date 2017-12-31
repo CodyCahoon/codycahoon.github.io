@@ -7,7 +7,7 @@ html, body {
 
 .main {
     width: 100vw;
-    background: #414249;
+    background: #252525;
     margin: 0;
     padding: 0;
 }
@@ -25,7 +25,7 @@ html, body {
 .mystery-title {
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
-    color: #a0a0a0;
+    color: #f3f3f3;
     font-weight: 100;
     position: relative;
     display: block;
@@ -45,7 +45,7 @@ html, body {
     height: 100%;
     top: 14px;
     left: 4px;
-    color: #737373;
+    color: grey;
     text-align: center;
     font-weight: bold;
 }
@@ -63,6 +63,7 @@ html, body {
     display: flex;
     justify-content: flex-start;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .character-card:after {
@@ -132,6 +133,7 @@ html, body {
     z-index: 1;
     font-size: 2.75em;
     text-align: left;
+    font-weight: bold;
 }
 
 .character-card .character-name:after {
@@ -225,4 +227,85 @@ html, body {
 
 .character-card.craftsman:before {
     border-color: #c1bf6f;
+}
+
+/* Writer */
+.character-card.writer .character-label,
+.character-card.writer .character-name {
+    color: #FFB25C;
+}
+
+.character-card.writer .character-label:after,
+.character-card.writer .character-name:after {
+    color: #de892a;
+
+}
+
+.character-card.writer:after {
+    border-color: #FFB25C;
+}
+
+.character-card.writer:before {
+    border-color: #de892a;
+}
+
+/* Preacher */
+.character-card.preacher .character-label,
+.character-card.preacher .character-name {
+    color: #9483fd;
+}
+
+.character-card.preacher .character-label:after,
+.character-card.preacher .character-name:after {
+    color: #7059FF;
+
+}
+
+.character-card.preacher:after {
+    border-color: #9483fd;
+}
+
+.character-card.preacher:before {
+    border-color: #7059FF;
+}
+
+/* Traveler */
+.character-card.traveler .character-label,
+.character-card.traveler .character-name {
+    color: #FA8CFF;
+}
+
+.character-card.traveler .character-label:after,
+.character-card.traveler .character-name:after {
+    color:#c56cca;
+
+}
+
+.character-card.traveler:after {
+    border-color: #FA8CFF;
+}
+
+.character-card.traveler:before {
+    border-color: #c56cca;
+}
+
+
+/* Athlete */
+.character-card.athlete .character-label,
+.character-card.athlete .character-name {
+    color: #1AE29B;
+}
+
+.character-card.athlete .character-label:after,
+.character-card.athlete .character-name:after {
+    color:#0eab73;
+
+}
+
+.character-card.athlete:after {
+    border-color: #1AE29B;
+}
+
+.character-card.athlete:before {
+    border-color: #0eab73;
 }
