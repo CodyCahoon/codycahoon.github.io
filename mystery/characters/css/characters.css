@@ -1,31 +1,38 @@
 .character {
     background: #414249;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:  column;
 }
 
 .character .clues {
     display: flex;
     flex-flow: column;
-    padding: 10px 16px;
-    margin-top: 40px;
     font-family: 'Quicksand', sans-serif;
-    height: 70vh;
+    height: 100%;
+    flex-grow: 1;
 }
 
 .character .clues .clue {
     font-size: 3em;
+    flex-grow: 1;
     color: white;
-    padding: 26px 0 8px;
-    margin: 50px 40px 0 20px;
+    padding: 8px 0 8px;
+    margin: 40px 30px;
     text-align: center;
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .character .clues .clue:after {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -2px;
+    left: -2px;
     width: 100%;
     height: 100%;
     content: '';
@@ -34,17 +41,34 @@
 
 .character .clues .clue:before {
     position: absolute;
-    top: 9px;
-    left: 9px;
+    top: -12px;
+    left: -12px;
     width: 100%;
     height: 100%;
     content: '';
     border: 6px solid #73D8EF;
 }
 
-.character .clues .clue.hidden {
+.character .clues .clue {
     font-size: 10em;
     font-weight: bold;
+}
+
+.character .clues .clue.locked:after {
+    border-color: #a0a0a0;
+}
+
+.character .clues .clue.locked:before {
+    border-color: #737373;
+}
+
+.character .clues .clue.locked .clue-number {
+    color: #a0a0a0;
+}
+
+.character .clues .clue.locked .clue-number:after {
+    color: #737373;
+
 }
 
 .character .clues .clue .clue-number {
@@ -52,18 +76,19 @@
     z-index: 1;
 }
 
+
+
 .character .clues .clue .clue-number:after {
     position: absolute;
     z-index: -1;
     content: attr(data-clue);
     width: 100%;
     height: 100%;
-    top: .01em;
-    left: .01em;
+    top: 3px;
+    left: 7px;
     color: #EDAF12;
     text-align: center;
 }
-
 
 .character .character-card {
     padding: 0;

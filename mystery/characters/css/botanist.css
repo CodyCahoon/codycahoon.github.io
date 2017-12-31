@@ -8,9 +8,9 @@
 }
 
 .character .clues .clue:after {
-    border-color: #3CA559;
+    border-color: #75D791;
 }
 
 .character .clues .clue:before {
-    border-color: #75D791;
+    border-color: #3CA559;
 }

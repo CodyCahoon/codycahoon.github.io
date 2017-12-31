@@ -1,16 +1,16 @@
 .character .clues .clue {
-    border-color: #E87777;
-    color: #E87777;
+    border-color: #c4bbfd;
+    color: #c4bbfd;
 }
 
 .character .clues .clue .clue-number:after {
-    color: #D05959;
+    color: #9E90F5;
 }
 
 .character .clues .clue:after {
-    border-color: #E87777;
+    border-color: #c4bbfd;
 }
 
 .character .clues .clue:before {
-    border-color: #D05959;
+    border-color: #9E90F5;
 }

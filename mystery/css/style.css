@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand");
 
-
-
 html, body {
     padding: 0;
     margin: 0;
@@ -21,14 +19,14 @@ html, body {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100vw;
-    padding: 0;
+    padding: 0 0 40px;
     margin: 0;
 }
 
 .mystery-title {
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
-    color: #ED8612;
+    color: #a0a0a0;
     font-weight: 100;
     position: relative;
     display: block;
@@ -37,6 +35,7 @@ html, body {
     padding-top: 10px;
     z-index: 0;
     font-size: 3em;
+    font-weight: bold;
 }
 
 .mystery-title:after {
@@ -45,20 +44,20 @@ html, body {
     content: attr(data-name);
     width: 100%;
     height: 100%;
-    top: 13px;
-    left: 3px;
-    color: #EDAF12;
+    top: 14px;
+    left: 4px;
+    color: #737373;
     text-align: center;
+    font-weight: bold;
 }
 
 .character-card {
     font-family: 'Quicksand', sans-serif;
-    color: #129AED;
-    margin: 50px 40px 0 20px;
-    padding: 26px 0 8px;
+    color: #73D8EF;
+    margin: 25px 20px;
+    padding: 20px 0 26px;
     position: relative;
     text-transform: uppercase;
-    text-align: center;
     z-index: 2;
     width: 100%;
     flex-grow: 1;
@@ -69,26 +68,30 @@ html, body {
 
 .character-card:after {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    border: 6px solid #129AED;
-}
-.character-card:before {
-    position: absolute;
-    top: 9px;
-    left: 9px;
+    top: -2px;
+    left: -2px;
     width: 100%;
     height: 100%;
     content: '';
     border: 6px solid #73D8EF;
+    z-index: 1;
+}
+
+.character-card:before {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 100%;
+    height: 100%;
+    content: '';
+    border: 6px solid #129AED;
+    z-index: 2;
 }
 
 .character-card .character-icon {
     flex-grow: 1;
     width:  7.5%;
+    text-align: center;
 }
 
 .character-card .character-info {
@@ -109,6 +112,7 @@ html, body {
     font-size: 2em;
     text-align: left;
 }
+
 .character-card .character-label:after {
     position: absolute;
     z-index: -1;
@@ -117,7 +121,7 @@ html, body {
     left: 3px;
     width: 100%;
     height: 100%;
-    color: #73D8EF;
+    color: #129AED;
     text-align: left;
 
 }
@@ -130,6 +134,7 @@ html, body {
     font-size: 2.75em;
     text-align: left;
 }
+
 .character-card .character-name:after {
     position: absolute;
     z-index: -1;
@@ -138,10 +143,10 @@ html, body {
     height: 100%;
     top: 4px;
     left: 4px;
-    color: #73D8EF;
+    color: #129AED;
 }
 
-/* BOTANIST */
+/* Engineer */
 .character-card.botanist .character-label,
 .character-card.botanist .character-name {
     color: #75D791;
@@ -155,14 +160,14 @@ html, body {
 }
 
 .character-card.botanist:after {
-    border-color: #3CA559;
-}
-
-.character-card.botanist:before {
     border-color: #75D791;
 }
 
-/* DOCTOR */
+.character-card.botanist:before {
+    border-color: #3CA559;
+}
+
+/* Doctor */
 .character-card.doctor .character-label,
 .character-card.doctor .character-name {
     color: #E87777;
@@ -176,9 +181,49 @@ html, body {
 }
 
 .character-card.doctor:after {
-    border-color: #D05959;
+    border-color: #E87777;
 }
 
 .character-card.doctor:before {
-    border-color: #E87777;
+    border-color: #D05959;
+}
+
+/* Engineer */
+.character-card.engineer .character-label,
+.character-card.engineer .character-name {
+    color: #c4bbfd;
+}
+
+.character-card.engineer .character-label:after,
+.character-card.engineer .character-name:after {
+    color: #9E90F5;
+
+}
+
+.character-card.engineer:after {
+    border-color: #c4bbfd;
+}
+
+.character-card.engineer:before {
+    border-color: #9E90F5;
+}
+
+/* Craftsman */
+.character-card.craftsman .character-label,
+.character-card.craftsman .character-name {
+    color: #FFFB75;
+}
+
+.character-card.craftsman .character-label:after,
+.character-card.craftsman .character-name:after {
+    color: #c1bf6f;
+
+}
+
+.character-card.craftsman:after {
+    border-color: #FFFB75;
+}
+
+.character-card.craftsman:before {
+    border-color: #c1bf6f;
 }
