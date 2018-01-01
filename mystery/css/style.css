@@ -45,7 +45,7 @@ html, body {
     height: 100%;
     top: 14px;
     left: 4px;
-    color: grey;
+    color: #9B9B9B;
     text-align: center;
     font-weight: bold;
 }
@@ -189,25 +189,25 @@ html, body {
     border-color: #C0392B;
 }
 
-/* Meteorologist */
-.character-card.meteorologist .character-label,
-.character-card.meteorologist .character-name {
-    color: #00CFFF;
+/* Collector */
+.character-card.collector .character-label,
+.character-card.collector .character-name {
+    color: #00EFFF;
 
 }
 
-.character-card.meteorologist .character-label:after,
-.character-card.meteorologist .character-name:after {
-    color: #108FAC;
+.character-card.collector .character-label:after,
+.character-card.collector .character-name:after {
+    color: #07ADB9;
 
 }
 
-.character-card.meteorologist:after {
-    border-color: #00CFFF;
+.character-card.collector:after {
+    border-color: #00EFFF;
 }
 
-.character-card.meteorologist:before {
-    border-color: #108FAC;
+.character-card.collector:before {
+    border-color: #07ADB9;
 }
 
 /* Engineer */

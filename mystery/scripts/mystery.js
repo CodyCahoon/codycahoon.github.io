@@ -11,3 +11,7 @@ function toggleClue(clueNumber) {
         }
     }
 }
+
+function openClue(clueNumber) {
+    
+}

@@ -1,20 +1,20 @@
 .character .clues .clue {
-    border-color: #2ECC71;
-    color: #2ECC71;
+    border-color: #FEB711;
+    color: #FEB711;
 }
 
 .character .clues .clue:after, .open-clue .back-button:after {
-    border-color: #2ECC71;
+    border-color: #FEB711;
 }
 
 .open-clue .back-button {
-    color: #2ECC71;
+    color: #FEB711;
 }
 
 .character .clues .clue:before, .open-clue .back-button:before {
-    border-color: #278C51;
+    border-color: #DD8E11;
 }
 
 .character .clues .clue .clue-number:after, .open-clue .back-button-txt:after {
-    color: #278C51;
+    color: #DD8E11;
 }

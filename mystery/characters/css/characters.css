@@ -54,6 +54,18 @@
     font-weight: bold;
 }
 
+.character .clues .clue .clue-lock {
+    display: none;
+}
+
+.character .clues .clue.locked .clue-number {
+    display: none;
+}
+
+.character .clues .clue.locked .clue-number.clue-lock {
+    display: block;
+}
+
 .character .clues .clue.locked:after {
     border-color: #a0a0a0;
 }

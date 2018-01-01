@@ -1,16 +1,20 @@
 .character .clues .clue {
-    border-color: #E87777;
-    color: #E87777;
+    border-color: #E74C3C;
+    color: #E74C3C;
 }
 
-.character .clues .clue .clue-number:after {
-    color: #D05959;
+.character .clues .clue:after, .open-clue .back-button:after {
+    border-color: #E74C3C;
 }
 
-.character .clues .clue:after {
-    border-color: #E87777;
+.open-clue .back-button {
+    color: #E74C3C;
 }
 
-.character .clues .clue:before {
-    border-color: #D05959;
+.character .clues .clue:before, .open-clue .back-button:before {
+    border-color: #C0392B;
+}
+
+.character .clues .clue .clue-number:after, .open-clue .back-button-txt:after {
+    color: #C0392B;
 }
