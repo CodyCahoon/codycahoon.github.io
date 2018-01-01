@@ -250,23 +250,23 @@ html, body {
     border-color: #BEA84F;
 }
 
-/* Writer */
-.character-card.writer .character-label,
-.character-card.writer .character-name {
+/* Chef */
+.character-card.chef .character-label,
+.character-card.chef .character-name {
     color: #FEB711;
 }
 
-.character-card.writer .character-label:after,
-.character-card.writer .character-name:after {
+.character-card.chef .character-label:after,
+.character-card.chef .character-name:after {
     color: #DD8E11;
 
 }
 
-.character-card.writer:after {
+.character-card.chef:after {
     border-color: #FEB711;
 }
 
-.character-card.writer:before {
+.character-card.chef:before {
     border-color: #DD8E11;
 }
 
