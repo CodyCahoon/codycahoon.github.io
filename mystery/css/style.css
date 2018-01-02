@@ -217,20 +217,20 @@
     border-color: #8550F0;
 }
 
-/* Craftsman */
-.character-card.craftsman .character-label, .character-card.craftsman .character-name {
+/* Chemist */
+.character-card.chemist .character-label, .character-card.chemist .character-name {
     color: #FFDE5A;
 }
 
-.character-card.craftsman .character-label:after, .character-card.craftsman .character-name:after {
+.character-card.chemist .character-label:after, .character-card.chemist .character-name:after {
     color: #BEA84F;
 }
 
-.character-card.craftsman:after {
+.character-card.chemist:after {
     border-color: #FFDE5A;
 }
 
-.character-card.craftsman:before {
+.character-card.chemist:before {
     border-color: #BEA84F;
 }
 
@@ -302,20 +302,20 @@
     border-color: #1A7563;
 }
 
-/* Athlete */
-.character-card.athlete .character-label, .character-card.athlete .character-name {
+/* Architect */
+.character-card.architect .character-label, .character-card.architect .character-name {
     color: #5D9CEC;
 }
 
-.character-card.athlete .character-label:after, .character-card.athlete .character-name:after {
+.character-card.architect .character-label:after, .character-card.architect .character-name:after {
     color: #3776ca;
 }
 
-.character-card.athlete:after {
+.character-card.architect:after {
     border-color: #5D9CEC;
 }
 
-.character-card.athlete:before {
+.character-card.architect:before {
     border-color: #3776ca;
 }
 

@@ -1,10 +1,14 @@
 // Stores passwords to specific html pages
 var passwords = {
-    botanist: 'plant',
+    architect: 'build',
+    botanist: 'bitcoin',
     chef: 'cook',
+    chemist: 'spud',
     collector: 'items',
     doctor: 'cure',
-    engineer: 'fix'
+    engineer: 'fix',
+    meteorologist: 'cloud',
+    traveler: 'getlit'
 };
 
 // Maps character names to their html page
