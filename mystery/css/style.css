@@ -92,7 +92,7 @@
 
 .character-card .character-icon {
     flex-grow: 1;
-    width: 7.5%;
+    width: 8%;
     text-align: center;
 }
 
@@ -168,19 +168,19 @@
 
 /* Doctor */
 .character-card.doctor .character-label, .character-card.doctor .character-name {
-    color: #E74C3C;
+    color: #D8334A;
 }
 
 .character-card.doctor .character-label:after, .character-card.doctor .character-name:after {
-    color: #C0392B;
+    color: #BF263C;
 }
 
 .character-card.doctor:after {
-    border-color: #E74C3C;
+    border-color: #D8334A;
 }
 
 .character-card.doctor:before {
-    border-color: #C0392B;
+    border-color: #BF263C;
 }
 
 /* Collector */
@@ -202,7 +202,7 @@
 
 /* Engineer */
 .character-card.engineer .character-label, .character-card.engineer .character-name {
-    color: #A579FF;
+    color: #AC92EC;
 }
 
 .character-card.engineer .character-label:after, .character-card.engineer .character-name:after {
@@ -210,7 +210,7 @@
 }
 
 .character-card.engineer:after {
-    border-color: #A579FF;
+    border-color: #AC92EC;
 }
 
 .character-card.engineer:before {
@@ -253,68 +253,85 @@
 
 /* Preacher */
 .character-card.preacher .character-label, .character-card.preacher .character-name {
-    color: #6A53FF;
+    color: #ff8b57;
 }
 
 .character-card.preacher .character-label:after, .character-card.preacher .character-name:after {
-    color: #4433B2;
+    color: #de5d22;
 }
 
 .character-card.preacher:after {
-    border-color: #6A53FF;
+    border-color: #de5d22;
 }
 
 .character-card.preacher:before {
-    border-color: #4433B2;
+    border-color: #de5d22;
 }
 
 /* Traveler */
 .character-card.traveler .character-label, .character-card.traveler .character-name {
-    color: #FA8CFF;
+    color: #EC87C0;
 }
 
 .character-card.traveler .character-label:after, .character-card.traveler .character-name:after {
-    color: #c56cca;
+    color: #D770AD;
 }
 
 .character-card.traveler:after {
-    border-color: #FA8CFF;
+    border-color: #EC87C0;
 }
 
 .character-card.traveler:before {
-    border-color: #c56cca;
+    border-color: #D770AD;
 }
 
-/* Reporter */
-.character-card.reporter .character-label, .character-card.reporter .character-name {
+/* Meteorologist */
+.character-card.meteorologist .character-label, .character-card.meteorologist .character-name {
     color: #1ABC9C;
 }
 
-.character-card.reporter .character-label:after, .character-card.reporter .character-name:after {
+.character-card.meteorologist .character-label:after, .character-card.meteorologist .character-name:after {
     color: #1A7563;
 }
 
-.character-card.reporter:after {
+.character-card.meteorologist:after {
     border-color: #1ABC9C;
 }
 
-.character-card.reporter:before {
+.character-card.meteorologist:before {
     border-color: #1A7563;
 }
 
 /* Athlete */
 .character-card.athlete .character-label, .character-card.athlete .character-name {
-    color: #129AED;
+    color: #5D9CEC;
 }
 
 .character-card.athlete .character-label:after, .character-card.athlete .character-name:after {
-    color: #1272AD;
+    color: #3776ca;
 }
 
 .character-card.athlete:after {
-    border-color: #129AED;
+    border-color: #5D9CEC;
 }
 
 .character-card.athlete:before {
-    border-color: #1272AD;
+    border-color: #3776ca;
+}
+
+/* Captain */
+.character-card.captain .character-label, .character-card.captain .character-name {
+    color: #BAA286;
+}
+
+.character-card.captain .character-label:after, .character-card.captain .character-name:after {
+    color: #AA8E69;
+}
+
+.character-card.captain:after {
+    border-color: #BAA286;
+}
+
+.character-card.captain:before {
+    border-color: #AA8E69;
 }
