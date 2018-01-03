@@ -128,3 +128,97 @@
 .open-clue .character-card .character-info .character-name:after {
     color: grey;
 }
+
+.open-clue .clue-text span.character-name {
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.open-clue .clue-text span.character-name.botanist {
+    color: #2ECC71;
+}
+
+.open-clue .clue-text span.character-name.botanist:before {
+    content: 'The Botanist';
+}
+
+.open-clue .clue-text span.character-name.doctor {
+    color: #D8334A;
+}
+
+.open-clue .clue-text span.character-name.doctor:before {
+    content: 'The Doctor';
+}
+
+.open-clue .clue-text span.character-name.collector {
+    color: #73D8EF;
+}
+
+.open-clue .clue-text span.character-name.collector:before {
+    content: 'The Collector';
+}
+
+.open-clue .clue-text span.character-name.genetic-engineer {
+    color: #fd972a;
+}
+
+.open-clue .clue-text span.character-name.genetic-engineer:before {
+    content: 'The Genetic Engineer';
+}
+
+.open-clue .clue-text span.character-name.inventor {
+    color: #AC92EC;
+}
+
+.open-clue .clue-text span.character-name.inventor:before {
+    content: 'The Inventor';
+}
+
+.open-clue .clue-text span.character-name.chef {
+    color: #FFDE5A;
+}
+
+.open-clue .clue-text span.character-name.chef:before {
+    content: 'The Chef';
+}
+
+.open-clue .clue-text span.character-name.manufacturer {
+    color: #F5F7FA;
+}
+
+.open-clue .clue-text span.character-name.manufacturer:before {
+    content: 'The Manufacturer';
+}
+
+.open-clue .clue-text span.character-name.blogger {
+    color: #EC87C0;
+}
+
+.open-clue .clue-text span.character-name.blogger:before {
+    content: 'The Blogger';
+}
+
+.open-clue .clue-text span.character-name.meteorologist {
+    color: #1ABC9C;
+}
+
+.open-clue .clue-text span.character-name.meteorologist:before {
+    content: 'The Meteorologist';
+}
+
+.open-clue .clue-text span.character-name.architect {
+    color: #5D9CEC;
+}
+
+.open-clue .clue-text span.character-name.architect:before {
+    content: 'The Architect';
+}
+
+.open-clue .clue-text span.character-name.miner {
+    color: #BAA286;
+}
+
+.open-clue .clue-text span.character-name.miner:before {
+    content: 'The Miner';
+}
