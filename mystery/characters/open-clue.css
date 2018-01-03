@@ -11,7 +11,7 @@
 }
 
 .open-clue .clue-title {
-    /* font-size: 3em; */
+    font-size: 3em;
     text-transform: uppercase;
     position: relative;
     color: #f3f3f3;
