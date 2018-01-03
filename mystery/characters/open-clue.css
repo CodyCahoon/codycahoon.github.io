@@ -17,7 +17,7 @@
     color: #f3f3f3;
     z-index: 1;
     text-align:  center;
-    margin: .5em 0 .67em;
+    margin: 0 0 20px;
 }
 
 .open-clue .clue-title:after {
@@ -34,7 +34,7 @@
 
 .open-clue .clue-text {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 30px;
     line-height: 1.55;
     flex-grow: 1;
     overflow:  scroll;
@@ -71,7 +71,7 @@
     text-decoration: none;
     text-align: center;
     margin: 24px 0 0;
-    font-size: 1.5em;
+    font-size: 32px;
 }
 
 .open-clue .back-button:before {
