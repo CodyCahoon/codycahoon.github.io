@@ -200,72 +200,89 @@
     border-color: #129AED;
 }
 
-/* Engineer */
-.character-card.engineer .character-label, .character-card.engineer .character-name {
+/* Inventor */
+.character-card.inventor .character-label, .character-card.inventor .character-name {
     color: #AC92EC;
 }
 
-.character-card.engineer .character-label:after, .character-card.engineer .character-name:after {
+.character-card.inventor .character-label:after, .character-card.inventor .character-name:after {
     color: #8550F0;
 }
 
-.character-card.engineer:after {
+.character-card.inventor:after {
     border-color: #AC92EC;
 }
 
-.character-card.engineer:before {
+.character-card.inventor:before {
     border-color: #8550F0;
 }
 
-/* Chemist */
-.character-card.chemist .character-label, .character-card.chemist .character-name {
+/* Genetic Engineer */
+.character-card.genetic-engineer .character-label, .character-card.genetic-engineer .character-name {
     color: #FFDE5A;
 }
 
-.character-card.chemist .character-label:after, .character-card.chemist .character-name:after {
+.character-card.genetic-engineer .character-label:after, .character-card.genetic-engineer .character-name:after {
     color: #BEA84F;
 }
 
-.character-card.chemist:after {
+.character-card.genetic-engineer:after {
     border-color: #FFDE5A;
 }
 
-.character-card.chemist:before {
+.character-card.genetic-engineer:before {
     border-color: #BEA84F;
+}
+
+/* Genetic Engineer */
+.character-card.genetic-engineer .character-label, .character-card.genetic-engineer .character-name {
+    color: #fd972a;
+}
+
+.character-card.genetic-engineer .character-label:after, .character-card.genetic-engineer .character-name:after {
+    color: #e28f36;
+}
+
+.character-card.genetic-engineer:after {
+    border-color: #fd972a;
+}
+
+.character-card.genetic-engineer:before {
+    border-color: #e28f36;
 }
 
 /* Chef */
 .character-card.chef .character-label, .character-card.chef .character-name {
-    color: #FEB711;
+    color: #FFDE5A;
 }
 
 .character-card.chef .character-label:after, .character-card.chef .character-name:after {
-    color: #DD8E11;
+    color: #BEA84F;
 }
 
 .character-card.chef:after {
-    border-color: #FEB711;
+    border-color: #FFDE5A;
 }
 
 .character-card.chef:before {
-    border-color: #DD8E11;
+    border-color: #BEA84F;
 }
 
 /* Manufacturer */
 .character-card.manufacturer .character-label, .character-card.manufacturer .character-name {
-    color: #ff8b57;
+    color: #F5F7FA;
 }
 
 .character-card.manufacturer .character-label:after, .character-card.manufacturer .character-name:after {
-    color: #de5d22;
+    color: #CCD1D9;
 }
 
 .character-card.manufacturer:after {
-    border-color: #de5d22;
+    border-color: #F5F7FA;
 }
 
 .character-card.manufacturer:before {
-    border-color: #de5d22;
+    border-color: #CCD1D9;
 }
 
 /* Traveler */

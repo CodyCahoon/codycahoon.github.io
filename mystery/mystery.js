@@ -1,24 +1,18 @@
 // Stores passwords to specific html pages
 var passwords = {
-    architect: 'build',
-    botanist: 'bitcoin',
-    chef: 'cook',
-    chemist: 'spud',
-    collector: 'items',
-    doctor: 'cure',
-    engineer: 'fix',
-    meteorologist: 'cloud',
-    traveler: 'getlit'
+    'architect'       : 'build',
+    'botanist'        : 'bitcoin',
+    'chef'            : 'cook',
+    'collector'       : 'wutwut',
+    'doctor'          : 'cure',
+    'genetic-engineer': 'spud',
+    'inventor'        : 'toetoe',
+    'manufacturer'    : 'toast',
+    'meteorologist'   : 'cloud',
+    'miner'           : 'coke',
+    'traveler'        : 'enews'
 };
 
-// Maps character names to their html page
-var urls = {
-    botanist: 'characters/botanist/botanist.html',
-    chef: 'characters/chef.html',
-    collector: 'characters/collector.html',
-    doctor: 'characters/doctor.html',
-    engineer: 'characters/engineer.html'
-};
 
 // Toggles visibility of the clue, will not display clues that are locked
 function toggleClue(characterName, clueNumber) {
@@ -47,7 +41,7 @@ function openCharacter(characterName) {
         if (index > -1) {
             href = href.substring(0, index);
         }
-        var url = urls[characterName];
+        var url = 'characters/' + characterName + '/' + characterName + '.html';
         window.location.href = href + url;
     }
 }

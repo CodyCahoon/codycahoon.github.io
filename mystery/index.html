@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>Murder Mystery - Space</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="./style.css"/>
     </head>
     <body>
         <div class="main">
             <h1 class="mystery-title" data-name="MARS Colonization Project">MARS Colonization Project</h1>
             <div class="cards">
                 <!-- Architect -->
-                <a href="./characters/athlete.html" class="character-card architect">
+                <button class="character-card architect" onclick="openCharacter('architect')">
                     <div class="character-icon">
                         <img src="./images/architect-icon.png"/>
                     </div>
@@ -37,17 +37,7 @@
                         <label class="character-label">The</label>
                         <h1 class="character-name" data-name="Chef">Chef</h1>
                     </div>
-                </button>
-                 <!-- Chemist -->
-                <button class="character-card chemist" onclick="openCharacter('chemist')">
-                    <div class="character-icon">
-                        <img src="./images/chemist-icon.png"/>
-                    </div>
-                    <div class="character-info">
-                        <label class="character-label">The</label>
-                        <h1 class="character-name" data-name="Chemist">Chemist</h1>
-                    </div>
-                </button>
+                </button>                
                 <!-- Collector -->
                 <button class="character-card collector" onclick="openCharacter('collector')">
                     <div class="character-icon">
@@ -68,18 +58,28 @@
                         <h1 class="character-name" data-name="Doctor">Doctor</h1>
                     </div>
                 </button>
-                <!-- Engineer -->
-                <button class="character-card engineer" onclick="openCharacter('engineer')">
+                 <!-- Genetic Engineer -->
+                <button class="character-card genetic-engineer" onclick="openCharacter('genetic-engineer')">
                     <div class="character-icon">
-                        <img src="./images/engineer-icon.png"/>
+                        <img src="./images/genetic-engineer-icon.png"/>
                     </div>
                     <div class="character-info">
                         <label class="character-label">The</label>
-                        <h1 class="character-name" data-name="Engineer">Engineer</h1>
+                        <h1 class="character-name" data-name="Genetic Engineer">Genetic Engineer</h1>
+                    </div>
+                </button>
+                <!-- Inventor -->
+                <button class="character-card inventor" onclick="openCharacter('inventor')">
+                    <div class="character-icon">
+                        <img src="./images/inventor-icon.png"/>
+                    </div>
+                    <div class="character-info">
+                        <label class="character-label">The</label>
+                        <h1 class="character-name" data-name="Inventor">Inventor</h1>
                     </div>
                 </button>
                 <!-- Manufacturer -->
-                <a href="./characters/manufacturer.html" class="character-card manufacturer">
+                <button class="character-card manufacturer" onclick="openCharacter('manufacturer')">
                     <div class="character-icon">
                         <img src="./images/manufacturer-icon.png"/>
                     </div>
@@ -89,7 +89,7 @@
                     </div>
                 </a>
                  <!-- Meteorologist -->
-                <a href="./characters/meteorologist.html" class="character-card meteorologist">
+                <button class="character-card meteorologist" onclick="openCharacter('meteorologist')">
                     <div class="character-icon">
                         <img src="./images/meteorologist-icon.png"/>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
                 </a>   
                 <!-- Miner -->
-                <a href="./characters/miner.html" class="character-card miner">
+                <button class="character-card miner" onclick="openCharacter('miner')">
                     <div class="character-icon">
                         <img src="./images/miner-icon.png"/>
                     </div>
@@ -109,7 +109,7 @@
                     </div>
                 </a>             
                 <!-- Traveler -->
-                <a href="./characters/traveler.html" class="character-card traveler">
+                <button class="character-card traveler" onclick="openCharacter('traveler')">
                     <div class="character-icon">
                         <img src="./images/traveler-icon.png"/>
                     </div>
@@ -120,6 +120,6 @@
                 </a>    
                
             </div>
-            <script src="./scripts/mystery.js"></script>
+            <script src="./mystery.js"></script>
     </body>
 </html>
