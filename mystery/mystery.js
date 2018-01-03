@@ -5,13 +5,14 @@ var passwords = {
     'chef'            : 'cook',
     'collector'       : 'wutwut',
     'doctor'          : 'cure',
-    'genetic-engineer': 'spud',
+    'Genetic Engineer': 'spud',
     'inventor'        : 'toetoe',
     'manufacturer'    : 'toast',
     'meteorologist'   : 'cloud',
     'miner'           : 'coke',
     'traveler'        : 'enews'
 };
+
 
 
 // Toggles visibility of the clue, will not display clues that are locked
@@ -32,7 +33,8 @@ function toggleClue(characterName, clueNumber) {
 
 // Opens the character's url, as long as the user types in correct password
 function openCharacter(characterName) {
-    var prompt = window.prompt('Access to ' + characterName + ', please enter password');
+    var captializedName = characterName.charAt(0).toUpperCase() + characterName.substring(1);
+    var prompt = window.prompt('Please enter password to access The ' + captializedName);
     var password = passwords[characterName];
     var isCorrectPassword = password === prompt;
     if (isCorrectPassword) {
