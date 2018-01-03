@@ -172,7 +172,7 @@
 }
 
 .character-card.doctor .character-label:after, .character-card.doctor .character-name:after {
-    color: #BF263C;
+    color: #af283b;
 }
 
 .character-card.doctor:after {
@@ -180,24 +180,24 @@
 }
 
 .character-card.doctor:before {
-    border-color: #BF263C;
+    border-color: #af283b;
 }
 
 /* Collector */
 .character-card.collector .character-label, .character-card.collector .character-name {
-    color: #00EFFF;
+    color: #73D8EF;
 }
 
 .character-card.collector .character-label:after, .character-card.collector .character-name:after {
-    color: #07ADB9;
+    color: #129AED;
 }
 
 .character-card.collector:after {
-    border-color: #00EFFF;
+    border-color: #73D8EF;
 }
 
 .character-card.collector:before {
-    border-color: #07ADB9;
+    border-color: #129AED;
 }
 
 /* Engineer */
@@ -251,20 +251,20 @@
     border-color: #DD8E11;
 }
 
-/* Preacher */
-.character-card.preacher .character-label, .character-card.preacher .character-name {
+/* Manufacturer */
+.character-card.manufacturer .character-label, .character-card.manufacturer .character-name {
     color: #ff8b57;
 }
 
-.character-card.preacher .character-label:after, .character-card.preacher .character-name:after {
+.character-card.manufacturer .character-label:after, .character-card.manufacturer .character-name:after {
     color: #de5d22;
 }
 
-.character-card.preacher:after {
+.character-card.manufacturer:after {
     border-color: #de5d22;
 }
 
-.character-card.preacher:before {
+.character-card.manufacturer:before {
     border-color: #de5d22;
 }
 
@@ -302,6 +302,7 @@
     border-color: #1A7563;
 }
 
+
 /* Architect */
 .character-card.architect .character-label, .character-card.architect .character-name {
     color: #5D9CEC;
@@ -319,19 +320,19 @@
     border-color: #3776ca;
 }
 
-/* Captain */
-.character-card.captain .character-label, .character-card.captain .character-name {
+/* Miner */
+.character-card.miner .character-label, .character-card.miner .character-name {
     color: #BAA286;
 }
 
-.character-card.captain .character-label:after, .character-card.captain .character-name:after {
+.character-card.miner .character-label:after, .character-card.miner .character-name:after {
     color: #AA8E69;
 }
 
-.character-card.captain:after {
+.character-card.miner:after {
     border-color: #BAA286;
 }
 
-.character-card.captain:before {
+.character-card.miner:before {
     border-color: #AA8E69;
 }
