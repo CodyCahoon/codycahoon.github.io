@@ -285,20 +285,20 @@
     border-color: #CCD1D9;
 }
 
-/* Traveler */
-.character-card.traveler .character-label, .character-card.traveler .character-name {
+/* Blogger */
+.character-card.blogger .character-label, .character-card.blogger .character-name {
     color: #EC87C0;
 }
 
-.character-card.traveler .character-label:after, .character-card.traveler .character-name:after {
+.character-card.blogger .character-label:after, .character-card.blogger .character-name:after {
     color: #D770AD;
 }
 
-.character-card.traveler:after {
+.character-card.blogger:after {
     border-color: #EC87C0;
 }
 
-.character-card.traveler:before {
+.character-card.blogger:before {
     border-color: #D770AD;
 }
 

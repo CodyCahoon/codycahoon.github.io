@@ -1,6 +1,7 @@
 // Stores passwords to specific html pages
 var passwords = {
     'architect'       : 'build',
+    'blogger'         : 'enews',
     'botanist'        : 'bitcoin',
     'chef'            : 'cook',
     'collector'       : 'wutwut',
@@ -10,7 +11,6 @@ var passwords = {
     'manufacturer'    : 'toast',
     'meteorologist'   : 'cloud',
     'miner'           : 'coke',
-    'traveler'        : 'enews'
 };
 
 
@@ -33,11 +33,11 @@ function toggleClue(characterName, clueNumber) {
 
 // Opens the character's url, as long as the user types in correct password
 function openCharacter(characterName) {
-    var captializedName = characterName.charAt(0).toUpperCase() + characterName.substring(1);
+    /*var captializedName = characterName.charAt(0).toUpperCase() + characterName.substring(1);
     var prompt = window.prompt('Please enter password to access The ' + captializedName);
     var password = passwords[characterName];
     var isCorrectPassword = password === prompt;
-    if (isCorrectPassword) {
+    if (isCorrectPassword) {*/
         var href = window.location.href;
         var index = href.indexOf('index.html');
         if (index > -1) {
@@ -45,5 +45,5 @@ function openCharacter(characterName) {
         }
         var url = 'characters/' + characterName + '/' + characterName + '.html';
         window.location.href = href + url;
-    }
+    //}
 }

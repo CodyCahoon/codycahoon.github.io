@@ -11,7 +11,7 @@
 }
 
 .open-clue .clue-title {
-    font-size: 3em;
+    /* font-size: 3em; */
     text-transform: uppercase;
     position: relative;
     color: #f3f3f3;
@@ -34,7 +34,7 @@
 
 .open-clue .clue-text {
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 24px;
     line-height: 1.55;
     flex-grow: 1;
     overflow:  scroll;
@@ -43,7 +43,6 @@
 
 .open-clue .clue-text p {
     overflow: scroll;
-    height: 80%;
     margin:  0;
 }
 
@@ -56,7 +55,7 @@
 
 .open-clue audio {
     width: 100%;
-    margin: 20px 0;
+    margin: 75px 0;
 }
 
 .open-clue .back-button {
