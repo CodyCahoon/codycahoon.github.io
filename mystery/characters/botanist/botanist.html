@@ -45,5 +45,14 @@
             </div>
         </div>
         <script src="../../mystery.js"></script>
+        <script>
+            let intervalMs = 10000;
+            let clues = document.getElementsByClassName('clue');
+            setInterval(function () {
+                openLock(clues[0], 1);
+                openLock(clues[1], 2);
+                openLock(clues[2], 3);
+            }, intervalMs);
+        </script>
     </body>
 </html>

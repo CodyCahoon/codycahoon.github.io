@@ -1,13 +1,13 @@
 // Stores passwords to specific html pages
 var passwords = {
     'architect'       : 'build',
-    'blogger'         : 'enews',
     'botanist'        : 'bitcoin',
     'chef'            : 'cook',
     'collector'       : 'wutwut',
     'doctor'          : 'cure',
     'Genetic Engineer': 'spud',
     'inventor'        : 'toetoe',
+    'journalist'      : 'enews',
     'manufacturer'    : 'toast',
     'meteorologist'   : 'cloud',
     'miner'           : 'coke',
@@ -48,14 +48,18 @@ function openCharacter(characterName) {
     //}
 }
 
-function openLock(lockNumber) {
+function openLock(element, lockNumber) {
     var xmlhttp = new XMLHttpRequest();
 
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) {
            if (xmlhttp.status == 200) {
                let lock = JSON.parse(xmlhttp.response).lock;
-               console.log(xmlhttp);
+               if (lock) {
+                   element.className = 'clue locked';
+               } else {
+                   element.className = 'clue';
+               }
            }
            else if (xmlhttp.status == 400) {
                console.log(xmlhttp);
@@ -65,7 +69,7 @@ function openLock(lockNumber) {
            }
         }
     };
-
-    xmlhttp.open("GET", "./json/clue-1-lock.json", true);
+    var url = "../../locks/clue-" + lockNumber + '-lock.json';
+    xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
