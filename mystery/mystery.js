@@ -54,6 +54,7 @@ function openLock(lockNumber) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE) {
            if (xmlhttp.status == 200) {
+               let lock = JSON.parse(xmlhttp.response).lock;
                console.log(xmlhttp);
            }
            else if (xmlhttp.status == 400) {
