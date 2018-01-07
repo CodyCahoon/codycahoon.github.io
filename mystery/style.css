@@ -285,20 +285,20 @@
     border-color: #CCD1D9;
 }
 
-/* Blogger */
-.character-card.blogger .character-label, .character-card.blogger .character-name {
+/* Journalist */
+.character-card.journalist .character-label, .character-card.journalist .character-name {
     color: #EC87C0;
 }
 
-.character-card.blogger .character-label:after, .character-card.blogger .character-name:after {
+.character-card.journalist .character-label:after, .character-card.journalist .character-name:after {
     color: #D770AD;
 }
 
-.character-card.blogger:after {
+.character-card.journalist:after {
     border-color: #EC87C0;
 }
 
-.character-card.blogger:before {
+.character-card.journalist:before {
     border-color: #D770AD;
 }
 

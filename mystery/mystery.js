@@ -47,3 +47,24 @@ function openCharacter(characterName) {
         window.location.href = href + url;
     //}
 }
+
+function openLock(lockNumber) {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE) {
+           if (xmlhttp.status == 200) {
+               console.log(xmlHttp);
+           }
+           else if (xmlhttp.status == 400) {
+               console.log(xmlhttp);
+           }
+           else {
+               console.log(xmlhttp);
+           }
+        }
+    };
+
+    xmlhttp.open("GET", "./json/clue-1-lock.json", true);
+    xmlhttp.send();
+}

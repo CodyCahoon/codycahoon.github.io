@@ -191,12 +191,12 @@
     content: 'The Manufacturer';
 }
 
-.open-clue .clue-text span.character-name.blogger {
+.open-clue .clue-text span.character-name.journalist {
     color: #EC87C0;
 }
 
-.open-clue .clue-text span.character-name.blogger:before {
-    content: 'The Blogger';
+.open-clue .clue-text span.character-name.journalist:before {
+    content: 'The Journalist';
 }
 
 .open-clue .clue-text span.character-name.meteorologist {
