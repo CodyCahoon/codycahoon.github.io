@@ -69,7 +69,7 @@ function openLock(element, lockNumber) {
            }
         }
     };
-    var url = "../../locks/clue-" + lockNumber + '-lock.json';
+    var url = "../../locks/clue-" + lockNumber + '-lock.json?t=' + (new Date()).getTime().toString();
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
