@@ -13,7 +13,7 @@
         pages.forEach(p => p.style.display = 'none');
         links.forEach(l => l.classList.remove('nav-item--selected'));
         links[index].classList.add('nav-item--selected');
-        pages[index].style.display = 'block';
+        pages[index].style.display = 'flex';
     }
 
     renderPage(0);

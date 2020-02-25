@@ -17,17 +17,19 @@ nav {
   color: white;
   display: flex;
   height: 90px;
+  padding: 0 30px;
   width: 100vw;
+  box-sizing: border-box;
 }
 
 nav img {
   margin: 0 20px;
-  width: 60px;
+  width: 48px;
 }
 
 nav h1 {
   font-family: "Bitter", serif;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 nav ul {
@@ -41,7 +43,7 @@ nav ul {
 .nav-item {
   border-radius: 4px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
   margin-right: 20px;
   padding: 5px 10px;
@@ -64,17 +66,32 @@ nav ul {
   color: white;
 }
 
+.content.about {
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.about__text {
+  flex-grow: 1;
+  font-size: 18px;
+  line-height: 2;
+  margin-right: 30px;
+}
+
+.about__img {
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+}
+
 .content {
   color: white;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   font-family: "Barlow", serif;
-  margin: 50px;
-}
-
-.content__text {
-  font-size: 18px;
-  line-height: 2;
+  margin: 40px;
 }
 
 .content__project {
@@ -83,14 +100,26 @@ nav ul {
   color: var(--c-grey-400);
   display: flex;
   justify-content: space-between;
-  margin: 20px;
   min-width: 400px;
   padding: 20px;
+  margin-bottom: 10px;
 }
 
 .content__project__heading {
+  font-family: "Bitter", serif;
+  display: inline-flex;
+  align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.content__project__description p {
+  line-height: 1.3;
+}
+
+.content__project__link img {
+  width: 20px;
+  margin: 4px 0 0 10px;
 }
 
 .content__project__tech {
