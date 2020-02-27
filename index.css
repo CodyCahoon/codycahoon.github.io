@@ -5,11 +5,17 @@
   --c-white: #ffffff;
 }
 
-body,
 html {
-  background-color: var(--c-grey-400);
   margin: 0;
   padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
 }
 
 nav {
