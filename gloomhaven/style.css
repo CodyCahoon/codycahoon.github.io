@@ -1,0 +1,122 @@
+@font-face {
+  font-family: Gloom;
+  src: url(./assets/fonts/PirataOne-Gloomhaven.ttf);
+}
+
+body,
+html {
+  background: #333;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: Gloom;
+  color: white;
+}
+
+main {
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 200px;
+  margin: 10px;
+}
+
+#draw {
+  cursor: pointer;
+  border: 4px solid transparent;
+  transition: all 150ms;
+}
+
+#draw:hover {
+  border-color: white;
+}
+
+#placeholder {
+  width: 240px;
+}
+
+#placeholder img {
+  border: 4px solid transparent;
+}
+
+section {
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+button {
+  margin: 4px;
+  outline: 4px solid #333;
+  border: 2px solid #333;
+  cursor: pointer;
+  background-color: #333;
+  font-family: Gloom;
+  font-size: 24px;
+  color: white;
+  letter-spacing: 0.5px;
+  transition: all 150ms;
+}
+
+button:hover {
+  border-color: white;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+  color: white;
+  font-family: Gloom;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+  margin: 4px;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 3px solid white;
+}
+
+.container:hover input ~ .checkmark,
+.container input:checked ~ .checkmark {
+  border-color: #2196f3;
+}
+
+.container input:checked {
+  color: #2196f3;
+}
