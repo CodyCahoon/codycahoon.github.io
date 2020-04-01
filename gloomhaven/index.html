@@ -10,9 +10,16 @@
         <button id="shuffle" type="button">Shuffle</button>
         <button id="bless" type="button">+ Add Bless</button>
         <button id="curse" type="button">+ Add Curse</button>
+        <button id="scenario-effect" type="button">
+          + Add -1
+        </button>
       </div>
       <section>
-        <img id="draw" src="./assets/attacks/Attack--Modifier.png" />
+        <div id="drawing-deck">
+          <img id="draw" src="./assets/attacks/Attack--Modifier.png" />
+          <span id="shuffle-deck">Shuffle!</span>
+          <span id="total-cards">--</span>
+        </div>
         <div id="placeholder"></div>
       </section>
     </main>

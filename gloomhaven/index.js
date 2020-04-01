@@ -46,7 +46,10 @@
         ['light', 'Element--Light'],
         ['refresh', 'Refresh'],
         ['pierce3', 'Pierce--3'],
-        ['blank', 'Attack--Modifier--Blank']
+        ['blank', 'Attack--Modifier--Blank'],
+        ['poison', 'Poison'],
+        ['+0stun', 'Damage--Plus--0--Stun'],
+        ['-1scenario', 'Damage--Minus--1'],
     ]);
 
     init();
@@ -94,6 +97,7 @@
             const deck = cardsByCharacter[characters.Spellweaver];
             addToDeck(deck, '+1', 11);
             addToDeck(deck, '+0', 2);
+            addToDeck(deck, '+0stun');
             addToDeck(deck, '-1', 3);
             addToDeck(deck, '+2fire', 2);
             addToDeck(deck, '+2ice', 2);
@@ -115,12 +119,13 @@
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
+            addToDeck(deck, 'poison');
         }
 
         function setupSunkeeper() {
             const deck = cardsByCharacter[characters.Sunkeeper];
             addToDeck(deck, '+1', 7);
-            addToDeck(deck, '+0', 7);
+            addToDeck(deck, '+0', 4);
             addToDeck(deck, '-1');
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
@@ -128,7 +133,7 @@
         }
 
         function setupQuartermaster() {
-            const deck = cardsByCharacter[characters.Sunkeeper];
+            const deck = cardsByCharacter[characters.Quartermaster];
             addToDeck(deck, '+1', 7);
             addToDeck(deck, '+0', 2);
             addToDeck(deck, '-1');
@@ -145,6 +150,7 @@
     configureButton('shuffle', onShuffle);
     configureButton('bless', onAddBless);
     configureButton('curse', onAddCurse);
+    configureButton('scenario-effect', onAddScenarioEffect);
 
     function onDraw() {
         const hasCardsToDraw = cards.available.length > 0;
@@ -159,8 +165,9 @@
     }
 
     function onShuffle() {
-        const blessAndCurse = cards.available.filter(c => c === 'bless' || c === 'curse');
-        cards.available = [...cards.all, ...blessAndCurse];
+        const cardsToKeep = new Set(['bless', 'curse', '-1scenario']);
+        const keepCards = cards.available.filter(c => cardsToKeep.has(c));
+        cards.available = [...cards.all, ...keepCards];
         cards.drawn = [];
     }
 
@@ -172,10 +179,23 @@
         cards.available.push('curse');
     }
 
+    function onAddScenarioEffect() {
+        cards.available.push('-1scenario');
+    }
+
     function renderCards() {
         const hasCardsToDraw = cards.available.length > 0;
         const filter = hasCardsToDraw ? '' : 'grayscale(1)';
         document.getElementById('draw').style.filter = filter;
+        document.getElementById('total-cards').innerHTML = cards.available.length;
+
+        if (needsShuffle()) {
+            document.getElementById('draw').classList.add('needs-shuffle');
+            document.getElementById('shuffle-deck').style.display = 'block';
+        } else {
+            document.getElementById('draw').classList.remove('needs-shuffle');
+            document.getElementById('shuffle-deck').style.display = 'none';
+        }
 
         const placeholder = document.getElementById('placeholder');
         placeholder.innerHTML = null;
@@ -189,6 +209,11 @@
             img.src = `./assets/attacks/${resource}.png`;
             return img;
         }
+    }
+
+    function needsShuffle() {
+        const isShuffle = c => new Set(['double', 'miss']).has(c);
+        return cards.drawn.filter(isShuffle).length > 0;
     }
 
     function renderName(name) {
