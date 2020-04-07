@@ -81,11 +81,10 @@ nav ul {
 
 .about__text {
   flex-grow: 1;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.7;
   margin: 0 30px 60px 0;
   color: var(--c-grey-400);
-  text-shadow: 1px 1px 0 var(--c-blue-400-alpha);
 }
 
 .about__img {
@@ -98,13 +97,13 @@ nav ul {
 }
 
 .tech {
-  width: 50%;
+  width: 33%;
 }
 
 .tech__heading {
   position: relative;
   display: inline-block;
-  font-size: 24px;
+  font-size: 22px;
   color: var(--c-grey-400);
   z-index: 1;
   text-transform: uppercase;
@@ -136,14 +135,20 @@ nav ul {
 }
 
 .tech__list__item img {
-  width: 30px;
+  width: 26px;
   margin-right: 14px;
 }
 
 .tech__list__item label {
   color: var(--c-grey-400);
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 4px;
+}
+
+.tech__list__item a {
+  color: var(--c-grey-400);
+  text-decoration: none;
+  border-bottom: 2px solid var(--c-grey-400);
 }
 
 .content {
@@ -209,7 +214,6 @@ nav ul {
   margin-right: 20px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  text-shadow: 1px 1px 0 var(--c-blue-400);
 }
 
 .contact {
