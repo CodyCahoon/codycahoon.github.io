@@ -23,7 +23,6 @@ nav {
   align-items: center;
   color: var(--c-grey-400);
   display: flex;
-  height: 100px;
   padding: 0 30px;
   width: 100%;
   box-sizing: border-box;
@@ -159,7 +158,6 @@ nav ul {
   color: var(--c-grey-400);
   display: flex;
   justify-content: space-between;
-  min-width: 400px;
   padding: 30px 0;
   border-bottom: 1px dotted var(--c-grey-200);
 }
@@ -246,5 +244,43 @@ nav ul {
 
   .nav-item {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    margin: 0;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav h1 {
+    margin: 0;
+  }
+
+  nav img {
+    margin: 10px 0;
+    width: 40px;
+  }
+
+  .tech__heading {
+    font-size: 18px;
+  }
+
+  .tech__heading::before {
+    top: 10px;
+    left: 5px;
+  }
+
+  .about__text {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .content__project__img {
+    min-width: 200px;
+    width: 100%;
   }
 }
