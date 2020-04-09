@@ -50,6 +50,8 @@
         ['poison', 'Poison'],
         ['+0stun', 'Damage--Plus--0--Stun'],
         ['-1scenario', 'Damage--Minus--1'],
+        ['+1roll', 'Damage--Plus--1--Roll'],
+        ['+1curse', 'Damage--Plus--1--Curse'],
     ]);
 
     init();
@@ -104,6 +106,7 @@
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
+            addToDeck(deck, '+1curse');
 
             // Elements
             addToDeck(deck, 'earth');
@@ -116,7 +119,7 @@
             const deck = cardsByCharacter[characters.Summoner];
             addToDeck(deck, '+1', 10);
             addToDeck(deck, '+0', 7);
-            addToDeck(deck, '+2');
+            addToDeck(deck, '+2', 2);
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'poison');
@@ -125,24 +128,24 @@
         function setupSunkeeper() {
             const deck = cardsByCharacter[characters.Sunkeeper];
             addToDeck(deck, '+1', 7);
-            addToDeck(deck, '+0', 4);
             addToDeck(deck, '-1');
             addToDeck(deck, '+2');
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
+            addToDeck(deck, '+1roll', 4);
         }
 
         function setupQuartermaster() {
             const deck = cardsByCharacter[characters.Quartermaster];
             addToDeck(deck, '+1', 7);
-            addToDeck(deck, '+0', 2);
             addToDeck(deck, '-1');
             addToDeck(deck, '-2');
-            addToDeck(deck, '+2');
+            addToDeck(deck, '+2', 3);
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'pierce3', 2);
             addToDeck(deck, 'refresh');
+            addToDeck(deck, '+1roll', 2);
         }
     }
 
@@ -172,15 +175,35 @@
     }
 
     function onAddBless() {
-        cards.available.push('bless');
+        addCard('bless');
     }
 
     function onAddCurse() {
-        cards.available.push('curse');
+        addCard('curse');
     }
 
     function onAddScenarioEffect() {
-        cards.available.push('-1scenario');
+        addCard('-1scenario');
+    }
+
+    function addCard(cardName) {
+        cards.available.push(cardName);
+
+        const card = createCard(cardName);
+        card.style.position = 'absolute';
+        card.style.top = '4px';
+        card.style.left = '3px';
+        card.classList.add('added-card');
+        
+        const drawingDeck = document.getElementById('drawing-deck');
+        if (!drawingDeck) {
+            return;
+        }
+        drawingDeck.appendChild(card);
+
+        setTimeout(() => {
+            card.remove();
+        }, 1000)
     }
 
     function renderCards() {
@@ -202,13 +225,6 @@
         
         const cardsToRender = cards.drawn.length === 0 ? ['blank'] : cards.drawn;
         cardsToRender.map(createCard).forEach(img => placeholder.appendChild(img));
-
-        function createCard(name) {
-            const img = document.createElement('img');
-            const resource = cardToResource.get(name);
-            img.src = `./assets/attacks/${resource}.png`;
-            return img;
-        }
     }
 
     function needsShuffle() {
@@ -220,4 +236,10 @@
         document.getElementById('name').innerHTML = name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
     }
 
+    function createCard(name) {
+        const img = document.createElement('img');
+        const resource = cardToResource.get(name);
+        img.src = `./assets/attacks/${resource}.png`;
+        return img;
+    }
 })();
