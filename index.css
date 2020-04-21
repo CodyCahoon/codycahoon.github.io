@@ -59,7 +59,7 @@ nav ul {
 }
 
 .nav-item--selected {
-  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  background: var(--c-grey-400);
   border-color: var(--c-grey-400);
   color: white;
 }
@@ -146,9 +146,26 @@ nav ul {
 }
 
 .tech__list__item a {
+  position: relative;
   color: var(--c-grey-400);
   text-decoration: none;
+  transition: all 150ms;
   border-bottom: 2px solid var(--c-grey-400);
+}
+
+.tech__list__item a:after {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--c-blue-400);
+  transition: all 150ms;
+}
+
+.tech__list__item a:hover:after {
+  width: 100%;
 }
 
 .content {
