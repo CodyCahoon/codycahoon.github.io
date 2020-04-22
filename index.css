@@ -1,6 +1,7 @@
 :root {
   --c-blue-400: #70caff;
   --c-blue-400-alpha: rgba(112, 202, 255, 0.4);
+  --c-grey-100: #f2f2f2;
   --c-grey-200: #aaaaaa;
   --c-grey-300: #444444;
   --c-grey-400: #333333;
@@ -16,7 +17,7 @@ body {
   box-sizing: border-box;
   margin: 0 10vw;
   padding: 0;
-  background: #f2f2f2;
+  background: var(--c-grey-100);
 }
 
 nav {
@@ -142,6 +143,7 @@ nav ul {
   color: var(--c-grey-400);
   font-size: 22px;
   margin-bottom: 4px;
+  transition: all 150ms;
 }
 
 .tech__list__item a {
