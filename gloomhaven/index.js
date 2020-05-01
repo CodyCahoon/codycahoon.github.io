@@ -52,6 +52,7 @@
         ['-1scenario', 'Damage--Minus--1'],
         ['+1roll', 'Damage--Plus--1--Roll'],
         ['+1curse', 'Damage--Plus--1--Curse'],
+	['stun--roll', 'Stun--Roll'],
     ]);
 
     init();
@@ -119,7 +120,7 @@
             const deck = cardsByCharacter[characters.Summoner];
             addToDeck(deck, '+1', 10);
             addToDeck(deck, '+0', 7);
-            addToDeck(deck, '+2', 2);
+            addToDeck(deck, '+2', 3);
             addToDeck(deck, 'double');
             addToDeck(deck, 'miss');
             addToDeck(deck, 'poison');
@@ -146,6 +147,7 @@
             addToDeck(deck, 'pierce3', 2);
             addToDeck(deck, 'refresh');
             addToDeck(deck, '+1roll', 2);
+	    addToDeck(deck, 'stun--roll');
         }
     }
 
