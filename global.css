@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --c-blue-400: #70caff;
+    --c-grey-100: #f2f2f2;
+    --c-grey-400: #162027;
+    --c-white: #ffffff;
+
+    --f-main: 2.4em;
+    --f-sub: 2em;
+    font-size: 10px;
+}
+
+html {
+    margin: 0 auto;
+}
+
+body {
+    display: flex;
+    background: var(--c-grey-100);
+    color: var(--c-grey-400);
+    box-sizing: border-box;
+    width: 1200px;
+    margin: 50px auto;
+    transition: width 150ms ease-in-out;
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    width: 75%;
+}
+
+nav {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+}
+
+.logo {
+    margin: 10px 0 80px;
+    width: 100px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    font-family: "Poppins", sans-serif;
+    font-size: var(--f-main);
+    color: var(--c-grey-400);
+    cursor: pointer;
+    transition: color 150ms ease-in-out;
+}
+
+.nav-item a {
+    color: var(--c-grey-400);
+    text-decoration: none;
+}
+
+.nav-item a:focus {
+    outline: 1px solid var(--c-grey-400);
+}
+
+.nav-item--selected a {
+    color: var(--c-blue-400);
+}
+
+.nav-item--selected a::after {
+    content: ".";
+    color: var(--c-blue-400);
+}
+
+.nav-item:hover a {
+    color: var(--c-blue-400);
+}
+
+.content__panels {
+    display: flex;
+    flex-direction: row;
+}
+
+.content__panel {
+    margin-top: 20px;
+}
+
+.content__panel__heading {
+    display: inline-block;
+    font-size: var(--f-sub);
+    color: var(--c-grey-400);
+    padding: 5px 9px;
+    border: 3px solid var(--c-grey-400);
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 1680px) {
+    body {
+        width: 1000px;
+    }
+
+    .logo {
+        margin-bottom: 60px;
+    }
+
+    main {
+        margin-left: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        width: 800px;
+    }
+
+    .logo {
+        width: 90px;
+        margin-bottom: 50px;
+    }
+
+    main {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --f-main: 2em;
+        --f-sub: 1.6em;
+    }
+
+    body {
+        width: 600px;
+    }
+
+    .logo {
+        width: 80px;
+        margin-bottom: 40px;
+    }
+
+    main {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 650px) {
+    :root {
+        --f-main: 1.8em;
+        --f-sub: 1.4em;
+    }
+
+    body {
+        width: 400px;
+    }
+
+    .content__panels {
+        flex-direction: column;
+    }
+
+    .logo {
+        width: 70px;
+        margin-bottom: 30px;
+    }
+
+    main {
+        margin-left: 30px;
+    }
+}
