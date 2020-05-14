@@ -8,10 +8,15 @@
     line-height: 1.8;
 }
 
-.content__about__img {
+.content__about__profile {
+    max-width: 240px;
     width: 240px;
     float: right;
     margin: 10px 0 20px 5vw;
+}
+
+.content__about__profile img {
+    width: 100%;
     border: 6px solid var(--c-grey-400);
     box-shadow: 6px 6px 0 0 var(--c-blue-400);
 }
@@ -19,7 +24,6 @@
 .content__about--focused {
     font-weight: 600;
 }
-
 
 .content .content__panel {
     flex-grow: 1;
@@ -39,24 +43,19 @@
     margin-bottom: 20px;
 }
 
-.content__tech__list__item img {
-    width: 28px;
-    max-height: 40px;
-}
-
 .content__tech__list__item label {
     font-size: var(--f-sub);
     margin: 0 0 3px 12px;
 }
 
 @media (max-width: 900px) {
-    .content__about__img {
+    .content__about__profile {
         width: 180px;
     }
 }
 
 @media (max-width: 650px) {
-    .content__about__img {
+    .content__about__profile {
         width: 140px;
     }
 }

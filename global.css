@@ -43,6 +43,10 @@ nav {
     width: 100px;
 }
 
+.logo img {
+    width: 100%;
+}
+
 nav ul {
     list-style: none;
     padding: 0;

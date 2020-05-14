@@ -18,7 +18,12 @@
     </head>
     <body>
         <nav>
-            <img class="logo" src="./assets/logo.png" alt="Cody Cahoon Logo" />
+            <picture class="logo">
+                <source type="image/webp" srcset="./assets/logo.webp" />
+                <source type="image/png" srcset="./assets/logo.png" />
+                <img src="./assets/logo.png" alt="Cody Cahoon Logo" />
+            </picture>
+
             <ul role="menu">
                 <li class="nav-item nav-item--selected" role="menuitem">
                     <a href="#">About</a>
@@ -35,18 +40,30 @@
         <main>
             <section class="content flex-col">
                 <p class="content__about">
-                    <img
-                        class="content__about__img"
-                        src="./assets/profile.png"
-                        alt="Profile image of Cody"
-                    />
+                    <picture class="content__about__profile">
+                        <source
+                            type="image/webp"
+                            srcset="./assets/profile.webp"
+                        />
+                        <source
+                            type="image/png"
+                            srcset="./assets/profile.png"
+                        />
+                        <img
+                            src="./assets/profile.png"
+                            alt="Profile picture of Cody"
+                        />
+                    </picture>
                     Hi, I am
                     <span class="content__about--focused">Cody Cahoon</span>. I
-                    am a full-stack developer living in <span class="content__about--focused">Raleigh, North Carolina, USA</span>. I am passionate about designing and developing interfaces
+                    am a full-stack developer living in
+                    <span class="content__about--focused"
+                        >Raleigh, North Carolina, USA</span
+                    >. I am passionate about designing and developing interfaces
                     for the web. I have worked with Angular and React
-                    frameworks, and spend my free time learning and using
-                    new web technologies such as Svelte. TypeScript is my
-                    language of choice on the front-end.
+                    frameworks, and spend my free time learning and using new
+                    web technologies such as Svelte. TypeScript is my language
+                    of choice on the front-end.
                 </p>
 
                 <div class="content__panels">
@@ -55,46 +72,96 @@
                         <ul class="content__tech__list flex-col">
                             <!-- Angular -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/angular.png"
-                                    alt="Angular Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/angular.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/angular.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/angular.png"
+                                        alt="Angular icon"
+                                    />
+                                </picture>
                                 <label>Angular</label>
                             </li>
 
                             <!-- React -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/react.png"
-                                    alt="React Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/react.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/react.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/react.png"
+                                        alt="React icon"
+                                    />
+                                </picture>
                                 <label>React</label>
                             </li>
 
                             <!-- Sass -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/sass.png"
-                                    alt="Sass Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/sass.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/sass.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/sass.png"
+                                        alt="Sass icon"
+                                    />
+                                </picture>
                                 <label>Sass</label>
                             </li>
 
                             <!-- Svelte -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/svelte.png"
-                                    alt="Svelte Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/svelte.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/svelte.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/svelte.png"
+                                        alt="Svelte icon"
+                                    />
+                                </picture>
                                 <label>Svelte</label>
                             </li>
 
                             <!-- TypeScript -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/typescript.png"
-                                    alt="TypeScript Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/typescript.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/typescript.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/typescript.png"
+                                        alt="TypeScript icon"
+                                    />
+                                </picture>
                                 <label>TypeScript</label>
                             </li>
                         </ul>
@@ -105,28 +172,58 @@
                         <ul class="content__tech__list flex-col">
                             <!-- Java -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/java.png"
-                                    alt="Java Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/java.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/java.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/java.png"
+                                        alt="Java icon"
+                                    />
+                                </picture>
                                 <label>Java</label>
                             </li>
 
                             <!-- NodeJS -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/nodejs.png"
-                                    alt="NodeJS Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/nodejs.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/nodejs.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/nodejs.png"
+                                        alt="NodeJS icon"
+                                    />
+                                </picture>
                                 <label>Node JS & Express</label>
                             </li>
 
                             <!-- Scala -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/scala.png"
-                                    alt="Scala Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/scala.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/scala.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/scala.png"
+                                        alt="Scala icon"
+                                    />
+                                </picture>
                                 <label>Scala</label>
                             </li>
                         </ul>
@@ -137,19 +234,39 @@
                         <ul class="content__tech__list flex-col">
                             <!-- GitHub -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/github.png"
-                                    alt="GitHub Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/github.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/github.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/github.png"
+                                        alt="GitHub icon"
+                                    />
+                                </picture>
                                 <label>GitHub</label>
                             </li>
 
                             <!-- Sketch -->
                             <li class="content__tech__list__item">
-                                <img
-                                    src="./assets/icons/sketch.png"
-                                    alt="Sketch Icon"
-                                />
+                                <picture>
+                                    <source
+                                        type="image/webp"
+                                        srcset="./assets/icons/sketch.webp"
+                                    />
+                                    <source
+                                        type="image/png"
+                                        srcset="./assets/icons/sketch.png"
+                                    />
+                                    <img
+                                        src="./assets/icons/sketch.png"
+                                        alt="Sketch icon"
+                                    />
+                                </picture>
                                 <label>Sketch</label>
                             </li>
                         </ul>
