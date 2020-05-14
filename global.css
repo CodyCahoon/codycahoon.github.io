@@ -6,9 +6,11 @@
     --c-grey-400: #162027;
     --c-white: #ffffff;
 
-    --f-main: 2.4em;
-    --f-sub: 2em;
+ 
     font-size: 10px;
+    --f-main: 2.4rem;
+    --f-sub: 2rem;
+    --f-small: 1.4rem;
 }
 
 html {
@@ -135,8 +137,9 @@ nav ul {
 
 @media (max-width: 900px) {
     :root {
-        --f-main: 2em;
-        --f-sub: 1.6em;
+        --f-main: 2rem;
+        --f-sub: 1.6rem;
+        --f-small: 1.2rem;
     }
 
     body {
@@ -155,8 +158,9 @@ nav ul {
 
 @media (max-width: 650px) {
     :root {
-        --f-main: 1.8em;
-        --f-sub: 1.4em;
+        --f-main: 1.8rem;
+        --f-sub: 1.4rem;
+        --f-small: 1.1rem;
     }
 
     body {
