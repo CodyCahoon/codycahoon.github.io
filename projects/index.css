@@ -43,3 +43,20 @@
 .content__project__link:hover {
     transform: translateY(-2px);
 }
+
+.content__project__tech {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+.content__project__tech li {
+    font-size: var(--f-sub);
+    margin-right: 10px;
+    background: var(--c-grey-400);
+    color: white;
+    padding: 3px 9px;
+}
+
